@@ -1,9 +1,14 @@
+<div class="container">
+<div class="header" style="background-image:url(https://www.inscamidemar.cat/wp-content/uploads/2022/02/star3.png)" style="width: 60%">
+<img src="https://www.inscamidemar.cat/wp-content/uploads/2022/02/logo_calafell_web.png" style="padding-top: 50px; padding-bottom: 50px">
+<p style="display: inline; font-size: 40px; font-weight: normal;color: #498F9D !important; margin-left:150px">Institut camí de mar de calafell</p>
+</div>
+
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
-
         <div class="card-body">
 
             <x-jet-validation-errors class="mb-3 rounded-0" />
@@ -33,6 +38,10 @@
                 </div>
 
                 <div class="mb-3">
+                    <x-jet-label value="{{ __('No soy un robot') }}" />
+                </div>
+                
+                <div class="mb-3">
                     <div class="custom-control custom-checkbox">
                         <x-jet-checkbox id="remember_me" name="remember" />
                         <label class="custom-control-label" for="remember_me">
@@ -45,12 +54,12 @@
                     <div class="d-flex justify-content-end align-items-baseline">
                         @if (Route::has('password.request'))
                             <a class="text-muted me-3" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                                {{ __('Has oblidat la teva contrasenya?') }}
                             </a>
                         @endif
 
                         <x-jet-button>
-                            {{ __('Log in') }}
+                            {{ __('Iniciar sessió') }}
                         </x-jet-button>
                     </div>
                 </div>
@@ -58,3 +67,4 @@
         </div>
     </x-jet-authentication-card>
 </x-guest-layout>
+</div>

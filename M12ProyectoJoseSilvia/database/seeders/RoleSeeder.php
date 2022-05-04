@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Role;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -17,12 +18,13 @@ class RoleSeeder extends Seeder
     {
         //
         self::seedRole();
-        $this->command->info('Tabla role inicializada con datos');
+        $this->command->info('Tabla roles inicializada con datos');
     }
+
     private function seedRole(){
         DB::table('roles')->delete();
         $rol1 = new Role;
-        $rol1->rol = 'Adminstrador';
+        $rol1->rol = 'Administrador';
         $rol1->save();
         $rol2 = new Role;
         $rol2->rol = 'Professor';
