@@ -5,26 +5,26 @@
             {{ __(Auth()->user()->nom .' '. Auth()->user()->cognom) }}
         </h2>
     </x-slot>
-    <ul class="nav nav-tabs" style="width: 500px">
-        <li class="nav-item">
+    <ul class="nav nav-tabs" style="width: 500rem" >
+        <li class="nav-item" style="font-size: 1.2rem">
           <a class="nav-link active" aria-current="page" href="#">Alumne</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="font-size: 1.2rem">
           <a class="nav-link" href="#">Professor</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="font-size: 1.2rem">
           <a class="nav-link" href="#">Cicle</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="font-size: 1.2rem">
             <a class="nav-link" href="#">Mòdul</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="font-size: 1.3rem">
             <a class="nav-link" href="#">Unitat Formativa</a>
         </li>
       </ul>
 
       <table class="table">
-        <thead style="background-color: orange">
+        <thead style="background-color: #f7ce51">
           <tr>
             <th scope="col">Dni</th>
             <th scope="col">Nom</th>
@@ -36,7 +36,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr style="background-color: white">
             <td>12345678 B</td>
             <td>Juan Andrés</td>
             <td>Méndez Muñoz</td>
@@ -45,7 +45,7 @@
             <td>jmendez@camidemar.cat</td>
             <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
           </tr>
-          <tr>
+          <tr style="background-color: lightyellow">
             <td>87654321 C</td>
             <td>Rigoberta</td>
             <td>Tejero Undargarín</td>
@@ -54,7 +54,7 @@
             <td>rtejero@camidemar.cat</td>
             <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
           </tr>
-          <tr>
+          <tr style="background-color: white">
             <td>58745894 S</td>
             <td>Ramón</td>
             <td>Ramirez Cortado</td>
