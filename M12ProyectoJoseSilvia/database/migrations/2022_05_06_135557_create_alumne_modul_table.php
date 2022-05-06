@@ -18,8 +18,12 @@ return new class extends Migration
             $table->integer('nota_media');
             $table->string('comentario');
             $table->string('modificat_per');
-            $table->foreignId('alumne_id')->constrained();
-            $table->foreignId('modul_id')->constrained();
+            $table->foreignId('alumne_id')->constrained()
+                            ->cascadeOnUpdate()
+                            ->cascadeOnDelete();
+            $table->foreignId('modul_id')->constrained()
+                            ->cascadeOnUpdate()
+                            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

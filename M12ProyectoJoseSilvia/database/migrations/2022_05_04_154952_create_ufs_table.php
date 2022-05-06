@@ -19,7 +19,9 @@ class CreateUfsTable extends Migration
             $table->string('descripcio');
             $table->string('hores');
             $table->string('modificat_per');
-            $table->foreignId('modul_id')->constrained();
+            $table->foreignId('modul_id')->constrained()
+                        ->cascadeOnUpdate()
+                        ->cascadeOnDelete();
             $table->timestamps();
         });
     }

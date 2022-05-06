@@ -16,8 +16,12 @@ return new class extends Migration
         Schema::create('alumne_uf', function (Blueprint $table) {
             $table->id();
             $table->integer('nota');
-            $table->foreignId('alumne_id')->constrained();
-            $table->foreignId('uf_id')->constrained();
+            $table->foreignId('alumne_id')->constrained()
+                        ->cascadeOnUpdate()
+                        ->cascadeOnDelete();
+            $table->foreignId('uf_id')->constrained()
+                        ->cascadeOnUpdate()
+                        ->cascadeOnDelete();
             $table->string('modificat_per');
             //$table->string('comentari');
             $table->timestamps();
