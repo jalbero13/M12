@@ -17,6 +17,38 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/profesor', function(){
+    return view('mis_vistas.profesor');
+});
+
+Route::get('/cicle', function(){
+    return view('mis_vistas.ciclo');
+});
+
+Route::get('/modul', function(){
+    return view('mis_vistas.modulo');
+});
+
+Route::get('/UF', function(){
+    return view('mis_vistas.UF');
+});
+
+Route::get('/addProfe', function(){
+    return view('mis_vistas.addProfe');
+});
+
+Route::get('/addAlumne', function(){
+    return view('mis_vistas.addAlumno');
+});
+
+Route::get('/addCicle', function(){
+    return view('mis_vistas.addCiclo');
+});
+
+Route::get('/addModul', function(){
+    return view('mis_vistas.addModulo');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

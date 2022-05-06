@@ -7,23 +7,23 @@
     </x-slot>
     <ul class="nav nav-tabs" style="width: 500rem" >
         <li class="nav-item" style="font-size: 1.2rem">
-          <a class="nav-link active" aria-current="page" href="#">Alumne</a>
+          <a class="nav-link active" aria-current="page" href="/dashboard" style="background-color: #498f9d; color:lightyellow">Alumne</a>
         </li>
         <li class="nav-item" style="font-size: 1.2rem">
-          <a class="nav-link" href="#">Professor</a>
+          <a class="nav-link" href="/profesor">Professor</a>
         </li>
         <li class="nav-item" style="font-size: 1.2rem">
-          <a class="nav-link" href="#">Cicle</a>
+          <a class="nav-link" href="/cicle">Cicle</a>
         </li>
         <li class="nav-item" style="font-size: 1.2rem">
-            <a class="nav-link" href="#">Mòdul</a>
+            <a class="nav-link" href="/modul">Mòdul</a>
         </li>
         <li class="nav-item" style="font-size: 1.3rem">
-            <a class="nav-link" href="#">Unitat Formativa</a>
+            <a class="nav-link" href="/UF">Unitat Formativa</a>
         </li>
       </ul>
 
-      <table class="table">
+      <table class="table" style="color:#1a374d">
         <thead style="background-color: #f7ce51">
           <tr>
             <th scope="col">Dni</th>
@@ -62,6 +62,15 @@
             <td>02/07/1963</td>
             <td>rramirez@camidemar.cat</td>
             <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+          </tr>
+          <tr style="background-color: #f7ce51">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="addAlumne">Afegir un alumne</a></td>
           </tr>
         </tbody>
       </table>
