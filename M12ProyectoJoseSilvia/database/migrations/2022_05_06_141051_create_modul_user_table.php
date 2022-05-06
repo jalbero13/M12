@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alumnes_ufs', function (Blueprint $table) {
+        Schema::create('modul_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('nota');
-            $table->foreignId('alumne_id')->constrained();
-            $table->foreignId('uf_id')->constrained();
             $table->string('modificat_per');
-            //$table->string('comentari');
+            $table->foreignId('modul_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumnes_ufs');
+        Schema::dropIfExists('modul_user');
     }
 };

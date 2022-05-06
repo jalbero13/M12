@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Cicle extends Model
 {
     use HasFactory;
-    public function usuaris(){
-        return $this->hasMany(User::class);
+    public function moduls(){
+        return $this->hasMany(Modul::class);
     }
 }
