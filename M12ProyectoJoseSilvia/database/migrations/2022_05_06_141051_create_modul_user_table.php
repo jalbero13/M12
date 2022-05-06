@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUfsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateUfsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ufs', function (Blueprint $table) {
+        Schema::create('modul_user', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('descripcio');
-            $table->string('hores');
             $table->string('modificat_per');
-            $table->foreignId('modul_id')->constrained()
-                        ->cascadeOnUpdate()
-                        ->cascadeOnDelete();
+            $table->foreignId('modul_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateUfsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ufs');
+        Schema::dropIfExists('modul_user');
     }
-}
+};

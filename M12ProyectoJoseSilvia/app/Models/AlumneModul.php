@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class AlumneModul extends Model
 {
     use HasFactory;
-    public function usuaris(){
-        return $this->hasMany(User::class);
-    }
 }

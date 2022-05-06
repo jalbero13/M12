@@ -61,4 +61,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function rol(){
+        return $this->belongsTo(Role::class);
+    }
+    public function modulUser(){
+        return $this->belongsToMany(Modul::class, 'modul_user');
+    }
 }
