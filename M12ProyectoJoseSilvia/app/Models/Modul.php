@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use SebastianBergmann\CodeUnit\FunctionUnit;
 
 class Modul extends Model
 {
@@ -13,5 +14,11 @@ class Modul extends Model
     }
     public function ufs(){
         return $this->hasMany(Uf::class);
+    }
+    public function alumneModul(){
+        return $this->belongsToMany(Alumne::class, 'alumne_modul');
+    }
+    public function userModul(){
+        return $this->belongsToMany(User::class, 'modul_user');
     }
 }

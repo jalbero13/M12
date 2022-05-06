@@ -11,4 +11,7 @@ class Uf extends Model
     public function moduls2(){
         return $this->belongsTo(Modul::class);
     }
+    public function alumneUf(){
+        return $this->belongsToMany(Alumne::class,'alumne_uf');
+    }
 }
