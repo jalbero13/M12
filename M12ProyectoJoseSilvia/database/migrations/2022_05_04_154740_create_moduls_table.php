@@ -17,6 +17,7 @@ class CreateModulsTable extends Migration
             $table->id();
             $table->string('nom');
             $table->string('descripcio');
+            $table->string('modificat_per');
             $table->integer('hores');
             $table->foreignId('cicle_id')->constrained()
                     ->cascadeOnUpdate()
