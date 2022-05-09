@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumneController; 
 use App\Http\Controllers\UserController; 
+use App\Http\Controllers\ModulController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,8 @@ Route::get('/addUF', function(){
 Route::post('/storeAlumno',[AlumneController::class, 'storeAlumno'])->name('storeAlumno');
 
 Route::post('/storeProfe',[UserController::class, 'storeProfe'])->name('storeProfe');
+
+Route::post('/storeModulo',[ModulController::class, 'storeModulo'])->name('storeModulo');
 
 
 Route::middleware([

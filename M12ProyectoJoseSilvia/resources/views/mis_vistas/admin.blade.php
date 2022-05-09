@@ -43,7 +43,7 @@
             <td>C/ falsa 123</td>
             <td>31/02/1985</td>
             <td>jmendez@camidemar.cat</td>
-            <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+            <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/addAlumneUf">Assignar UF</a></td>
           </tr>
           <tr style="background-color: lightyellow">
             <td>87654321 C</td>
@@ -52,7 +52,7 @@
             <td>C/ de mentira 321</td>
             <td>24/09/1979</td>
             <td>rtejero@camidemar.cat</td>
-            <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+            <td><a href="#">Editar</a> | <a href="#">Esborrar | <a href="/addAlumneUf">Assignar UF</a></a></td>
           </tr>
           <tr style="background-color: white">
             <td>58745894 S</td>
@@ -61,7 +61,7 @@
             <td>C/ verdadera 456</td>
             <td>02/07/1963</td>
             <td>rramirez@camidemar.cat</td>
-            <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+            <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/addAlumneUf">Assignar UF</a></td>
           </tr>
           <tr style="background-color: #f7ce51">
             <td></td>

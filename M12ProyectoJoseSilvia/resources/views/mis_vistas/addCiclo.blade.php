@@ -22,11 +22,12 @@
                 <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
-          <form>
- 
+          <form action="{{route('storeCiclo')}}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label class="form-label">Nom del cicle</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="nombreCiclo">
+                <input type="hidden" name="modificado_por" value="jmolina">
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Afegir cicle</button>

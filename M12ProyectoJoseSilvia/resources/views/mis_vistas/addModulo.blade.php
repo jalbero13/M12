@@ -22,21 +22,37 @@
                 <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
-          <form>
+          <form action="{{route('storeModulo')}}" method="POST">
+            @csrf
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom del mòdul</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="nombreModulo">
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció del mòdul</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="descripcionModulo">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Número d'hores del mòdul</label>
+                            <input type="number" class="form-control" name="horasModulo">
+                          </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Id del cicle</label>
+                            <input type="number" class="form-control" name="idCiclo">
+                        </div>
                     </div>
                 </div>
             </div>
+            <!--<input type="hidden" name="modificado_por" value="jmolina">-->
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Afegir mòdul</button>
             </div>
