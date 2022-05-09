@@ -22,4 +22,9 @@ class UserController extends Controller
         return redirect('/profesor');
         //
     }
+
+    public function modificado($correo){
+        $modificado = explode("@",$correo);
+        return $modificado[0];
+    }
 }
