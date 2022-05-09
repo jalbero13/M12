@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('data_naixement');
             $table->string('dni', 9);
             $table->string('telefon', 9);
+            $table->string('mail');
             $table->string('modificat_per');
             $table->timestamps();
         });

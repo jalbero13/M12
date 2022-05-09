@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlumneController; 
+use App\Http\Controllers\UserController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +54,10 @@ Route::get('/addModul', function(){
 Route::get('/addUF', function(){
     return view('mis_vistas.addUF');
 });
+
+Route::post('/storeAlumno',[AlumneController::class, 'storeAlumno'])->name('storeAlumno');
+
+Route::post('/storeProfe',[UserController::class, 'storeProfe'])->name('storeProfe');
 
 
 Route::middleware([

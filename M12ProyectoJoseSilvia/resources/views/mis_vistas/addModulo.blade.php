@@ -7,19 +7,19 @@
         </x-slot>
         <ul class="nav nav-tabs" style="width: 500rem" >
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" aria-current="page" href="/dashboard">Alumne</a>
+              <a class="nav-link" aria-current="page" href="/dashboard" style="background-color: lightyellow; color: #498f9d">Alumne</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" href="/profesor">Professor</a>
+              <a class="nav-link" href="/profesor" style="background-color: lightyellow; color: #498f9d">Professor</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" href="/cicle">Cicle</a>
+              <a class="nav-link" href="/cicle" style="background-color: lightyellow; color: #498f9d">Cicle</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
                 <a class="nav-link active" href="/modul" style="background-color: #498f9d; color:lightyellow">Mòdul</a>
             </li>
             <li class="nav-item" style="font-size: 1.3rem">
-                <a class="nav-link" href="/UF">Unitat Formativa</a>
+                <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
           <form>

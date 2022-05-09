@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ 'Aplicatiu INS Camí de Mar' }}</title>
-        <link rel="shortcut icon" href="https://www.inscamidemar.cat/wp-content/uploads/2022/02/logo_calafell_web.png">
+        <link rel="icon" href="{{ asset('imagenes/logoMini.png') }}">
         <!-- config('app.name', 'Laravel')  -->
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
