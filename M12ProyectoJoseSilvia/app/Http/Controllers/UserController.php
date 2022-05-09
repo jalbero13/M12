@@ -23,8 +23,8 @@ class UserController extends Controller
         //
     }
 
-    public function modificado($correo){
-        $modificado = explode("@",$correo);
+    public function modificado(){
+        $modificado = explode("@", Auth()->user()->email);
         return $modificado[0];
     }
 }
