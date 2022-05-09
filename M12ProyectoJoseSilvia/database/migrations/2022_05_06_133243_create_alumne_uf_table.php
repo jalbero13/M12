@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('modificat_per');
             //$table->string('comentari');
             $table->timestamps();
+            $table->unique(['alumne_id','uf_id']);
         });
     }
 

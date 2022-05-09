@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('modul_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
+            $table->unique(['modul_id','user_id']);
         });
     }
 

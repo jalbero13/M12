@@ -25,6 +25,7 @@ return new class extends Migration
                             ->cascadeOnUpdate()
                             ->cascadeOnDelete();
             $table->timestamps();
+            $table->unique(['alumne_id','modul_id']);
         });
     }
 
