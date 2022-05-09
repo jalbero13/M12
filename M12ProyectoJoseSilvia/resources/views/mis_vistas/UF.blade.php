@@ -45,7 +45,7 @@
               <tr style="background-color: #f7ce51">
                 <td></td>
                 <td></td>
-                <td><a href="#">Afegir una unitat formativa</a></td>
+                <td><a href="/addUF">Afegir una unitat formativa</a></td>
               </tr>
             </tbody>
           </table>
