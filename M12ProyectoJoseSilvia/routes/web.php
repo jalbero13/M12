@@ -43,6 +43,10 @@ Route::get('/addAlumne', function(){
     return view('mis_vistas.addAlumno');
 });
 
+Route::get('/addAlumneUf', function(){
+    return view('mis_vistas.addAlumnoUf');
+});
+
 Route::get('/addCicle', function(){
     return view('mis_vistas.addCiclo');
 });
