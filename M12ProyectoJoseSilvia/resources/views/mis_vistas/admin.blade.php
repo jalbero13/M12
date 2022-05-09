@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
-            {{ __(Auth()->user()->nom .' '. Auth()->user()->cognom) }}
+            {{ __(Auth()->user()->nom .' '. Auth()->user()->cognoms) }}
         </h2>
     </x-slot>
     <ul class="nav nav-tabs" style="width: 500rem" >
