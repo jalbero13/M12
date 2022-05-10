@@ -5,7 +5,7 @@ use App\Http\Controllers\AlumneController;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\CicleController;
-use App\Http\Controllers\UFController;
+use App\Http\Controllers\UfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,17 +23,14 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('mis_vistas.admin');
-    })->name('dashboard');
+
+    Route::get('/dashboard', function () {return view('mis_vistas.admin');})->name('dashboard');
 
     Route::get('/profesor', function(){
         return view('mis_vistas.profesor');
     });
 
-    Route::get('/cicle', function(){
-        return view('mis_vistas.ciclo');
-    });
+    Route::get('/cicle',[CicleController::class, 'showCicle'])->name('showCiclo');
 
     Route::get('/modul', function(){
         return view('mis_vistas.modulo');

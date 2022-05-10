@@ -3,12 +3,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Cicle;
+use App\Models\Alumne;
 use Illuminate\Support\Facades\DB;
 
-class CicleSeeder extends Seeder
+class AlumnoSeeder extends Seeder
 {   
-    private $arrayCicles = array(
+    private $arrayAlumnes = array(
 		array(
 			'nom' => 'DAW I',
 			'modificat_per' => 'System', 
@@ -32,7 +32,7 @@ class CicleSeeder extends Seeder
     private function seedCicle(){
         DB::table('cicles')->delete();
         foreach($this->arrayCicles as $cicle){
-            $ciclo = new Cicle;
+            $ciclo = new Alumne;
             $ciclo->nom = $cicle['nom'];
             $ciclo->modificat_per = $cicle['modificat_per'];
             $ciclo->save();

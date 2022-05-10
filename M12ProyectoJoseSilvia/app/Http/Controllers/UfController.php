@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UF;
+use App\Models\Uf;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class UFController extends Controller
+class UfController extends Controller
 {
     //
     public function storeUF(Request $request){
-        $UF = new UF;
+        $UF = new Uf;
         $UF->nom = $request->input('nombreUF');
         $UF->descripcio = $request->input('descripcionUF');
         $UF->hores = $request->input('horasUF');

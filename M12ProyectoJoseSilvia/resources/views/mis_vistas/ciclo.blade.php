@@ -31,19 +31,18 @@
               </tr>
             </thead>
             <tbody>
+            @foreach($arrayCicles as $key => $ciclo)
               <tr style="background-color: white">
-                <td>CFGS Desenvolupament d'aplicacions web 1</td>
+                <td>{{$ciclo->nom}}</td>
                 <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
-              <tr style="background-color: lightyellow">
-                <td>CFGS Desenvolupament d'aplicacions web 2</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
-              </tr>
-              <tr style="background-color: #f7ce51">
-                <td></td>
-                <td><a href="/addCicle">Afegir un cicle</a></td>
-              </tr>
+            @endforeach
+            <tr style="background-color: #f7ce51">
+              <td></td>
+              <td><a href="/addCicle">Afegir un cicle</a></td>
+            </tr>
             </tbody>
           </table>
+
     </x-app-layout>
     </div>
