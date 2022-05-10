@@ -40,7 +40,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Correu professor</label>
-                <input type="email" class="form-control" name="correoProfe">
+                <input id="correoProfe" type="email" class="form-control" name="correoProfe">
             </div>
             <div class="mb-3">
               <label class="form-label">Contrasenya</label>

@@ -42,13 +42,13 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Telèfon alumne</label>
-                        <input type="text" class="form-control" name="telefonoAlumno">
+                        <input id="telefonoAlumno" type="text" class="form-control" name="telefonoAlumno">
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">DNI alumne</label>
-                        <input type="text" class="form-control" name="dniAlumno">
+                        <input id="dniAlumno" type="text" class="form-control" name="dniAlumno">
                     </div>
                 </div>
             </div>
