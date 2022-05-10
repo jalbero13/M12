@@ -31,7 +31,7 @@ function validarDni(e){
         }
     }else{
         campo.setAttribute('class', 'erroneo')
-        e.preventDefault
+        e.preventDefault();
     }
 }
 
