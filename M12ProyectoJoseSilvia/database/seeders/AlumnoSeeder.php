@@ -42,7 +42,7 @@ class AlumnoSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
     }
     private function seedAlumno(){
-        DB::table('cicles')->delete();
+        DB::table('alumnes')->delete();
         foreach($this->arrayAlumnes as $alumne){
             $alumno = new Alumne;
             $alumno->nom = $alumne['nom'];
