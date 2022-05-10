@@ -23,9 +23,9 @@ class ModulSeeder extends Seeder
     private function seedModul(){
         DB::table('moduls')->delete();
         $modul1 = new Modul;
-        $modul1->nom = 'M07';
-        $modul1->descripcio = 'Desenvolupament daplicacions web';
-        $modul1->hores = '150';
+        $modul1->nom = 'M06';
+        $modul1->descripcio = 'Desenvolupament Web en entorn Client';
+        $modul1->hores = '165';
         $modul1->modificat_per = 'System';
         $modul1->cicle_id = '1';
         $modul1->save();
