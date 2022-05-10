@@ -28,21 +28,21 @@
               <tr>
                 <th scope="col">Nom</th>
                 <th scope="col">Descripció</th>
+                <th scope="col">Hores</th>
                 <th scope="col">Accions</th>
               </tr>
             </thead>
             <tbody>
+              @foreach($arrayUfs as $key => $uf)
               <tr style="background-color: white">
-                <td>M3UF4</td>
-                <td>Programació orientada a objectes, fonaments</td>
+                <td>{{$uf->nom}}</td>
+                <td>{{$uf->descripcio}}</td>
+                <td>{{$uf->hores}}</td>
                 <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
-              <tr style="background-color: lightyellow">
-                <td>M3UF5</td>
-                <td>Desenvolupament web en entorn client</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
-              </tr>
+              @endforeach
               <tr style="background-color: #f7ce51">
+                <td></td>
                 <td></td>
                 <td></td>
                 <td><a href="/addUF">Afegir una unitat formativa</a></td>

@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 use App\Models\Modul;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ModulController extends Controller
 {
     //
+    public function showModul(){
+        if(Auth::user()->role_id == 1){
+            return view('mis_vistas.modulo',array('arrayModuls'=>Modul::all()));
+        }
+    }
+
     public function storeModulo(Request $request){
         $modul = new Modul;
         $modul->nom = $request->input('nombreModulo');

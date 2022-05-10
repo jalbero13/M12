@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CicleSeeder::class);
         $this->call(ModulSeeder::class);
         $this->call(AlumnoSeeder::class);
+        $this->call(UfSeeder::class);
+
     }
 }

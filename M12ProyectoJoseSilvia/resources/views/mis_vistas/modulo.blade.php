@@ -32,16 +32,13 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($arrayModuls as $key => $modul)
               <tr style="background-color: white">
-                <td>M3</td>
-                <td>Programació</td>
+                <td>{{$modul->nom}}</td>
+                <td>{{$modul->descripcio}}</td>
                 <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
-              <tr style="background-color: lightyellow">
-                <td>M6</td>
-                <td>Desenvolupament web en entorn client</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
-              </tr>
+              @endforeach
               <tr style="background-color: #f7ce51">
                 <td></td>
                 <td></td>

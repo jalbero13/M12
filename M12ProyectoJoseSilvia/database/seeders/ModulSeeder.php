@@ -9,6 +9,22 @@ use Illuminate\Support\Facades\DB;
 
 class ModulSeeder extends Seeder
 {
+    private $arrayModuls = array(
+		array(
+			'nom' => 'M06',
+            'descripcio' =>'Desenvolupament Web en entorn Client',
+			'modificat_per' => 'System',
+            'hores' =>'400',
+            'cicle_id' =>2
+		),
+		array(
+			'nom' => 'M03',
+            'descripcio' =>'Programació II',
+			'modificat_per' => 'System',
+            'hores' =>'500',
+            'cicle_id' => 2
+		)
+	);
     /**
      * Run the database seeds.
      *
@@ -22,13 +38,15 @@ class ModulSeeder extends Seeder
     }
     private function seedModul(){
         DB::table('moduls')->delete();
-        $modul1 = new Modul;
-        $modul1->nom = 'M06';
-        $modul1->descripcio = 'Desenvolupament Web en entorn Client';
-        $modul1->hores = '165';
-        $modul1->modificat_per = 'System';
-        $modul1->cicle_id = '1';
-        $modul1->save();
+        foreach($this->arrayModuls as $modul){
+            $modulo = new Modul;
+            $modulo->nom = $modul['nom'];
+            $modulo->descripcio = $modul['descripcio'];
+            $modulo->modificat_per = $modul['modificat_per'];
+            $modulo->hores = $modul['hores'];
+            $modulo->cicle_id = $modul['cicle_id'];
+            $modulo->save();
+        }
 
     }
 }

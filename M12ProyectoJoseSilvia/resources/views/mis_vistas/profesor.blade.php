@@ -28,28 +28,20 @@
               <tr>
                 <th scope="col">Nom</th>
                 <th scope="col">Cognoms</th>
-                <th scope="col">Data de naixement</th>
                 <th scope="col">Correu</th>
                 <th scope="col">Accions</th>
               </tr>
             </thead>
             <tbody>
+              @foreach($arrayUsers as $key => $profe)
               <tr style="background-color: white">
-                <td>Francisco</td>
-                <td>Alejandre Alcaide</td>
-                <td>25-05-1968</td>
-                <td>falejandre@inscamidemar.cat</td>
+                <td>{{$profe->nom}}</td>
+                <td>{{$profe->cognoms}}</td>
+                <td>{{$profe->email}}</td>
                 <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
-              <tr style="background-color: lightyellow">
-                <td>Carmen</td>
-                <td>Marquez Villalta</td>
-                <td>1-03-1993</td>
-                <td>cmarquez@inscamidemar.cat</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
-              </tr>
+              @endforeach
               <tr style="background-color: #f7ce51">
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>

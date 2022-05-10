@@ -26,19 +26,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/dashboard',[AlumneController::class, 'showAlumne'])->name('dashboard');
 
-    Route::get('/profesor', function(){
-        return view('mis_vistas.profesor');
-    });
+    Route::get('/profesor',[UserController::class, 'showProfe'])->name('showProfesor');
 
     Route::get('/cicle',[CicleController::class, 'showCicle'])->name('showCiclo');
 
-    Route::get('/modul', function(){
-        return view('mis_vistas.modulo');
-    });
+    Route::get('/modul',[ModulController::class, 'showModul'])->name('showModulo');
 
-    Route::get('/UF', function(){
-        return view('mis_vistas.UF');
-    });
+    Route::get('/UF',[UfController::class, 'showUf'])->name('showUfs');
 
     Route::get('/addProfe', function(){
         return view('mis_vistas.addProfe');

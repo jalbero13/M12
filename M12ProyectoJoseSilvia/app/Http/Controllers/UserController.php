@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     //
+    public function showProfe(){
+        if(Auth::user()->role_id == 1){
+            return view('mis_vistas.profesor',array('arrayUsers'=>User::all()));
+        }
+    }
+
     public function storeProfe(Request $request){
         $prof = new User;
         $prof->nom = $request->input('nombreProfe');

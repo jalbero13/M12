@@ -9,6 +9,22 @@ use Illuminate\Support\Facades\DB;
 
 class UfSeeder extends Seeder
 {
+    private $arrayUfs = array(
+		array(
+			'nom' => 'UF1',
+            'descripcio' =>'Sintaxi del llenguatge. Objectes predefinits del llenguatge',
+            'hores' => 40,
+			'modificat_per' => 'System', 
+            'modul_id' => 1
+		),
+		array(
+			'nom' => 'UF2',
+            'descripcio' =>'Estructures definides pel programador. Objectes',
+            'hores' => 40,
+			'modificat_per' => 'System', 
+            'modul_id' => 1,
+		)
+	);
     /**
      * Run the database seeds.
      *
@@ -22,19 +38,14 @@ class UfSeeder extends Seeder
     }
     private function seedUf(){
         DB::table('ufs')->delete();
-        $uf1 = new Uf;
-        $uf1->nom = 'UF1';
-        $uf1->descripcio = 'Sintaxi del llenguatge. Objectes predefinits del llenguatge';
-        $uf1->modificat_per = 'System';
-        $uf1->hores = '40';
-        $uf1->cicle_id = '1';
-        $uf1->save();
-        $uf2 = new Uf;
-        $uf2->nom = 'UF2';
-        $uf2->descripcio = 'Estructures definides pel programador. Objectes';
-        $uf2->modificat_per = 'System';
-        $uf2->hores = '40';
-        $uf2->cicle_id = '1';
-        $uf2->save();
+        foreach($this->arrayUfs as $ufs){
+            $uf = new Uf;
+            $uf->nom = $ufs['nom'];
+            $uf->descripcio = $ufs['descripcio'];
+            $uf->modificat_per = $ufs['modificat_per'];
+            $uf->hores = $ufs['hores'];
+            $uf->modul_id = $ufs['modul_id'];
+            $uf->save();
+        }
     }
 }
