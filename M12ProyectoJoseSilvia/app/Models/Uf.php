@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Uf extends Model
+class UF extends Model
 {
     use HasFactory;
     public function moduls2(){

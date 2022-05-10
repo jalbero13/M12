@@ -22,20 +22,26 @@
                 <a class="nav-link active" href="/UF" style="background-color: #498f9d; color:lightyellow">Unitat Formativa</a>
             </li>
           </ul>
-          <form>
+          <form action="{{route('storeUF')}}" method="POST">
+            @csrf
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom de la unitat formativa</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="nombreUF">
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
-                        <label class="form-label">Descripció de la unitat formativa</label>
-                        <input type="text" class="form-control">
+                        <label class="form-label">Número d'hores de la unitat formativa</label>
+                        <input type="number" class="form-control" name="horasUF">
                     </div>
                 </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripció de la unitat formativa</label>
+                <input type="text" class="form-control" name="descripcionUF">
+                <input type="hidden" name="modificado_por" value="jmolina">
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Afegir unitat formativa</button>
