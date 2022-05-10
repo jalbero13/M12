@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
-    Route::get('/dashboard', function () {return view('mis_vistas.admin');})->name('dashboard');
+    Route::get('/dashboard',[AlumneController::class, 'showAlumne'])->name('dashboard');
 
     Route::get('/profesor', function(){
         return view('mis_vistas.profesor');

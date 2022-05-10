@@ -26,44 +26,31 @@
       <table class="table" style="color:#1a374d">
         <thead style="background-color: #f7ce51">
           <tr>
-            <th scope="col">Dni</th>
             <th scope="col">Nom</th>
             <th scope="col">Cognoms</th>
             <th scope="col">Direcció</th>
             <th scope="col">Data de naixement</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Telèfon</th>
             <th scope="col">Correu</th>
             <th scope="col">Accions</th>
           </tr>
         </thead>
         <tbody>
+        @foreach($arrayAlumnes as $key => $alumno)
           <tr style="background-color: white">
-            <td>12345678 B</td>
-            <td>Juan Andrés</td>
-            <td>Méndez Muñoz</td>
-            <td>C/ falsa 123</td>
-            <td>31/02/1985</td>
-            <td>jmendez@camidemar.cat</td>
+            <td>{{$alumno->nom}}</td>
+            <td>{{$alumno->cognoms}}</td>
+            <td>{{$alumno->direccio}}</td>
+            <td>{{$alumno->data_naixement}}</td>
+            <td>{{$alumno->dni}}</td>
+            <td>{{$alumno->telefon}}</td>
+            <td>{{$alumno->mail}}</td>
             <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/addAlumneUf">Assignar UF</a></td>
           </tr>
-          <tr style="background-color: lightyellow">
-            <td>87654321 C</td>
-            <td>Rigoberta</td>
-            <td>Tejero Undargarín</td>
-            <td>C/ de mentira 321</td>
-            <td>24/09/1979</td>
-            <td>rtejero@camidemar.cat</td>
-            <td><a href="#">Editar</a> | <a href="#">Esborrar | <a href="/addAlumneUf">Assignar UF</a></a></td>
-          </tr>
-          <tr style="background-color: white">
-            <td>58745894 S</td>
-            <td>Ramón</td>
-            <td>Ramirez Cortado</td>
-            <td>C/ verdadera 456</td>
-            <td>02/07/1963</td>
-            <td>rramirez@camidemar.cat</td>
-            <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/addAlumneUf">Assignar UF</a></td>
-          </tr>
+        @endforeach
           <tr style="background-color: #f7ce51">
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

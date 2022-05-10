@@ -15,6 +15,7 @@ class UfController extends Controller
         $UF->nom = $request->input('nombreUF');
         $UF->descripcio = $request->input('descripcionUF');
         $UF->hores = $request->input('horasUF');
+        $UF->modul_id = $request->input('idModulo');
         $UF->modificat_per = $request->input('modificado_por');
         $UF->save();
         return redirect('/UF');

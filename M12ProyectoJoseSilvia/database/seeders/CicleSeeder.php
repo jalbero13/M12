@@ -26,7 +26,7 @@ class CicleSeeder extends Seeder
     public function run()
     {
         self::seedCicle();
-        $this->command->info('Tabla de anuncios inicializada con datos');
+        $this->command->info('Tabla de ciclos inicializada con datos');
         // \App\Models\User::factory(10)->create();
     }
     private function seedCicle(){
