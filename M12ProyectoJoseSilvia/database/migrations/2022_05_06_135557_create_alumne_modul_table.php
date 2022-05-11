@@ -20,11 +20,11 @@ return new class extends Migration
             $table->foreignId('modul_id')->constrained()
                             ->cascadeOnUpdate()
                             ->cascadeOnDelete();
-            $table->integer('nota_media');
-            $table->string('comentario');
+            $table->integer('nota_media')->nullable();
+            $table->string('comentario')->nullable();
             $table->string('modificat_per');
             $table->timestamps();
-            $table->primary(['alumne_id','modul_id']);
+            $table->primary(['modul_id','alumne_id']);
         });
     }
 

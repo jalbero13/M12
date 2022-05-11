@@ -34,13 +34,3 @@ function validarDni(e){
         e.preventDefault();
     }
 }
-
-
-/***
- * correoProfe y email
- * 
- * telefono
- * 
- * dni
- * 
- *  */
