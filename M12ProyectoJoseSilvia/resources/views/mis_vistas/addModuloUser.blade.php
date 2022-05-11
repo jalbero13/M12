@@ -22,32 +22,32 @@
                 <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
-    
-          <table class="table" style="color:#1a374d">
-            <thead style="background-color: #f7ce51">
-              <tr>
-                <th scope="col">Nom</th>
-                <th scope="col">Cognoms</th>
-                <th scope="col">Correu</th>
-                <th scope="col">Accions</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($arrayUsers as $key => $profe)
-              <tr style="background-color: white">
-                <td>{{$profe->nom}}</td>
-                <td>{{$profe->cognoms}}</td>
-                <td>{{$profe->email}}</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/inscriureProfessor">Inscriure a modul</a></td>
-              </tr>
-              @endforeach
-              <tr style="background-color: #f7ce51">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a href="/addProfe">Afegir un professor</a></td>
-              </tr>
-            </tbody>
-          </table>
+          <form action="{{route('storeProfe')}}" method="POST">
+            @csrf
+            <div class="row" style="margin-top: 20px">
+                <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Professor</label>
+                        <input name="nombreProfe" value="">
+                        <input name="idProfe" value="{{$id}}" hidden>
+                      </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Inscriure al cicle</label>
+                        <select name="idCiclo">
+                            @foreach($cicles as $cicle)
+                                <option value="{{$cicle->id}}">{{$cicle->nom}}</option>
+                            @endforeach
+                        </select>
+                      </div>
+                </div>
+                
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn" style="background-color: #498f9d">Inscriure professor</button>
+            </div>
+          </form>
+
     </x-app-layout>
     </div>
