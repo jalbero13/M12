@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('modul_user', function (Blueprint $table) {
-            $table->id();
-            $table->string('modificat_per');
             $table->foreignId('modul_id')->constrained();
             $table->foreignId('user_id')->constrained();
+            $table->string('modificat_per');
             $table->timestamps();
-            $table->unique(['modul_id','user_id']);
+            $table->primary(['modul_id','user_id']);
         });
     }
 

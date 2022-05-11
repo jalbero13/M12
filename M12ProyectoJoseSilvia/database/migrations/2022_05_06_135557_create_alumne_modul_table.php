@@ -14,18 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('alumne_modul', function (Blueprint $table) {
-            $table->id();
-            $table->integer('nota_media');
-            $table->string('comentario');
-            $table->string('modificat_per');
             $table->foreignId('alumne_id')->constrained()
                             ->cascadeOnUpdate()
                             ->cascadeOnDelete();
             $table->foreignId('modul_id')->constrained()
                             ->cascadeOnUpdate()
                             ->cascadeOnDelete();
+            $table->integer('nota_media');
+            $table->string('comentario');
+            $table->string('modificat_per');
             $table->timestamps();
-            $table->unique(['alumne_id','modul_id']);
+            $table->primary(['alumne_id','modul_id']);
         });
     }
 
