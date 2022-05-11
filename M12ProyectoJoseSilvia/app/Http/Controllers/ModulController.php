@@ -12,6 +12,8 @@ class ModulController extends Controller
     public function showModul(){
         if(Auth::user()->role_id == 1){
             return view('mis_vistas.modulo',array('arrayModuls'=>Modul::all()));
+        }else if(Auth::user()->role_id == 2){
+            return view('mis_vistas.moduloProfe');
         }
     }
 

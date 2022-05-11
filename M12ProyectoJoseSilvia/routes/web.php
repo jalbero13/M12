@@ -5,6 +5,7 @@ use App\Http\Controllers\AlumneController;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\CicleController;
+use App\Http\Controllers\NotesmodulController;
 use App\Http\Controllers\UfController;
 
 /*
@@ -33,6 +34,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/modul',[ModulController::class, 'showModul'])->name('showModulo');
 
     Route::get('/UF',[UfController::class, 'showUf'])->name('showUfs');
+
+    Route::get('/notesModul',[NotesmodulController::class, 'showNotesModul'])->name('showNotasModulo');
 
     Route::get('/addProfe', function(){
         return view('mis_vistas.addProfe');
