@@ -25,7 +25,8 @@ class AlumneModulController extends Controller
             $modul->id_modul = $modulo->id;
             $ufAlumno = new AlumneUfController;
             $ufAlumno->storeAlumneUf($modulo->id,$request->input('idAlumno'));
-            //$modul->modificat_per = $request->input('modificado_por');
+            $user = new UserController;
+            $modul->modificat_per = $user->modificado();
             $modul->save();
         }
         return redirect('/modul');
