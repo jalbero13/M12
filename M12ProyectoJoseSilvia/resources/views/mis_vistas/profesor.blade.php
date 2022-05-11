@@ -38,7 +38,7 @@
                 <td>{{$profe->nom}}</td>
                 <td>{{$profe->cognoms}}</td>
                 <td>{{$profe->email}}</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+                <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/inscriureProfessor">Inscriure a modul</a></td>
               </tr>
               @endforeach
               <tr style="background-color: #f7ce51">
