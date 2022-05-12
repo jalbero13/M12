@@ -22,13 +22,13 @@
                 <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
-          <form action="{{route('storeProfe')}}" method="POST">
+          <form action="{{route('storeAlumneUf')}}" method="POST">
             @csrf
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Alumne</label>
-                        <input name="nombreAlumno" value="">
+                        <input name="nombreAlumno" value="{{$alumne->nom . ' ' . $alumne->cognoms }}" disabled> 
                         <input name="idAlumno" value="{{$id}}" hidden>
                       </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="mb-3">
                         <label class="form-label">Inscriure al cicle</label>
                         <select name="idCiclo">
-                            @foreach($cicles as $cicle)
+                            @foreach($arrayCicles as $key => $cicle)
                                 <option value="{{$cicle->id}}">{{$cicle->nom}}</option>
                             @endforeach
                         </select>
