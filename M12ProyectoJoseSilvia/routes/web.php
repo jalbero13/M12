@@ -53,7 +53,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/addModul', function(){
         return view('mis_vistas.addModulo');
-    });
+    });  
 
     Route::get('/addUF', function(){
         return view('mis_vistas.addUF');
