@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AlumneController; 
+use App\Http\Controllers\AlumneController;
+use App\Http\Controllers\AlumneModulController;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\CicleController;
+use App\Http\Controllers\ModulUserController;
 use App\Http\Controllers\NotesmodulController;
 use App\Http\Controllers\UfController;
 
@@ -56,6 +58,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/addUF', function(){
         return view('mis_vistas.addUF');
     });
+
+    Route::get('/inscriureAlumne/{id}', [AlumneModulController::class, 'inscribirAlumno'])->name('inscriureAlumne');
+ 
+    Route::get('/inscriureProfessor', [ModulUserController::class, 'inscribirProfesor'])->name('inscriureProfessor'); 
 
     Route::post('/storeAlumno',[AlumneController::class, 'storeAlumno'])->name('storeAlumno');
 

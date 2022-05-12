@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class AlumneModulController extends Controller
 {
     //
-    // public function showModul(){
-    //     if(Auth::user()->role_id == 1){
-    //         return view('mis_vistas.modulo',array('arrayModuls'=>Modul::all()));
-    //     }
-    // }
+    public function inscribirAlumno($id){
+        if(Auth::user()->role_id == 1){
+            return view('mis_vistas.addAlumnoUf',array('id'=>$id));
+        }
+    }
 
     public function storeAlumneModul(Request $request){
         $modulos = Modul::where('cicle_id' ,$request->input('idCiclo'))->get();

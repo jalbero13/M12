@@ -46,7 +46,7 @@
             <td>{{$alumno->dni}}</td>
             <td>{{$alumno->telefon}}</td>
             <td>{{$alumno->mail}}</td>
-            <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/addAlumneUf">Inscriure en el cicle</a></td>
+            <td><a href="#">Editar</a> | <a href="#">Esborrar</a> | <a href="/inscriureAlumne">Inscriure en el cicle</a></td>
           </tr>
         @endforeach
           <tr style="background-color: #f7ce51">
