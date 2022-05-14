@@ -15,7 +15,7 @@ class AlumneModulController extends Controller
     //
     public function inscribirAlumno($id){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.addAlumnoUf', array('id'=>$id, 'alumne'=>Alumne::find($id), 'arrayCicles'=>Cicle::all()));
+            return view('mis_vistas.addAlumnoModul', array('id'=>$id, 'alumne'=>Alumne::find($id), 'arrayCicles'=>Cicle::all()));
         }
     }
 
@@ -24,14 +24,16 @@ class AlumneModulController extends Controller
         foreach($modulos as $modulo){
             $modul = new AlumneModul;
             $modul->alumne_id = $request->input('idAlumno');
-            $modul->id_modul = $modulo->id;
-            $ufAlumno = new AlumneUfController;
-            $ufAlumno->storeAlumnoUf($modulo->id,$request->input('idAlumno'));
+            $modul->modul_id = $modulo->id;
+            //$ufAlumno = new AlumneUfController;
+            //$ufAlumno->storeAlumnoUf($modulo->id,$request->input('idAlumno'));
             $user = new UserController;
             $modul->modificat_per = $user->modificado();
             $modul->save();
         }
-        return redirect('/modul');
+        $id = $request->input('idAlumno');
+        $ruta = "/inscriureAlumneUf/$id";
+        return redirect($ruta);
         //
     }
 }

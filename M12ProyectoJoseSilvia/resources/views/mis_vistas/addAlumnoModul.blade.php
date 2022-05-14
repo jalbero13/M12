@@ -22,14 +22,14 @@
                 <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
-          <form action="{{route('storeAlumneUf')}}" method="POST">
+          <form action="{{route('storeAlumneModul')}}" method="POST">
             @csrf
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Alumne</label>
                         <input name="nombreAlumno" value="{{$alumne->nom . ' ' . $alumne->cognoms }}" disabled> 
-                        <input name="idAlumno" value="{{$alumne->id}}" hidden>
+                        <input name="idAlumno" value="{{$id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">

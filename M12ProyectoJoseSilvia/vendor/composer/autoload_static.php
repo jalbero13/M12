@@ -581,6 +581,7 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ModulController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModulController.php',
         'App\\Http\\Controllers\\ModulUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModulUserController.php',
+        'App\\Http\\Controllers\\NotesmodulController' => __DIR__ . '/../..' . '/app/Http/Controllers/NotesmodulController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\UfController' => __DIR__ . '/../..' . '/app/Http/Controllers/UfController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
