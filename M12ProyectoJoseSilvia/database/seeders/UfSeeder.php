@@ -23,6 +23,20 @@ class UfSeeder extends Seeder
             'hores' => 40,
 			'modificat_per' => 'System', 
             'modul_id' => 1,
+        ),
+        array(
+			'nom' => 'UF4',
+            'descripcio' =>'Programació orientada a objectes. Fonaments',
+            'hores' => 40,
+			'modificat_per' => 'System', 
+            'modul_id' => 2
+		),
+		array(
+			'nom' => 'UF5',
+            'descripcio' =>'POO. Llibreries de classes fonamentals',
+            'hores' => 40,
+			'modificat_per' => 'System', 
+            'modul_id' => 2,
 		)
 	);
     /**

@@ -34,15 +34,12 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
-                        <label class="form-label">Inscriure al cicle</label>
-                        <select name="idCiclo">
-                            @foreach($arrayCicles as $key => $cicle)
-                                <option value="{{$cicle->id}}">{{$cicle->nom}}</option>
-                            @endforeach
+                        <label class="form-label">Inscriure a les Unitats formatives del Modul</label>
+                        <select name="idCiclo" >
+                                <option value="{{$arrayCicles->id}}">{{$arrayCicles->nom}}</option>h
                         </select>
                       </div>
                 </div>
-                
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Insciure alumne</button>

@@ -32,7 +32,8 @@ class AlumneModulController extends Controller
             $modul->save();
         }
         $id = $request->input('idAlumno');
-        $ruta = "/inscriureAlumneUf/$id";
+        $idCiclo = $request->input('idCiclo');
+        $ruta = "/inscriureAlumneUf/$id/$idCiclo";
         return redirect($ruta);
         //
     }
