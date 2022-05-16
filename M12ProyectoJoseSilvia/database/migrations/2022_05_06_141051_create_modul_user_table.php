@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('modificat_per');
             $table->timestamps();
             $table->primary(['modul_id','user_id']);
+            $table->string('nom_modul');
         });
     }
 

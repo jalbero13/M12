@@ -14,23 +14,17 @@
           <table class="table" style="color:#1a374d">
             <thead style="background-color: #f7ce51">
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Grup</th>
                 <th scope="col">Accions</th>
               </tr>
             </thead>
             <tbody>
+              @foreach($arrayCicles as $key => $ciclo)
               <tr style="background-color: white">
-                <td>1</td>
-                <td>Desenvolupament d'aplicacions web (ICC0B)</td>
+                <td>{{$ciclo->}}</td>
                 <td><a href="/modul">Veure detalls</a></td>
               </tr>
-
-              <tr style="background-color: white">
-                <td>2</td>
-                <td>Administració de sistemes informàtics i xarxes</td>
-                <td><a href="/modul">Veure detalls</a></td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
     </x-app-layout>
