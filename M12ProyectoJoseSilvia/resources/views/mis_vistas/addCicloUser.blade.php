@@ -40,9 +40,8 @@
                                 <option value="{{$cicle->id}}">{{$cicle->nom }}</option>
                             @endforeach
                         </select>
-                      </div>
-                </div>
-                
+                    </div>
+                </div>            
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Inscriure professor</button>

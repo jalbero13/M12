@@ -30,7 +30,7 @@ class ModulUserController extends Controller
             $modul = Modul::find($request->input('idModulo'));
             $user = new UserController;
             $modificat_per = $user->modificado();
-            $modul->userModul()->attach($request->input('idProfe'),['modificat_per'=> $modificat_per]);    
+            $modul->userModul()->attach($request->input('idProfe'),['modificat_per'=> $modificat_per, 'nom_modul'=> $modul->descripcio]);    
             return redirect('/modul');
         //
     }
