@@ -17,6 +17,12 @@ class AlumneController extends Controller
         }
     }
 
+    public function editAlumne($id){
+        if(Auth::user()->role_id == 1){
+            return view('mis_vistas.editAlumno',array('id' => $id, 'Alumno' => Alumne::find($id)));
+        }
+    }
+
     public function storeAlumno(Request $request){
         $alum = new Alumne;
         $alum->nom = $request->input('nombreAlumno');
