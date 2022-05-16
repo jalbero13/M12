@@ -31,4 +31,18 @@ class AlumneController extends Controller
         return redirect('/dashboard');
         //
     }
+    public function updateAlumno(Request $request){
+        
+        $alum = Alumne::find($request->input('id'));
+        $alum->nom = $request->input('nombreAlumno');
+        $alum->cognoms = $request->input('apellidosAlumno');
+        $alum->direccio = $request->input('direccionAlumno');
+        $alum->data_naixement = $request->input('fecha_nacimientoAlumno');
+        $alum->dni = $request->input('dniAlumno');
+        $alum->telefon = $request->input('telefonoAlumno');
+        $alum->mail = $request->input('correoAlumno');
+        $alum->modificat_per = $request->input('modificado_por');
+        $alum->save();
+        return redirect('/dashboard');
+    }
 }

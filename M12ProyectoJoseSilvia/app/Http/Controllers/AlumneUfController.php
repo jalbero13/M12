@@ -27,12 +27,10 @@ class AlumneUfController extends Controller
             $ufs = Uf::where('modul_id', $modulo->id)->get();
 
             foreach($ufs as $uf){                
-                $alumnoUf = new AlumneUf;
-                $alumnoUf->alumne_id = $request->input('idAlumno');
-                $alumnoUf->uf_id = $uf->id;
+                $alumnoUf = Uf::find($uf->id);
                 $user = new UserController;
-                $alumnoUf->modificat_per = $user->modificado();
-                $alumnoUf->save();
+                $modificat_per = $user->modificado();
+                $alumnoUf->alumneUf()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
             }
         }
         
