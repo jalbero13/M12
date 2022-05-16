@@ -35,7 +35,7 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Inscriure a les Unitats formatives del Modul</label>
-                        <select name="idCiclo" >
+                        <select name="idCiclo" disabled>
                                 <option value="{{$arrayCicles->id}}">{{$arrayCicles->nom}}</option>h
                         </select>
                       </div>
