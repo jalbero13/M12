@@ -11,4 +11,8 @@ class Cicle extends Model
     public function moduls(){
         return $this->hasMany(Modul::class);
     }
+
+    public function userCicle(){
+        return $this->belongsToMany(User::class,'cicle_user');
+    }
 }

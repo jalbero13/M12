@@ -12,5 +12,232 @@
                 </ol>
             </nav>
         </x-slot>
+        <table class="table" style="color:#1a374d">
+            <thead style="background-color: #f7ce51">
+              <tr>
+                <th style="background-color: white"></th>
+                <th scope="col" colspan="8" style="text-align: center">Qualificació de les unitats formatives del mòdul profesional</th>
+                <th scope="col" colspan="4" rowspan="2" style="text-align: center; margin:auto">Qualificació final del mòdul</th>
+              </tr>
+              <tr>
+                <td style="background-color: white"></td>
+                <td scope="col" colspan="2" style="text-align: center">UF1</td>
+                <td scope="col" colspan="2" style="text-align: center">UF2</td>
+                <td scope="col" colspan="2" style="text-align: center">UF3</td>
+                <td scope="col" colspan="2" style="text-align: center">UF4</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: #f7ce51">
+                <td style="text-align: center">Alumnat</td>
+                <td style="text-align: center">Hores</td>
+                <td style="text-align: center">Qualif.</td>
+                <td style="text-align: center">Hores</td>
+                <td style="text-align: center">Qualif.</td>
+                <td style="text-align: center">Hores</td>
+                <td style="text-align: center">Qualif.</td>
+                <td style="text-align: center">Hores</td>
+                <td style="text-align: center">Qualif.</td>
+                <td style="text-align: center">Hores</td>
+                <td style="text-align: center">Qualif.</td>
+              </tr>
+
+              <tr style="background-color: white">
+                <td style="text-align: center">Lopez Castaño, Emmanuel</td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">42</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">165</td>
+                <td style="text-align: center">7</td>
+              </tr>
+              <tr style="background-color: white">
+                <td style="text-align: center">Fuentes Ibáñez, Rosa María</td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">42</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">165</td>
+                <td style="text-align: center">7</td>
+              </tr>
+              <tr style="background-color: white">
+                <td style="text-align: center">Sillero Pinos, Claudia Alberta</td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">42</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">30</td>
+                <td style="text-align: center">
+                  <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </td>
+                <td style="text-align: center">165</td>
+                <td style="text-align: center">7</td>
+              </tr>
+            </tbody>
+          </table>
     </x-app-layout>
 </div>

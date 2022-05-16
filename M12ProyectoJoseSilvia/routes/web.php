@@ -7,6 +7,7 @@ use App\Http\Controllers\AlumneUfController;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\CicleController;
+use App\Http\Controllers\CicleUserController;
 use App\Http\Controllers\ModulUserController;
 use App\Http\Controllers\NotesmodulController;
 use App\Http\Controllers\UfController;
@@ -67,11 +68,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
  
     Route::get('/inscriureProfessor/{id}', [ModulUserController::class, 'inscribirProfesor'])->name('inscriureProfessor'); 
 
+    Route::get('/inscriureProfessorCicle/{id}', [CicleUserController::class, 'inscribirProfesorCiclo'])->name('inscriureProfessorCicle');
+
     Route::post('/storeAlumnoModul', [AlumneModulController::class, 'storeAlumnoModul'])->name('storeAlumneModul');
 
     Route::post('/storeAlumnoUf', [AlumneUfController::class, 'storeAlumnoUf'])->name('storeAlumneUf');
 
     Route::post('/storeModulUser', [ModulUserController::class, 'storeModulUser'])->name('storeModulUser');
+
+    Route::post('/storeCicleUser', [CicleUserController::class, 'storeCicleUser'])->name('storeCicleUser');
 
     Route::post('/storeAlumno',[AlumneController::class, 'storeAlumno'])->name('storeAlumno');
 
