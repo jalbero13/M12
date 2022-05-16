@@ -24,7 +24,7 @@ class CicleUserController extends Controller
     }*/
 
     public function storeCicleUser(Request $request){
-        $ciclos = Cicle::find('cicle_id');    
+        $ciclos = Cicle::find($request->input('idCiclo'));    
         $user = new UserController;
         $modificat_per = $user->modificado();
         $ciclos->userCicle()->attach($request->input('idProfe'),['modificat_per' => $modificat_per]);
