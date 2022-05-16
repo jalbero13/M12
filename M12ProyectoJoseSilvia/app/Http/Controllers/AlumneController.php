@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Alumne;
 use App\Http\Controllers\Controller;
 use App\Models\CicleUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,9 +39,9 @@ class AlumneController extends Controller
         return redirect('/dashboard');
         //
     }
-    public function updateAlumno(Request $request){
+    public function updateAlumno(Request $request, $id){
         
-        $alum = Alumne::find($request->input('id'));
+        $alum = Alumne::find($id);
         $alum->nom = $request->input('nombreAlumno');
         $alum->cognoms = $request->input('apellidosAlumno');
         $alum->direccio = $request->input('direccionAlumno');
@@ -48,7 +49,8 @@ class AlumneController extends Controller
         $alum->dni = $request->input('dniAlumno');
         $alum->telefon = $request->input('telefonoAlumno');
         $alum->mail = $request->input('correoAlumno');
-        $alum->modificat_per = $request->input('modificado_por');
+        $user = new UserController;
+        $alum->modificat_per = $user->modificado();
         $alum->save();
         return redirect('/dashboard');
     }

@@ -69,6 +69,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/inscriureProfessor/{id}', [ModulUserController::class, 'inscribirProfesor'])->name('inscriureProfessor'); 
 
     Route::get('/inscriureProfessorCicle/{id}', [CicleUserController::class, 'inscribirProfesorCiclo'])->name('inscriureProfessorCicle');
+    
+    Route::get('/editAlumne/{id}', [AlumneController::class, 'editAlumne'])->name('editAlumne');
 
     Route::post('/storeAlumnoModul', [AlumneModulController::class, 'storeAlumnoModul'])->name('storeAlumneModul');
 
@@ -87,5 +89,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::post('/storeCiclo',[CicleController::class, 'storeCiclo'])->name('storeCiclo');
 
     Route::post('/storeUF',[UFController::class, 'storeUF'])->name('storeUF');
+
+    Route::put('/updateAlumno', [AlumneController::class, 'updateAlumno'])->name('updateAlumno');
+
 
 });
