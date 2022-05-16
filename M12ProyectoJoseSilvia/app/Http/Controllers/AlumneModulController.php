@@ -22,14 +22,10 @@ class AlumneModulController extends Controller
     public function storeAlumnoModul(Request $request){
         $modulos = Modul::where('cicle_id' ,$request->input('idCiclo'))->get();
         foreach($modulos as $modulo){
-            $modul = new AlumneModul;
-            $modul->alumne_id = $request->input('idAlumno');
-            $modul->modul_id = $modulo->id;
-            //$ufAlumno = new AlumneUfController;
-            //$ufAlumno->storeAlumnoUf($modulo->id,$request->input('idAlumno'));
+            $modul = Modul::find($modulo->id);
             $user = new UserController;
-            $modul->modificat_per = $user->modificado();
-            $modul->save();
+            $modificat_per = $user->modificado();
+            $modul->alumneModul()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
         }
         $id = $request->input('idAlumno');
         $idCiclo = $request->input('idCiclo');

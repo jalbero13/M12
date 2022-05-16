@@ -29,6 +29,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nom alumne</label>
                         <input type="text" class="form-control" name="nombreAlumno">
+                        <input type="number" class="form-control" name="idAlumno" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">

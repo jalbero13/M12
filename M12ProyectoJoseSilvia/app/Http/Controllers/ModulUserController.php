@@ -27,13 +27,11 @@ class ModulUserController extends Controller
     }*/
 
     public function storeModulUser(Request $request){
-            $modul = new ModulUser;
-            $modul->user_id = $request->input('idProfe');
-            $modul->modul_id = $request->input('idModulo');
+            $modul = Modul::find($request->input('idModulo'));
             $user = new UserController;
-            $modul->modificat_per = $user->modificado();
-            $modul->save();
-        return redirect('/modul');
+            $modificat_per = $user->modificado();
+            $modul->userModul()->attach($request->input('idProfe'),['modificat_per'=> $modificat_per]);    
+            return redirect('/modul');
         //
     }
 }
