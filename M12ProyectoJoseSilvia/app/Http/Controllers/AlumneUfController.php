@@ -26,9 +26,7 @@ class AlumneUfController extends Controller
         foreach($modulos as $modulo){
             $ufs = Uf::where('modul_id', $modulo->id)->get();
 
-           
-            foreach($ufs as $uf){
-                
+            foreach($ufs as $uf){                
                 $alumnoUf = new AlumneUf;
                 $alumnoUf->alumne_id = $request->input('idAlumno');
                 $alumnoUf->uf_id = $uf->id;
