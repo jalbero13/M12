@@ -28,14 +28,14 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom alumne</label>
-                        <input type="text" class="form-control" name="nombreAlumno">
-                        <input type="number" class="form-control" name="idAlumno" hidden>
+                        <input type="text" class="form-control" name="nombreAlumno" value="{{$Alumno->nom}}">
+                        <input type="number" class="form-control" name="idAlumno" value="{{$Alumno->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Cognoms alumne</label>
-                        <input type="text" class="form-control" name="apellidosAlumno">
+                        <input type="text" class="form-control" name="apellidosAlumno" value="{{$Alumno->cognoms}}">
                     </div>
                 </div>
             </div>
