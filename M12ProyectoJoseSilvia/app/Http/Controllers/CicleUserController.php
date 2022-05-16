@@ -16,12 +16,6 @@ class CicleUserController extends Controller
             return view('mis_vistas.addCicloUser',array('id'=>$id, 'profesor'=>User::find($id), 'arrayCicles'=>Cicle::all()));
         }
     }
-    /*public function showCiclo(){
-        if(Auth::user()->role_id == 2){
-            $cicleUser = CicleUser::where('user_id',Auth::user()->id);
-            //return view('mis_vistas.addModuloUser',array('id'=>$id, 'profesor'=>User::find($id), 'arrayModuls'=>Modul::all()));
-        }
-    }*/
 
     public function storeCicleUser(Request $request){
         $ciclos = Cicle::find($request->input('idCiclo'));    

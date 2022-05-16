@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Alumne;
 use App\Http\Controllers\Controller;
+use App\Models\CicleUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +14,7 @@ class AlumneController extends Controller
         if(Auth::user()->role_id == 1){
             return view('mis_vistas.admin',array('arrayAlumnes'=>Alumne::all()));
         }else if(Auth::user()->role_id == 2){
-            return view('mis_vistas.cicloProfe');
+            return view('mis_vistas.cicloProfe',array('arrayCicles'=>CicleUser::where('user_id',Auth::user()->id)));
         }
     }
 
