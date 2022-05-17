@@ -19,7 +19,7 @@ class ModulController extends Controller
 
     public function editModul($id){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.editModulo',array('id' => $id, 'Modulo' => Modul::find($id)));
+            return view('mis_vistas.editModulo',array('id' => $id, 'Modul' => Modul::find($id)));
         }
     }
 

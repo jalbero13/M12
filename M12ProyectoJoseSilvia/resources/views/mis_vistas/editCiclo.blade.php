@@ -22,7 +22,7 @@
                 <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
             </li>
           </ul>
-          <form action="{{route('updateCiclo')}}" method="POST">
+          <form action="{{route('updateCicle')}}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">

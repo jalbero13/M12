@@ -22,7 +22,7 @@
                 <a class="nav-link active" href="/UF" style="background-color: #498f9d; color:lightyellow">Unitat Formativa</a>
             </li>
           </ul>
-          <form action="{{route('updateUF')}}" method="POST">
+          <form action="{{route('updateUf')}}" method="POST">
             @csrf
             @method('PUT')
             <div class="row" style="margin-top: 20px">
@@ -56,7 +56,7 @@
             </div>
 
             <div class="d-grid gap-2">
-                <button type="submit" class="btn" style="background-color: #498f9d">Afegir unitat formativa</button>
+                <button type="submit" class="btn" style="background-color: #498f9d">Modificar unitat formativa</button>
             </div>
           </form>
     </x-app-layout>
