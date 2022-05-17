@@ -10,7 +10,6 @@
                 </ol>
             </nav>
         </x-slot>
-
           <table class="table" style="color:#1a374d">
             <thead style="background-color: #f7ce51">
               <tr>
