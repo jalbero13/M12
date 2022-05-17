@@ -36,7 +36,13 @@
               <tr style="background-color: white">
                 <td>{{$modul->nom}}</td>
                 <td>{{$modul->descripcio}}</td>
-                <td><a href="/editModul/{{$modul->id}}">Editar</a> | <a href="#">Esborrar</a></td>
+                <td>
+                  <a href="/editModul/{{$modul->id}}">Editar</a> 
+                  | <form method="POST" action="{{route('eliminarModulo', $modul->id)}}" >
+                    @method('DELETE')
+                    @csrf
+                        <button type="submit" class="btn btn-dark">Esborrar mòdul</button>
+                  </form>
               </tr>
               @endforeach
               <tr style="background-color: #f7ce51">

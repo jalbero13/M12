@@ -49,4 +49,10 @@ class ModulController extends Controller
         $Modulo->save();
         return redirect('/modul');
     }
+
+    public function eliminarModulo($id){
+        $modulo = Modul::find($id);
+        $modulo->delete();
+        return redirect('/modul');      
+    }
 }

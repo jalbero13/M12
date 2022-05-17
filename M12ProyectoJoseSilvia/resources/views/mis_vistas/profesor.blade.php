@@ -38,17 +38,24 @@
                 <td>{{$profe->nom}}</td>
                 <td>{{$profe->cognoms}}</td>
                 <td>{{$profe->email}}</td>
-                <td><a href="/editProfe/{{$profe->id}}">Editar</a> | 
-                    <a href="#">Esborrar</a> | 
-                    <a href="/inscriureProfessor/{{$profe->id}}">Inscriure a modul</a> | 
-                    <a href="/inscriureProfessorCicle/{{$profe->id}}">Inscriure a cicle</a></td>
+                <td>
+                  <a type="button" class="btn btn-dark" href="/editProfe/{{$profe->id}}">Editar</a> 
+                @if($profe->id !=1) 
+                | <form method="POST" action="{{route('eliminarProfesor', $profe->id)}}" >
+                    @method('DELETE')
+                    @csrf
+                        <button type="submit" class="btn btn-dark">Esborrar professor</button>
+                  </form> @endif | 
+                  <a type="button" class="btn btn-dark" href="/inscriureProfessor/{{$profe->id}}">Inscriure a modul</a> | 
+                  <a type="button" class="btn btn-dark" href="/inscriureProfessorCicle/{{$profe->id}}">Inscriure a cicle</a>
+                </td>
               </tr>
               @endforeach
               <tr style="background-color: #f7ce51">
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><a href="/addProfe">Afegir un professor</a></td>
+                <td><a type="button" class="btn btn-dark" href="/addProfe">Afegir un professor</a></td>
               </tr>
             </tbody> 
           </table>

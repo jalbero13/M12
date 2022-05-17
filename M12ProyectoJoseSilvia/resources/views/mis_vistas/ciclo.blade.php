@@ -34,7 +34,12 @@
             @foreach($arrayCicles as $key => $ciclo)
               <tr style="background-color: white">
                 <td>{{$ciclo->nom}}</td>
-                <td><a href="/editCicle/{{$ciclo->id}}">Editar</a> | <a href="#">Esborrar</a></td>
+                <td><a href="/editCicle/{{$ciclo->id}}">Editar</a> 
+                  | <form method="POST" action="{{route('eliminarCiclo', $ciclo->id)}}" >
+                    @method('DELETE')
+                    @csrf
+                        <button type="submit" class="btn btn-dark">Esborrar cicle</button>
+                  </form>
               </tr>
             @endforeach
             <tr style="background-color: #f7ce51">

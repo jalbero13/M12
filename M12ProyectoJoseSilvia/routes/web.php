@@ -111,4 +111,12 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::delete('inicio/eliminarAlumno/{id?}',[AlumneController::class, 'eliminarAlumno'])->name('eliminarAlumno');
 
+    Route::delete('inicio/eliminarProfesor/{id?}',[UserController::class, 'eliminarProfesor'])->name('eliminarProfesor');
+
+    Route::delete('inicio/eliminarCiclo/{id?}',[CicleController::class, 'eliminarCiclo'])->name('eliminarCiclo');
+
+    Route::delete('inicio/eliminarModulo/{id?}',[ModulController::class, 'eliminarModulo'])->name('eliminarModulo');
+
+    Route::delete('inicio/eliminarUf/{id?}',[UfController::class, 'eliminarUf'])->name('eliminarUf');
+
 });

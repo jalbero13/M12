@@ -38,7 +38,13 @@
                 <td>{{$uf->nom}}</td>
                 <td>{{$uf->descripcio}}</td>
                 <td>{{$uf->hores}}</td>
-                <td><a href="/editUf/{{$uf->id}}">Editar</a> | <a href="#">Esborrar</a></td>
+                <td>
+                  <a href="/editUf/{{$uf->id}}">Editar</a> 
+                  | <form method="POST" action="{{route('eliminarUf', $uf->id)}}" >
+                    @method('DELETE')
+                    @csrf
+                        <button type="submit" class="btn btn-dark">Esborrar UF</button>
+                  </form>
               </tr>
               @endforeach
               <tr style="background-color: #f7ce51">
