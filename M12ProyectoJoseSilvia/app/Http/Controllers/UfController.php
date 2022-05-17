@@ -17,6 +17,12 @@ class UfController extends Controller
         }
     }
 
+    public function editUf($id){
+        if(Auth::user()->role_id == 1){
+            return view('mis_vistas.editUf',array('id' => $id, 'Uf' => Uf::find($id)));
+        }
+    }
+
     public function storeUF(Request $request){
         $UF = new Uf;
         $UF->nom = $request->input('nombreUF');
@@ -27,5 +33,18 @@ class UfController extends Controller
         $UF->save();
         return redirect('/UF');
         //
+    }
+
+    public function updateUf(Request $request){
+        
+        $UF = Uf::find($request->input('idUf'));
+        $UF->nom = $request->input('nombreUF');
+        $UF->descripcio = $request->input('descripcionUF');
+        $UF->hores = $request->input('horasUF');
+        $user = new UserController;
+        $UF->modificat_per = $user->modificado();
+        $UF->modul_id = $request->input('idModulo');
+        $UF->save();
+        return redirect('/UF');
     }
 }

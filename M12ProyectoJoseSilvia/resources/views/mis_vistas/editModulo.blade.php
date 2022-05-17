@@ -29,33 +29,34 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom del mòdul</label>
-                        <input type="text" class="form-control" name="nombreModulo">
+                        <input type="text" class="form-control" name="nombreModulo" value="{{$Modul->nom}}">
+                        <input type="number" class="form-control" name="idModulo" value="{{$Modul->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció del mòdul</label>
-                        <input type="text" class="form-control" name="descripcionModulo">
+                        <input type="text" class="form-control" name="descripcionModulo" value="{{$Modul->descipcio}}">
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px">
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Número d'hores del mòdul</label>
-                            <input type="number" class="form-control" name="horasModulo">
+                            <input type="number" class="form-control" name="horasModulo" value="{{$Modul->hores}}">
                           </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Id del cicle</label>
-                            <input type="number" class="form-control" name="idCiclo">
+                            <input type="number" class="form-control" name="idCiclo" value="{{$Modul->cicle_id}}">
                         </div>
                     </div>
                 </div>
             </div>
             <!--<input type="hidden" name="modificado_por" value="jmolina">-->
             <div class="d-grid gap-2">
-                <button type="submit" class="btn" style="background-color: #498f9d">Afegir mòdul</button>
+                <button type="submit" class="btn" style="background-color: #498f9d">Modificar mòdul</button>
             </div>
           </form>
     </x-app-layout>

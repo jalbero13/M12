@@ -36,7 +36,7 @@
               <tr style="background-color: white">
                 <td>{{$modul->nom}}</td>
                 <td>{{$modul->descripcio}}</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+                <td><a href="/editModul/{{$modul->id}}">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
               @endforeach
               <tr style="background-color: #f7ce51">

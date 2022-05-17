@@ -24,32 +24,33 @@
           </ul>
           <form action="{{route('updateProfe')}}" method="POST">
             @csrf
+            @method('PUT')
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom professor</label>
-                        <input type="text" class="form-control" name="nombreProfe">
+                        <input type="text" class="form-control" name="nombreProfe" value="{{$Profe->nom}}">
+                        <input type="number" class="form-control" name="idProfe" value="{{$Profe->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Cognoms professor</label>
-                        <input type="text" class="form-control" name="apellidosProfe">
+                        <input type="text" class="form-control" name="apellidosProfe" value="{{$Profe->cognoms}}">
                     </div>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Correu professor</label>
-                <input id="correoProfe" type="email" class="form-control" name="correoProfe">
+                <input id="correoProfe" type="email" class="form-control" name="correoProfe" value="{{$Profe->email}}">
             </div>
             <div class="mb-3">
               <label class="form-label">Contrasenya</label>
-              <input type="password" class="form-control" name="contra">
+              <input type="password" class="form-control" name="contra" value="{{$Profe->password}}" disabled>
             </div>
-            <input type="hidden" name="modificado_por" value="jmolina">
             <input type="hidden" name="role_id" value="2">
             <div class="d-grid gap-2">
-                <button type="submit" class="btn" style="background-color: #498f9d">Afegir professor</button>
+                <button type="submit" class="btn" style="background-color: #498f9d">Modificar professor</button>
             </div>
           </form>
 

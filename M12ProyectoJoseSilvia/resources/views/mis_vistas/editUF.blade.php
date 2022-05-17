@@ -24,17 +24,19 @@
           </ul>
           <form action="{{route('updateUF')}}" method="POST">
             @csrf
+            @method('PUT')
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom de la unitat formativa</label>
-                        <input type="text" class="form-control" name="nombreUF">
+                        <input type="text" class="form-control" name="nombreUF" value="{{$Uf->nom}}">
+                        <input type="number" class="form-control" name="idUf" value="{{$Uf->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Número d'hores de la unitat formativa</label>
-                        <input type="number" class="form-control" name="horasUF">
+                        <input type="number" class="form-control" name="horasUF" value="{{$Uf->hores}}">
                     </div>
                 </div>
             </div>
@@ -42,14 +44,13 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció de la unitat formativa</label>
-                        <input type="text" class="form-control" name="descripcionUF">
-                        <input type="hidden" name="modificado_por" value="jmolina">
+                        <input type="text" class="form-control" name="descripcionUF" value="{{$Uf->descripcio}}">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Id del mòdul</label>
-                        <input type="number" class="form-control" name="idModulo">
+                        <input type="number" class="form-control" name="idModulo" value="{{$Uf->modul_id}}">
                     </div>
                 </div>
             </div>

@@ -34,7 +34,7 @@
             @foreach($arrayCicles as $key => $ciclo)
               <tr style="background-color: white">
                 <td>{{$ciclo->nom}}</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+                <td><a href="/editCicle/{{$ciclo->id}}">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
             @endforeach
             <tr style="background-color: #f7ce51">

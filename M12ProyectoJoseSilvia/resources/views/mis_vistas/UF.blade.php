@@ -38,7 +38,7 @@
                 <td>{{$uf->nom}}</td>
                 <td>{{$uf->descripcio}}</td>
                 <td>{{$uf->hores}}</td>
-                <td><a href="#">Editar</a> | <a href="#">Esborrar</a></td>
+                <td><a href="/editUf/{{$uf->id}}">Editar</a> | <a href="#">Esborrar</a></td>
               </tr>
               @endforeach
               <tr style="background-color: #f7ce51">

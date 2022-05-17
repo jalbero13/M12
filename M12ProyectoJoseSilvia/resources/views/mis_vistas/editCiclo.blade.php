@@ -24,13 +24,14 @@
           </ul>
           <form action="{{route('updateCiclo')}}" method="POST">
             @csrf
-                <div class="mb-3">
-                  <label class="form-label">Nom del cicle</label>
-                  <input type="text" class="form-control" name="nombreCiclo">
-                  <input type="hidden" name="modificado_por" value="jmolina">
-                </div>
+            @method('PUT')
+            <div class="mb-3">
+              <label class="form-label">Nom del cicle</label>
+              <input type="text" class="form-control" name="nombreCiclo" value="{{$Ciclo->nom}}">
+              <input type="number" class="form-control" name="idCiclo" value="{{$Ciclo->id}}" hidden>
+            </div>
             <div class="d-grid gap-2">
-                <button type="submit" class="btn" style="background-color: #498f9d">Afegir cicle</button>
+                <button type="submit" class="btn" style="background-color: #498f9d">Modificar cicle</button>
             </div>
           </form>
     </x-app-layout>

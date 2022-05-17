@@ -39,9 +39,10 @@ class AlumneController extends Controller
         return redirect('/dashboard');
         //
     }
-    public function updateAlumno(Request $request, $id){
+    
+    public function updateAlumno(Request $request){
         
-        $alum = Alumne::find($id);
+        $alum = Alumne::find($request->input('idAlumno'));
         $alum->nom = $request->input('nombreAlumno');
         $alum->cognoms = $request->input('apellidosAlumno');
         $alum->direccio = $request->input('direccionAlumno');

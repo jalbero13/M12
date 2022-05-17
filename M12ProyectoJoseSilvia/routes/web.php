@@ -72,6 +72,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     
     Route::get('/editAlumne/{id}', [AlumneController::class, 'editAlumne'])->name('editAlumne');
 
+    Route::get('/editCicle/{id}', [CicleController::class, 'editCicle'])->name('editCicle');
+
+    Route::get('/editModul/{id}', [ModulController::class, 'editModul'])->name('editModul');
+
+    Route::get('/editUf/{id}', [UfController::class, 'editUf'])->name('editUf');
+
+    Route::get('/editProfe/{id}', [UserController::class, 'editProfe'])->name('editProfe');
+
+
     Route::post('/storeAlumnoModul', [AlumneModulController::class, 'storeAlumnoModul'])->name('storeAlumneModul');
 
     Route::post('/storeAlumnoUf', [AlumneUfController::class, 'storeAlumnoUf'])->name('storeAlumneUf');
@@ -91,6 +100,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::post('/storeUF',[UFController::class, 'storeUF'])->name('storeUF');
 
     Route::put('/updateAlumno', [AlumneController::class, 'updateAlumno'])->name('updateAlumno');
+
+    Route::put('/updateCicle', [CicleController::class, 'updateCicle'])->name('updateCicle');
+
+    Route::put('/updateModul', [ModulController::class, 'updateModul'])->name('updateModul');
+
+    Route::put('/updateUf', [UfController::class, 'updateUf'])->name('updateUf');
+
+    Route::put('/updateProfe', [UserController::class, 'updateProfe'])->name('updateProfe');
+
 
 
 });
