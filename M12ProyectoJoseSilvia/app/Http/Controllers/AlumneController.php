@@ -55,4 +55,10 @@ class AlumneController extends Controller
         $alum->save();
         return redirect('/dashboard');
     }
+
+    public function eliminarAlumno($id){
+        $alumno = Alumne::find($id);
+        $alumno->delete();
+        return redirect('/dashboard');
+    }
 }

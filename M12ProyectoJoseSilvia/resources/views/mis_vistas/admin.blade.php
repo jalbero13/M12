@@ -46,7 +46,14 @@
             <td>{{$alumno->dni}}</td>
             <td>{{$alumno->telefon}}</td>
             <td>{{$alumno->mail}}</td>
-            <td><a href="/editAlumne/{{$alumno->id}}">Editar</a> | <a href="#">Esborrar</a> | <a href="/inscriureAlumne/{{$alumno->id}}">Inscriure en el cicle</a></td>
+            <td><a type="button" class="btn btn-dark" href="/editAlumne/{{$alumno->id}}">Editar</a> |
+              <form method="POST" action="{{route('eliminarAlumno', $alumno->id)}}" >
+                @method('DELETE')
+                @csrf
+                    <button type="submit" class="btn btn-dark">Esborrar alumne</button>
+              </form> | 
+            <a type="button" class="btn btn-dark" href="/inscriureAlumne/{{$alumno->id}}">Inscriure en el cicle</a>
+            </td>
           </tr>
         @endforeach
           <tr style="background-color: #f7ce51">
