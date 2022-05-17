@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Uf;
 use App\Http\Controllers\Controller;
+use App\Models\Modul;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,7 @@ class UfController extends Controller
 
     public function editUf($id){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.editUf',array('id' => $id, 'Uf' => Uf::find($id)));
+            return view('mis_vistas.editUf',array('id' => $id, 'Uf' => Uf::find($id), 'arrayModulos' => Modul::all()));
         }
     }
 

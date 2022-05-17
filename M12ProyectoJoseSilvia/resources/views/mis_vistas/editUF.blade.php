@@ -39,6 +39,7 @@
                         <input type="number" class="form-control" name="horasUF" value="{{$Uf->hores}}">
                     </div>
                 </div>
+                
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
@@ -47,18 +48,18 @@
                         <input type="text" class="form-control" name="descripcionUF" value="{{$Uf->descripcio}}">
                     </div>
                 </div>
+                
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
-                        <label class="form-label">Id del mòdul</label>
-                        <select name="idModulo">
+                        <label class="form-label">Id del mòdul</label><br>
+                        <select class="form-control" name="idModulo">
                             @foreach($arrayModulos as $key => $modulo)
                             @if($modulo->id == $Uf->modul_id)
-                            <option value="{{$UF->modul_id}}"selected>{{$modulo->nom . " " . $modulo->descripcio}}</option>
+                            <option value="{{$Uf->modul_id}}"selected>{{$modulo->nom . " " . $modulo->descripcio}}</option>
                             @else
                                 <option value="{{$modulo->id}}">{{$modulo->nom . " " . $modulo->descripcio}}</option>
                             @endif
                             @endforeach
-                        <input type="number" class="form-control" name="idModulo" value="{{$Uf->modul_id}}">
                     </div>
                 </div>
             </div>

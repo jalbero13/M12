@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Modul;
 use App\Http\Controllers\Controller;
+use App\Models\Cicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,7 @@ class ModulController extends Controller
 
     public function editModul($id){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.editModulo',array('id' => $id, 'Modul' => Modul::find($id)));
+            return view('mis_vistas.editModulo',array('id' => $id, 'Modul' => Modul::find($id), 'arrayCiclos' => Cicle::all()));
         }
     }
 
