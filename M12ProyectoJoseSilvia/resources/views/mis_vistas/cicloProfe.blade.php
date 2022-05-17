@@ -21,8 +21,8 @@
             <tbody>
               @foreach($profe->cicles as $cicle)
               <tr style="background-color: white">
-                <td>{{$ciclo->nom_cicle}}</td>
-                <td><a href="/modul">Veure detalls</a></td>
+                <td>{{$cicle->nom}}</td>
+                <td><a href="/modul/{{$cicle->nom}}">Veure detalls</a></td>
               </tr>
               @endforeach
             </tbody>
