@@ -53,4 +53,10 @@ class UserController extends Controller
         $prof->save();
         return redirect('/profesor');
     }
+
+    public function eliminarProfesor($id){
+        $profesor = User::find($id);
+        $profesor->delete();
+        return redirect('/profesor');      
+    }
 }

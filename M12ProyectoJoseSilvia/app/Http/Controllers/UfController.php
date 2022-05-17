@@ -48,4 +48,10 @@ class UfController extends Controller
         $UF->save();
         return redirect('/UF');
     }
+
+    public function eliminarUf($id){
+        $UF = Uf::find($id);
+        $UF->delete();
+        return redirect('/UF');      
+    }
 }

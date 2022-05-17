@@ -43,4 +43,10 @@ class CicleController extends Controller
         $ciclo->save();
         return redirect('/cicle');
     }
+
+    public function eliminarCiclo($id){
+        $ciclo = Cicle::find($id);
+        $ciclo->delete();
+        return redirect('/cicle');      
+    }
 }
