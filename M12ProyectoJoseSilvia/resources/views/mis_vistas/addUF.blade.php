@@ -43,13 +43,15 @@
                     <div class="mb-3">
                         <label class="form-label">Descripció de la unitat formativa</label>
                         <input type="text" class="form-control" name="descripcionUF">
-                        <input type="hidden" name="modificado_por" value="jmolina">
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Id del mòdul</label>
-                        <input type="number" class="form-control" name="idModulo">
+                        <select name="idModulo">
+                            @foreach($arrayModulos as $key => $modulo)
+                            <option value="{{$modulo->id}}">{{$modulo->nom . " " .$modulo->descripcio}}</option>
+                            @endforeach
                     </div>
                 </div>
             </div>

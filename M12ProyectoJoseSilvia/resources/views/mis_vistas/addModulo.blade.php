@@ -47,7 +47,10 @@
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Id del cicle</label>
-                            <input type="number" class="form-control" name="idCiclo">
+                            <select name="idCiclo">
+                                @foreach($arrayCiclos as $key => $ciclo)
+                                <option value="{{$ciclo->id}}">{{$ciclo->nom}}</option>
+                                @endforeach
                         </div>
                     </div>
                 </div>
