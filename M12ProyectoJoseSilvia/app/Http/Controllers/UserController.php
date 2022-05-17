@@ -43,7 +43,7 @@ class UserController extends Controller
 
     public function updateProfe(Request $request){
         
-        $prof = User::find($request->input('idAlumno'));
+        $prof = User::find($request->input('idProfe'));
         $prof->nom = $request->input('nombreProfe');
         $prof->cognoms = $request->input('apellidosProfe');
         $prof->email = $request->input('correoProfe');
