@@ -18,7 +18,7 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($ciclo as $cicle)
+              @foreach($profe->cicles as $cicle)
               <tr style="background-color: white">
                 <td>{{$cicle->nom}}</td>
                 <td><a href="/modul/{{$cicle->id}}">Veure detalls</a></td>

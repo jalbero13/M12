@@ -67,7 +67,7 @@ class User extends Authenticatable
     public function modulUser(){
         return $this->belongsToMany(Modul::class, 'modul_user');
     }
-    public function userCicle(){
+    public function cicles(){
         return $this->belongsToMany(Cicle::class,'cicle_user');
     }
 }
