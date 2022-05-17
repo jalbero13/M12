@@ -49,6 +49,14 @@
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Id del cicle</label>
+                            <select name="idCiclo">
+                                @foreach ($arrayCiclos as $key => $ciclo)
+                                @if($ciclo->id == $Modul->cicle_id)
+                                    <option value="{{$Modul->cicle_id}}" selected>{{$ciclo->nom}}</option>
+                                @else
+                                    <option value="{{$ciclo->id}}">{{$ciclo->nom}}</option>
+                                @endif                                    
+                                @endforeach
                             <input type="number" class="form-control" name="idCiclo" value="{{$Modul->cicle_id}}">
                         </div>
                     </div>

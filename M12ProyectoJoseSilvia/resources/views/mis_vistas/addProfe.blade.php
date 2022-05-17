@@ -46,7 +46,6 @@
               <label class="form-label">Contrasenya</label>
               <input type="password" class="form-control" name="contra">
             </div>
-            <input type="hidden" name="modificado_por" value="jmolina">
             <input type="hidden" name="role_id" value="2">
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Afegir professor</button>
