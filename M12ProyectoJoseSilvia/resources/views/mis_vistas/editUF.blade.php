@@ -29,14 +29,14 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom de la unitat formativa</label>
-                        <input type="text" class="form-control" name="nombreUF" value="{{$Uf->nom}}">
+                        <input type="text" class="form-control" name="nombreUF" value="{{$Uf->nom}}" required>
                         <input type="number" class="form-control" name="idUf" value="{{$Uf->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Número d'hores de la unitat formativa</label>
-                        <input type="number" class="form-control" name="horasUF" value="{{$Uf->hores}}">
+                        <input type="number" class="form-control" name="horasUF" value="{{$Uf->hores}}" required>
                     </div>
                 </div>
                 
@@ -45,7 +45,7 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció de la unitat formativa</label>
-                        <input type="text" class="form-control" name="descripcionUF" value="{{$Uf->descripcio}}">
+                        <input type="text" class="form-control" name="descripcionUF" value="{{$Uf->descripcio}}" required>
                     </div>
                 </div>
                 

@@ -40,11 +40,11 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Correu professor</label>
-                <input id="correoProfe" type="email" class="form-control" name="correoProfe">
+                <input id="correoProfe" type="email" class="form-control" name="correoProfe" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Contrasenya</label>
-              <input type="password" class="form-control" name="contra">
+              <input type="password" class="form-control" name="contra" required>
             </div>
             <input type="hidden" name="role_id" value="2">
             <div class="d-grid gap-2">

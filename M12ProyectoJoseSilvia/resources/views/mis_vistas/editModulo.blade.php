@@ -29,21 +29,21 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom del mòdul</label>
-                        <input type="text" class="form-control" name="nombreModulo" value="{{$Modul->nom}}">
+                        <input type="text" class="form-control" name="nombreModulo" value="{{$Modul->nom}}" required>
                         <input type="number" class="form-control" name="idModulo" value="{{$Modul->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció del mòdul</label>
-                        <input type="text" class="form-control" name="descripcionModulo" value="{{$Modul->descripcio}}">
+                        <input type="text" class="form-control" name="descripcionModulo" value="{{$Modul->descripcio}}" required>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px">
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Número d'hores del mòdul</label>
-                            <input type="number" class="form-control" name="horasModulo" value="{{$Modul->hores}}">
+                            <input type="number" class="form-control" name="horasModulo" value="{{$Modul->hores}}" required>
                           </div>
                     </div>
                     <div class="col-12 col-md-6">

@@ -29,20 +29,20 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom professor</label>
-                        <input type="text" class="form-control" name="nombreProfe" value="{{$Profe->nom}}">
+                        <input type="text" class="form-control" name="nombreProfe" value="{{$Profe->nom}}" required>
                         <input type="number" class="form-control" name="idProfe" value="{{$Profe->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Cognoms professor</label>
-                        <input type="text" class="form-control" name="apellidosProfe" value="{{$Profe->cognoms}}">
+                        <input type="text" class="form-control" name="apellidosProfe" value="{{$Profe->cognoms}}" required>
                     </div>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Correu professor</label>
-                <input id="correoProfe" type="email" class="form-control" name="correoProfe" value="{{$Profe->email}}">
+                <input id="correoProfe" type="email" class="form-control" name="correoProfe" value="{{$Profe->email}}" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Contrasenya</label>
