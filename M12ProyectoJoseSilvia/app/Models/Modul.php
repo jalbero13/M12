@@ -15,10 +15,10 @@ class Modul extends Model
     public function ufs(){
         return $this->hasMany(Uf::class);
     }
-    public function alumneModul(){
+    public function alumnes(){
         return $this->belongsToMany(Alumne::class, 'alumne_modul');
     }
-    public function userModul(){
+    public function moduls(){
         return $this->belongsToMany(User::class, 'modul_user');
     }
 }

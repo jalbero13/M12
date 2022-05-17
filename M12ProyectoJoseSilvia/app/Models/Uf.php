@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Uf extends Model
 {
     use HasFactory;
-    public function moduls2(){
+    public function moduls(){
         return $this->belongsTo(Modul::class);
     }
-    public function alumneUf(){
+    public function alumnes(){
         return $this->belongsToMany(Alumne::class,'alumne_uf');
     }
 }

@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Alumne extends Model
 {
     use HasFactory;
-    public function ufAlumne(){
+    public function ufs(){
         return $this->belongsToMany(Uf::class, 'alumne_uf');
     }
     
-    public function modulAlumne(){
+    public function moduls(){
         return $this->belongsToMany(Modul::class, 'alumne_modul');
     }
 }

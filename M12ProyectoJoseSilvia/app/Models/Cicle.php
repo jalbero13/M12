@@ -12,7 +12,7 @@ class Cicle extends Model
         return $this->hasMany(Modul::class);
     }
 
-    public function userCicle(){
+    public function usuaris(){
         return $this->belongsToMany(User::class, 'cicle_user');
     }
 }
