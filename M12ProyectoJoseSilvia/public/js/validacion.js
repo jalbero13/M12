@@ -2,7 +2,7 @@ let valCorreo = /^\w\@$/;
 
 
 function validarTelefono(e){
-    let valTelefono = /^\[6-8-9]{1}d{8}$/;
+    let valTelefono = /^\[6-7-8-9]{1}d{8}$/;
     var campo = $('#telefonoAlumno') ;
     if(campo.value.match(valTelefono)){
         campo.setAttribute('class', 'correcto');

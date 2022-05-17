@@ -61,6 +61,26 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         return view('mis_vistas.addUF');
     });
 
+    // Route::get('/addProfe', function(){
+    //     return view('mis_vistas.addProfe');
+    // });
+
+    // Route::get('/addAlumne', function(){
+    //     return view('mis_vistas.addAlumno');
+    // });
+
+    // Route::get('/addCicle', function(){
+    //     return view('mis_vistas.addCiclo');
+    // });
+
+    // Route::get('/addModul', function(){
+    //     return view('mis_vistas.addModulo');
+    // });  
+
+    // Route::get('/addUF', function(){
+    //     return view('mis_vistas.addUF');
+    // });
+
     Route::get('/inscriureAlumne/{id}', [AlumneModulController::class, 'inscribirAlumno'])->name('inscriureAlumne');
 
     Route::get('/inscriureAlumneUf/{id}/{idCiclo}', [AlumneUfController::class, 'inscribirAlumnoUf'])->name('inscriureAlumneUf');

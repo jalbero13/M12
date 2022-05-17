@@ -10,6 +10,7 @@
                 </ol>
             </nav>
         </x-slot>
+
           <table class="table" style="color:#1a374d">
             <thead style="background-color: #f7ce51">
               <tr>
@@ -18,10 +19,10 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($ciclo as $cicle)
+              @foreach($arrayCicles as $key => $ciclo)
               <tr style="background-color: white">
-                <td>{{$cicle->nom}}</td>
-                <td><a href="/modul/{{$cicle->id}}">Veure detalls</a></td>
+                <td>{{$ciclo->nom_cicle}}</td>
+                <td><a href="/modul">Veure detalls</a></td>
               </tr>
               @endforeach
             </tbody>

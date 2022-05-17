@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <!--<input type="hidden" name="modificado_por" value="jmolina">-->
+            <input hidden>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Modificar mòdul</button>
             </div>
