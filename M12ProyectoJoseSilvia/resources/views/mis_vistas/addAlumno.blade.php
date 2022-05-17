@@ -28,13 +28,13 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom alumne</label>
-                        <input type="text" class="form-control" name="nombreAlumno">
+                        <input type="text" class="form-control" name="nombreAlumno" required>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Cognoms alumne</label>
-                        <input type="text" class="form-control" name="apellidosAlumno">
+                        <input type="text" class="form-control" name="apellidosAlumno" required>
                     </div>
                 </div>
             </div>
@@ -42,27 +42,27 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Telèfon alumne</label>
-                        <input id="telefonoAlumno" type="text" class="form-control" name="telefonoAlumno" maxlength="9">
+                        <input id="telefonoAlumno" type="text" class="form-control" name="telefonoAlumno" maxlength="9" required>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">DNI alumne</label>
-                        <input id="dniAlumno" type="text" class="form-control" name="dniAlumno" maxlength="9">
+                        <input id="dniAlumno" type="text" class="form-control" name="dniAlumno" maxlength="9" required>
                     </div>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Direcció alumne</label>
-                <input type="text" class="form-control" name="direccionAlumno">
+                <input type="text" class="form-control" name="direccionAlumno" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Correu alumne</label>
-                <input type="email" class="form-control" name="correoAlumno">
+                <input type="email" class="form-control" name="correoAlumno" required>
             </div>
             <div class="mb-3">
               <label  class="form-label">Data de naixement alumne</label>
-              <input type="date" class="form-control" name="fecha_nacimientoAlumno">
+              <input type="date" class="form-control" name="fecha_nacimientoAlumno" required>
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Afegir alumne</button>

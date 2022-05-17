@@ -27,7 +27,7 @@
             @method('PUT')
             <div class="mb-3">
               <label class="form-label">Nom del cicle</label>
-              <input type="text" class="form-control" name="nombreCiclo" value="{{$Ciclo->nom}}">
+              <input type="text" class="form-control" name="nombreCiclo" value="{{$Ciclo->nom}}" required>
               <input type="number" class="form-control" name="idCiclo" value="{{$Ciclo->id}}" hidden>
             </div>
             <div class="d-grid gap-2">

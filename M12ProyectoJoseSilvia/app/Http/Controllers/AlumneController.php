@@ -17,8 +17,7 @@ class AlumneController extends Controller
             return view('mis_vistas.admin',array('arrayAlumnes'=>Alumne::all()));
         }else if(Auth::user()->role_id == 2){
             $profe = User::find(Auth()->user()->id);
-            $ciclo = Cicle::all();
-            return view('mis_vistas.cicloProfe', compact('profe', 'ciclo'));
+            return view('mis_vistas.cicloProfe', compact('profe'));
         }
     }
 

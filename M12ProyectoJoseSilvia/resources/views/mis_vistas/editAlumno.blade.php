@@ -29,14 +29,14 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom alumne</label>
-                        <input type="text" class="form-control" name="nombreAlumno" value="{{$Alumno->nom}}">
+                        <input type="text" class="form-control" name="nombreAlumno" value="{{$Alumno->nom}}" required>
                         <input type="number" class="form-control" name="idAlumno" value="{{$Alumno->id}}" hidden>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Cognoms alumne</label>
-                        <input type="text" class="form-control" name="apellidosAlumno" value="{{$Alumno->cognoms}}">
+                        <input type="text" class="form-control" name="apellidosAlumno" value="{{$Alumno->cognoms}}" required>
                     </div>
                 </div>
             </div>
@@ -44,27 +44,27 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Telèfon alumne</label>
-                        <input id="telefonoAlumno" type="text" class="form-control" name="telefonoAlumno" maxlength="9" value="{{$Alumno->telefon}}">
+                        <input id="telefonoAlumno" type="text" class="form-control" name="telefonoAlumno" maxlength="9" value="{{$Alumno->telefon}}" required>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">DNI alumne</label>
-                        <input id="dniAlumno" type="text" class="form-control" name="dniAlumno" maxlength="9" value="{{$Alumno->dni}}">
+                        <input id="dniAlumno" type="text" class="form-control" name="dniAlumno" maxlength="9" value="{{$Alumno->dni}}" required>
                     </div>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Direcció alumne</label>
-                <input type="text" class="form-control" name="direccionAlumno" value="{{$Alumno->direccio}}">
+                <input type="text" class="form-control" name="direccionAlumno" value="{{$Alumno->direccio}}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Correu alumne</label>
-                <input type="email" class="form-control" name="correoAlumno" value="{{$Alumno->mail}}">
+                <input type="email" class="form-control" name="correoAlumno" value="{{$Alumno->mail}}" required>
             </div>
             <div class="mb-3">
               <label  class="form-label">Data de naixement alumne</label>
-              <input type="date" class="form-control" name="fecha_nacimientoAlumno" value="{{$Alumno->data_naixement}}">
+              <input type="date" class="form-control" name="fecha_nacimientoAlumno" value="{{$Alumno->data_naixement}}" required>
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Modificar alumne</button>

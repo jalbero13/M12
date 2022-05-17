@@ -28,13 +28,13 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom de la unitat formativa</label>
-                        <input type="text" class="form-control" name="nombreUF">
+                        <input type="text" class="form-control" name="nombreUF" required>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Número d'hores de la unitat formativa</label>
-                        <input type="number" class="form-control" name="horasUF">
+                        <input type="number" class="form-control" name="horasUF" required>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció de la unitat formativa</label>
-                        <input type="text" class="form-control" name="descripcionUF">
+                        <input type="text" class="form-control" name="descripcionUF" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">

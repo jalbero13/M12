@@ -28,20 +28,20 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom del mòdul</label>
-                        <input type="text" class="form-control" name="nombreModulo">
+                        <input type="text" class="form-control" name="nombreModulo" required>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Descripció del mòdul</label>
-                        <input type="text" class="form-control" name="descripcionModulo">
+                        <input type="text" class="form-control" name="descripcionModulo" required>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px">
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Número d'hores del mòdul</label>
-                            <input type="number" class="form-control" name="horasModulo">
+                            <input type="number" class="form-control" name="horasModulo" required>
                           </div>
                     </div>
                     <div class="col-12 col-md-6">
