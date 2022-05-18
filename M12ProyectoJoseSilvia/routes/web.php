@@ -90,6 +90,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/editProfe/{id}', [UserController::class, 'editProfe'])->name('editProfe');
 
+    Route::get('/alumnes', [AlumneController::class, 'showAlumnes'])->name('showAlumnes');
+
 
     Route::post('/storeAlumnoModul', [AlumneModulController::class, 'storeAlumnoModul'])->name('storeAlumneModul');
 
@@ -128,5 +130,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::delete('inicio/eliminarModulo/{id?}',[ModulController::class, 'eliminarModulo'])->name('eliminarModulo');
 
     Route::delete('inicio/eliminarUf/{id?}',[UfController::class, 'eliminarUf'])->name('eliminarUf');
+
+
 
 });

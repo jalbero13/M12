@@ -15,4 +15,8 @@ class Alumne extends Model
     public function moduls(){
         return $this->belongsToMany(Modul::class, 'alumne_modul');
     }
+
+    public function cicles(){
+        return $this->belongsTo(Cicle::class, 'cicle_id');
+    }
 }

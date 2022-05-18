@@ -14,16 +14,17 @@
           <table class="table" style="color:#1a374d">
             <thead style="background-color: #f7ce51">
               <tr>
-                <th scope="col">Grup</th>
+                <th scope="col">Nom Alumne</th>
+                <th scope="col">cognoms</th>
                 <th scope="col">Accions</th>
               </tr>
             </thead>
             <tbody>
-              @foreach($profe->cicles as $cicle)
+              @foreach($alumnos as $alumne)
               <tr style="background-color: white">
-                <td>{{$cicle->nom}}</td>
-                <td><a href="/modul/{{$cicle->nom}}">Veure detalls</a> |
-                <a href="/alumnes">Mostra alumnes</a></td>
+                <td>{{$alumne->nom}}</td>
+                <td>{{$alumne->cognoms}}</td>
+                <td><a href="/notes">Veure notes</a></td>
               </tr>
               @endforeach
             </tbody>

@@ -22,7 +22,9 @@ return new class extends Migration
             $table->string('dni', 9);
             $table->string('telefon', 9);
             $table->string('mail');
-            $table->integer('cicle_id');
+            $table->foreignId('cicle_id')->constrained('cicles')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('modificat_per');
             $table->timestamps();
         });

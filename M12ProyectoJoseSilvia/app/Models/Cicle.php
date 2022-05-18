@@ -15,4 +15,8 @@ class Cicle extends Model
     public function usuaris(){
         return $this->belongsToMany(User::class, 'cicle_user');
     }
+
+    public function alumnos(){
+        return $this->hasMany(Alumne::class, 'id');
+    }
 }

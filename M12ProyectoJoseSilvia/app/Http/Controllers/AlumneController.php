@@ -21,6 +21,11 @@ class AlumneController extends Controller
         }
     }
 
+    public function showAlumnes(){
+        $alumnos = Alumne::all();
+        return view('mis_vistas.alumnos', compact('alumnos'));
+    }
+
     public function addAlumne(){
         return view('mis_vistas.addAlumno', array('arrayCicles'=>Cicle::all()));
     }
