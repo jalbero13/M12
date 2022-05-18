@@ -24,6 +24,12 @@ class ModulController extends Controller
         }
     }
 
+    public function agregarModulo(){
+        if (Auth::user()->id == 1){
+            return view('mis_vistas.addModulo');
+        }
+    }
+
     public function storeModulo(Request $request){
         $modul = new Modul;
         $modul->nom = $request->input('nombreModulo');

@@ -23,6 +23,12 @@ class UserController extends Controller
         }
     }
 
+    public function agregarProfe(){
+        if (Auth::user()->id == 1){
+            return view('mis_vistas.addProfe');
+        }
+    }
+
     public function storeProfe(Request $request){
         $prof = new User;
         $prof->nom = $request->input('nombreProfe');

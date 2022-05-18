@@ -24,6 +24,11 @@ class CicleController extends Controller
         }
     }
 
+    public function agregarCiclo(){
+        if (Auth::user()->id == 1){
+            return view('mis_vistas.addCiclo');
+        }
+    }
     //
     public function storeCiclo(Request $request){
         $ciclo = new Cicle;

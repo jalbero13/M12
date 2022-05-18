@@ -24,6 +24,12 @@ class UfController extends Controller
         }
     }
 
+    public function agregarUf(){
+        if (Auth::user()->id == 1){
+            return view('mis_vistas.addUF');
+        }
+    }
+
     public function storeUF(Request $request){
         $UF = new Uf;
         $UF->nom = $request->input('nombreUF');
