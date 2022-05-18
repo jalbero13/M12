@@ -18,7 +18,7 @@ class Modul extends Model
     public function alumnes(){
         return $this->belongsToMany(Alumne::class, 'alumne_modul');
     }
-    public function moduls(){
+    public function profes(){
         return $this->belongsToMany(User::class, 'modul_user');
     }
 }
