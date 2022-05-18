@@ -17,6 +17,7 @@ class AlumnoSeeder extends Seeder
             'dni' => '21457899S',
             'telefon' => '674814785',
             'mail' => 'sbulldog@inscamidemar.cat',
+            'cicle_id' => 1,
 			'modificat_per' => 'System', 
 		),
 		array(
@@ -27,6 +28,7 @@ class AlumnoSeeder extends Seeder
             'dni' => '87495218L',
             'telefon' => '648718532',
             'mail' => 'crodriguez@inscamidemar.cat',
+            'cicle_id' => 1,
 			'modificat_per' => 'System', 
 		)
 	);
@@ -52,6 +54,7 @@ class AlumnoSeeder extends Seeder
             $alumno->dni = $alumne['dni'];
             $alumno->telefon = $alumne['telefon'];
             $alumno->mail = $alumne['mail'];
+            $alumno->cicle_id = $alumne['cicle_id'];
             $alumno->modificat_per = $alumne['modificat_per'];
             $alumno->save();
         }

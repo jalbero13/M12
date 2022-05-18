@@ -23,6 +23,7 @@
               <tr style="background-color: white">
                 <td>{{$cicle->nom}}</td>
                 <td><a href="/modul/{{$cicle->nom}}">Veure detalls</a></td>
+                <td><a href="/alumnes">Mostra alumnes</a></td>
               </tr>
               @endforeach
             </tbody>

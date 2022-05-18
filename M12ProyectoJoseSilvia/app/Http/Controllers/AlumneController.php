@@ -21,6 +21,10 @@ class AlumneController extends Controller
         }
     }
 
+    public function addAlumne(){
+        return view('mis_vistas.addAlumno', array('arrayCicles'=>Cicle::all()));
+    }
+
     public function editAlumne($id){
         if(Auth::user()->role_id == 1){
             return view('mis_vistas.editAlumno',array('id' => $id, 'Alumno' => Alumne::find($id)));
@@ -36,7 +40,9 @@ class AlumneController extends Controller
         $alum->dni = $request->input('dniAlumno');
         $alum->telefon = $request->input('telefonoAlumno');
         $alum->mail = $request->input('correoAlumno');
-        $alum->modificat_per = $request->input('modificado_por');
+        $alum->cicle_id = $request->input('idCiclo');
+        $user =  new UserController;
+        $alum->modificat_per= $user->modificado();
         $alum->save();
         return redirect('/dashboard');
         //

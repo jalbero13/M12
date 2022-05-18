@@ -64,6 +64,16 @@
               <label  class="form-label">Data de naixement alumne</label>
               <input type="date" class="form-control" name="fecha_nacimientoAlumno" required>
             </div>
+            <div class="col-12 col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Inscriure al cicle</label>
+                    <select name="idCiclo">
+                        @foreach($arrayCicles as $key => $cicle)
+                            <option value="{{$cicle->id}}">{{$cicle->nom}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+            </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn" style="background-color: #498f9d">Afegir alumne</button>
             </div>
