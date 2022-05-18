@@ -43,7 +43,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/addProfe',[UserController::class, 'agregarProfe'])->name('addProfe');
  
-    Route::get('/addAlumne',[AlumneController::class, 'agregarAlumno'])->name('addAlumne');
+    Route::get('/addAlumne',[AlumneController::class, 'addAlumne'])->name('addAlumne');
 
     Route::get('/addCicle', [CicleController::class , 'agregarCiclo'])->name('addCicle');
 
