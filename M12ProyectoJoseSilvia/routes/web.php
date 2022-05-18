@@ -41,25 +41,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/notesModul',[NotesmodulController::class, 'showNotesModul'])->name('showNotasModulo');
 
-    Route::get('/addProfe', function(){
-        return view('mis_vistas.addProfe');
-    });
+    Route::get('/addProfe',[UserController::class, 'agregarProfe'])->name('addProfe');
+ 
+    Route::get('/addAlumne',[AlumneController::class, 'agregarAlumno'])->name('addAlumne');
 
-    Route::get('/addAlumne', function(){
-        return view('mis_vistas.addAlumno');
-    });
+    Route::get('/addCicle', [CicleController::class , 'agregarCiclo'])->name('addCicle');
 
-    Route::get('/addCicle', function(){
-        return view('mis_vistas.addCiclo');
-    });
+    Route::get('/addModul', [ModulController::class, 'agregarModulo'])->name('addModul');
 
-    Route::get('/addModul', function(){
-        return view('mis_vistas.addModulo');
-    });  
-
-    Route::get('/addUF', function(){
-        return view('mis_vistas.addUF');
-    });
+    Route::get('/addUF', [UfController::class, 'agregarUf'])->name('addUf');
 
     // Route::get('/addProfe', function(){
     //     return view('mis_vistas.addProfe');
