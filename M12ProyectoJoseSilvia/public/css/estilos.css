@@ -1,6 +1,19 @@
-/*****************************************   *****************************/
-
-
+/***************************************** Admin  *****************************/
+.lista{
+    background-color: lightyellow; color: #498f9d
+}
+.listaSelec{
+    background-color: #498f9d; color:lightyellow
+}
+.tabla{
+    color:#1a374d;
+}
+.tabla-amarillo{
+    background-color: #f7ce51;
+}
+.tabla-fila{
+    background-color: white;
+}
 /***************************************** formulario *****************************************/
 .correcto{
     border-color: green;
@@ -9,3 +22,7 @@
     border-color: red;
 }
 
+.btn-ins{
+    background-color: #498f9d;
+    color: lightyellow;
+}

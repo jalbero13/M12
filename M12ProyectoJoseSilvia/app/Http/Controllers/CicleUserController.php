@@ -21,7 +21,7 @@ class CicleUserController extends Controller
         $ciclos = Cicle::find($request->input('idCiclo'));    
         $user = new UserController;
         $modificat_per = $user->modificado();
-        $ciclos->userCicle()->attach($request->input('idProfe'),['modificat_per' => $modificat_per, 'nom_cicle' =>$ciclos->nom]);
+        $ciclos->usuaris()->attach($request->input('idProfe'),['modificat_per' => $modificat_per, 'nom_cicle' =>$ciclos->nom]);
     return redirect('/profesor');
     //
     }
