@@ -7,19 +7,19 @@
         </x-slot>
         <ul class="nav nav-tabs" style="width: 500rem" >
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" aria-current="page" href="/dashboard" style="background-color: lightyellow; color: #498f9d">Alumne</a>
+              <a class="nav-link lista" aria-current="page" href="/dashboard" >Alumne</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" href="/profesor" style="background-color: lightyellow; color: #498f9d">Professor</a>
+              <a class="nav-link lista" href="/profesor" >Professor</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" href="/cicle" style="background-color: lightyellow; color: #498f9d">Cicle</a>
+              <a class="nav-link lista" href="/cicle" >Cicle</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-                <a class="nav-link active" href="/modul" style="background-color: #498f9d; color:lightyellow">Mòdul</a>
+                <a class="nav-link lista-activo active" href="/modul">Mòdul</a>
             </li>
             <li class="nav-item" style="font-size: 1.3rem">
-                <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
+                <a class="nav-link" href="/UF" >Unitat Formativa</a>
             </li>
           </ul>
           <form action="{{route('storeModulo')}}" method="POST">
@@ -47,17 +47,17 @@
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Id del cicle</label>
-                            <select name="idCiclo">
+                            <select class="form-control" name="idCiclo">
                                 @foreach($arrayCiclos as $key => $ciclo)
-                                <option value="{{$ciclo->id}}">{{$ciclo->nom}}</option>
+                                    <option value="{{$ciclo->id}}">{{$ciclo->nom}}</option>
                                 @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<input type="hidden" name="modificado_por" value="jmolina">-->
             <div class="d-grid gap-2">
-                <button type="submit" class="btn" style="background-color: #498f9d">Afegir mòdul</button>
+                <button type="submit" class="btn btn-ins">Afegir mòdul</button>
             </div>
           </form>
     </x-app-layout>

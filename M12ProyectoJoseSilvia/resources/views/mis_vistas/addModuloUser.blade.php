@@ -7,19 +7,19 @@
         </x-slot>
         <ul class="nav nav-tabs" style="width: 500rem" >
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" aria-current="page" href="/dashboard" style="background-color: lightyellow; color: #498f9d">Alumne</a>
+              <a class="nav-link lista" aria-current="page" href="/dashboard" >Alumne</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link active" href="/profesor" style="background-color: #498f9d; color:lightyellow">Professor</a>
+              <a class="nav-link lista-activo active" href="/profesor" >Professor</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" href="/cicle" style="background-color: lightyellow; color: #498f9d">Cicle</a>
+              <a class="nav-link lista" href="/cicle" >Cicle</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-                <a class="nav-link" href="/modul" style="background-color: lightyellow; color: #498f9d">Mòdul</a>
+                <a class="nav-link lista" href="/modul" >Mòdul</a>
             </li>
             <li class="nav-item" style="font-size: 1.3rem">
-                <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
+                <a class="nav-link lista" href="/UF" >Unitat Formativa</a>
             </li>
           </ul>
           <form action="{{route('storeModulUser')}}" method="POST">
@@ -35,7 +35,7 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Inscriure al mòdul</label>
-                        <select name="idModulo">
+                        <select class="form-control" name="idModulo">
                             @foreach($arrayModuls as $modul)
                                 <option value="{{$modul->id}}">{{$modul->nom . ' ' . $modul->descripcio}}</option>
                             @endforeach
@@ -45,7 +45,7 @@
                 
             </div>
             <div class="d-grid gap-2">
-                <button type="submit" class="btn" style="background-color: #498f9d">Inscriure professor</button>
+                <button type="submit" class="btn btn-ins" >Inscriure professor</button>
             </div>
           </form>
 
