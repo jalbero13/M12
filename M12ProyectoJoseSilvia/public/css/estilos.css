@@ -1,9 +1,11 @@
 /***************************************** Admin  *****************************/
 .lista{
-    background-color: lightyellow; color: #498f9d
+    background-color: lightyellow !important;
+    color: #1a374d !important;
 }
-.listaSelec{
-    background-color: #498f9d; color:lightyellow
+.lista-activo{
+    background-color: #1a374d !important; 
+    color:lightyellow !important;
 }
 .tabla{
     color:#1a374d;
@@ -23,6 +25,10 @@
 }
 
 .btn-ins{
-    background-color: #498f9d;
-    color: lightyellow;
+    background-color: #1a374d !important;
+    color: lightyellow !important;
+}
+.btn-ins:hover{
+    background-color:  lightyellow !important;
+    color: #1a374d !important;
 }

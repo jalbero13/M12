@@ -7,24 +7,24 @@
     </x-slot>
     <ul class="nav nav-tabs" style="width: 500rem" >
         <li class="nav-item" style="font-size: 1.2rem">
-          <a class="nav-link active" aria-current="page" href="/dashboard" style="background-color: #498f9d; color:lightyellow">Alumne</a>
+          <a class="nav-link lista-activo active" aria-current="page" href="/dashboard" >Alumne</a>
         </li>
         <li class="nav-item" style="font-size: 1.2rem">
-          <a class="nav-link" href="/profesor" style="background-color: lightyellow; color: #498f9d">Professor</a>
+          <a class="nav-link lista" href="/profesor" >Professor</a>
         </li>
         <li class="nav-item" style="font-size: 1.2rem">
-          <a class="nav-link" href="/cicle" style="background-color: lightyellow; color: #498f9d">Cicle</a>
+          <a class="nav-link lista" href="/cicle" >Cicle</a>
         </li>
         <li class="nav-item" style="font-size: 1.2rem">
-            <a class="nav-link" href="/modul" style="background-color: lightyellow; color: #498f9d">Mòdul</a>
+            <a class="nav-link lista" href="/modul" >Mòdul</a>
         </li>
         <li class="nav-item" style="font-size: 1.3rem">
-            <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
+            <a class="nav-link lista" href="/UF" >Unitat Formativa</a>
         </li>
       </ul>
 
-      <table class="table" style="color:#1a374d">
-        <thead style="background-color: #f7ce51">
+      <table class="table tabla">
+        <thead class="tabla-amarillo">
           <tr>
             <th scope="col">Nom</th>
             <th scope="col">Cognoms</th>
@@ -38,7 +38,7 @@
         </thead>
         <tbody>
         @foreach($arrayAlumnes as $key => $alumno)
-          <tr style="background-color: white">
+          <tr class="tabla-fila">
             <td>{{$alumno->nom}}</td>
             <td>{{$alumno->cognoms}}</td>
             <td>{{$alumno->direccio}}</td>
@@ -56,7 +56,7 @@
             </td>
           </tr>
         @endforeach
-          <tr style="background-color: #f7ce51">
+          <tr class="tabla-amarillo">
             <td></td>
             <td></td>
             <td></td>
