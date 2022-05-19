@@ -17,6 +17,6 @@ class Cicle extends Model
     }
 
     public function alumnos(){
-        return $this->hasMany(Alumne::class, 'id');
+        return $this->hasMany(Alumne::class);
     }
 }
