@@ -22,7 +22,7 @@
               @foreach($profe->cicles as $cicle)
               <tr class="tabla-fila">
                 <td>{{$cicle->nom}}</td>
-                <td><a class="btn btn-ins" href="/modul/{{$cicle->nom}}">Veure detalls</a> |
+                <td><a class="btn btn-ins" href="/modul/{{$cicle->id}}">Veure detalls</a> |
                 <a class="btn btn-ins" href="/alumnes">Mostra alumnes</a></td>
               </tr>
               @endforeach
