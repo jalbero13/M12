@@ -39,7 +39,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/UF',[UfController::class, 'showUf'])->name('showUfs');
 
-    Route::get('/notesModul',[NotesmodulController::class, 'showNotesModul'])->name('showNotasModulo');
+    Route::get('/notesModul/{id}',[NotesmodulController::class, 'showNotesModul'])->name('showNotasModulo');
 
     Route::get('/addProfe',[UserController::class, 'agregarProfe'])->name('addProfe');
  
