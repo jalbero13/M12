@@ -12,8 +12,8 @@
             </nav>
         </x-slot>
 
-          <table class="table" style="color:#1a374d">
-            <thead style="background-color: #f7ce51">
+          <table class="table tabla">
+            <thead class="tabla-amarillo">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Grup</th>
@@ -21,16 +21,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr style="background-color: white">
+              <tr class="tabla-fila">
                 <td>1</td>
                 <td>M3 Programació II</td>
-                <td><a href="/notesModul">Veure detalls</a></td>
+                <td><a class="btn btn-ins" href="/notesModul">Veure detalls</a></td>
               </tr>
 
-              <tr style="background-color: white">
+              <tr class="tabla-fila">
                 <td>2</td>
                 <td>M6 Desenvolupament web en entorn client</td>
-                <td><a href="/notesModul">Veure detalls</a></td>
+                <td><a class="btn btn-ins" href="/notesModul">Veure detalls</a></td>
               </tr>
             </tbody>
           </table>

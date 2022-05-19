@@ -63,6 +63,7 @@ class AlumneController extends Controller
         $alum->dni = $request->input('dniAlumno');
         $alum->telefon = $request->input('telefonoAlumno');
         $alum->mail = $request->input('correoAlumno');
+        $alum->cicle_id = $request->input('idCiclo');
         $user = new UserController;
         $alum->modificat_per = $user->modificado();
         $alum->save();

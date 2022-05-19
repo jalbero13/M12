@@ -7,24 +7,24 @@
         </x-slot>
         <ul class="nav nav-tabs" style="width: 500rem" >
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" aria-current="page" href="/dashboard" style="background-color: lightyellow; color: #498f9d">Alumne</a>
+              <a class="nav-link lista" aria-current="page" href="/dashboard">Alumne</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link active" href="/profesor" style="background-color: #498f9d; color:lightyellow">Professor</a>
+              <a class="nav-link lista-activo active" href="/profesor">Professor</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-              <a class="nav-link" href="/cicle" style="background-color: lightyellow; color: #498f9d">Cicle</a>
+              <a class="nav-link lista" href="/cicle">Cicle</a>
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
-                <a class="nav-link" href="/modul" style="background-color: lightyellow; color: #498f9d">Mòdul</a>
+                <a class="nav-link lista" href="/modul">Mòdul</a>
             </li>
             <li class="nav-item" style="font-size: 1.3rem">
-                <a class="nav-link" href="/UF" style="background-color: lightyellow; color: #498f9d">Unitat Formativa</a>
+                <a class="nav-link lista" href="/UF">Unitat Formativa</a>
             </li>
           </ul>
     
-          <table class="table" style="color:#1a374d">
-            <thead style="background-color: #f7ce51">
+          <table class="table tabla">
+            <thead class="tabla-amarillo">
               <tr>
                 <th scope="col">Nom</th>
                 <th scope="col">Cognoms</th>
@@ -34,28 +34,28 @@
             </thead>
             <tbody>
               @foreach($arrayUsers as $key => $profe)
-              <tr style="background-color: white">
+              <tr class="tabla-fila">
                 <td>{{$profe->nom}}</td>
                 <td>{{$profe->cognoms}}</td>
                 <td>{{$profe->email}}</td>
                 <td>
-                  <a type="button" class="btn btn-dark" href="/editProfe/{{$profe->id}}">Editar</a> 
+                  <a type="button" class="btn btn-ins" href="/editProfe/{{$profe->id}}">Editar</a> 
                 @if($profe->id !=1) 
                 | <form method="POST" action="{{route('eliminarProfesor', $profe->id)}}" >
                     @method('DELETE')
                     @csrf
-                        <button type="submit" class="btn btn-dark">Esborrar professor</button>
+                        <button type="submit" class="btn btn-ins">Esborrar professor</button>
                   </form> @endif | 
-                  <a type="button" class="btn btn-dark" href="/inscriureProfessor/{{$profe->id}}">Inscriure a modul</a> | 
-                  <a type="button" class="btn btn-dark" href="/inscriureProfessorCicle/{{$profe->id}}">Inscriure a cicle</a>
+                  <a type="button" class="btn btn-ins" href="/inscriureProfessor/{{$profe->id}}">Inscriure a modul</a> | 
+                  <a type="button" class="btn btn-ins" href="/inscriureProfessorCicle/{{$profe->id}}">Inscriure a cicle</a>
                 </td>
               </tr>
               @endforeach
-              <tr style="background-color: #f7ce51">
+              <tr class="tabla-amarillo">
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><a type="button" class="btn btn-dark" href="/addProfe">Afegir un professor</a></td>
+                <td><a type="button" class="btn btn-ins" href="/addProfe">Afegir un professor</a></td>
               </tr>
             </tbody> 
           </table>

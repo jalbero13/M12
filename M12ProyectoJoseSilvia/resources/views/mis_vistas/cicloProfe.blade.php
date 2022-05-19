@@ -11,8 +11,8 @@
             </nav>
         </x-slot>
 
-          <table class="table" style="color:#1a374d">
-            <thead style="background-color: #f7ce51">
+          <table class="table tabla">
+            <thead class="tabla-amarillo">
               <tr>
                 <th scope="col">Grup</th>
                 <th scope="col">Accions</th>
@@ -20,10 +20,10 @@
             </thead>
             <tbody>
               @foreach($profe->cicles as $cicle)
-              <tr style="background-color: white">
+              <tr class="tabla-fila">
                 <td>{{$cicle->nom}}</td>
-                <td><a href="/modul/{{$cicle->nom}}">Veure detalls</a> |
-                <a href="/alumnes">Mostra alumnes</a></td>
+                <td><a class="btn btn-ins" href="/modul/{{$cicle->nom}}">Veure detalls</a> |
+                <a class="btn btn-ins" href="/alumnes">Mostra alumnes</a></td>
               </tr>
               @endforeach
             </tbody>

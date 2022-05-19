@@ -5,7 +5,7 @@
             {{ __(Auth()->user()->nom .' '. Auth()->user()->cognoms) }}
         </h2>
     </x-slot>
-    <ul class="nav nav-tabs" style="width: 500rem" >
+    <ul class="nav nav-tabs">
         <li class="nav-item" style="font-size: 1.2rem">
           <a class="nav-link lista-activo active" aria-current="page" href="/dashboard" >Alumne</a>
         </li>
@@ -64,7 +64,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a href="addAlumne">Afegir un alumne</a></td>
+            <td><a class="btn btn-ins" href="addAlumne">Afegir un alumne</a></td>
           </tr>
         </tbody>
       </table>

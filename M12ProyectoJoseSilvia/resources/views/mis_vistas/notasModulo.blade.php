@@ -12,15 +12,15 @@
                 </ol>
             </nav>
         </x-slot>
-        <table class="table" style="color:#1a374d">
-            <thead style="background-color: #f7ce51">
+        <table class="table tabla">
+            <thead class="tabla-amarillo">
               <tr>
-                <th style="background-color: white"></th>
+                <th class="tabla-fila"></th>
                 <th scope="col" colspan="8" style="text-align: center">Qualificació de les unitats formatives del mòdul profesional</th>
                 <th scope="col" colspan="4" rowspan="2" style="text-align: center; margin:auto">Qualificació final del mòdul</th>
               </tr>
               <tr>
-                <td style="background-color: white"></td>
+                <td class="tabla-fila"></td>
                 <td scope="col" colspan="2" style="text-align: center">UF1</td>
                 <td scope="col" colspan="2" style="text-align: center">UF2</td>
                 <td scope="col" colspan="2" style="text-align: center">UF3</td>
@@ -28,7 +28,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr style="background-color: #f7ce51">
+              <tr class="tabla-amarillo">
                 <td style="text-align: center">Alumnat</td>
                 <td style="text-align: center">Hores</td>
                 <td style="text-align: center">Qualif.</td>
@@ -42,7 +42,7 @@
                 <td style="text-align: center">Qualif.</td>
               </tr>
 
-              <tr style="background-color: white">
+              <tr class="tabla-fila">
                 <td style="text-align: center">Lopez Castaño, Emmanuel</td>
                 <td style="text-align: center">30</td>
                 <td style="text-align: center">
