@@ -53,6 +53,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/modul/{id}',[ModulController::class, 'showModulProfe'])->name('showModuloProfe');
 
+    Route::get('/UF/{id}',[UfController::class, 'showUfProfe'])->name('showUfsProfe');
 
     // Route::get('/addProfe', function(){
     //     return view('mis_vistas.addProfe');

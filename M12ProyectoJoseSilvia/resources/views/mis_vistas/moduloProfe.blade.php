@@ -15,22 +15,15 @@
           <table class="table tabla">
             <thead class="tabla-amarillo">
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Grup</th>
                 <th scope="col">Accions</th>
               </tr>
             </thead>
             <tbody>
+              @foreach($moduls as $modul)
               <tr class="tabla-fila">
-                <td>1</td>
-                <td>M3 Programació II</td>
-                <td><a class="btn btn-ins" href="/notesModul">Veure detalls</a></td>
-              </tr>
-
-              <tr class="tabla-fila">
-                <td>2</td>
-                <td>M6 Desenvolupament web en entorn client</td>
-                <td><a class="btn btn-ins" href="/notesModul">Veure detalls</a></td>
+                <td>{{$modul->nom .'. ' .$modul->descripcio}}</td>
+                <td><a class="btn btn-ins" href="/notesModul/{{$modul->id}}">Veure detalls</a></td>
               </tr>
             </tbody>
           </table>

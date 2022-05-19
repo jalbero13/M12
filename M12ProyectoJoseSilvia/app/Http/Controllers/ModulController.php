@@ -17,7 +17,7 @@ class ModulController extends Controller
     }
     public function showModulProfe($id){
         if(Auth::user()->role_id == 2){
-            return view('mis_vistas.moduloProfe',array('modul'=>Modul::find($id)));
+            return view('mis_vistas.moduloProfe',array('moduls'=>Modul::where('cicle_id',$id)));
         }
     }
 
