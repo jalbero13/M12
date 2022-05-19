@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Modul;
 use App\Http\Controllers\Controller;
 use App\Models\Cicle;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +18,8 @@ class ModulController extends Controller
     }
     public function showModulProfe($id){
         if(Auth::user()->role_id == 2){
-            return view('mis_vistas.moduloProfe',array('moduls'=>Modul::where('cicle_id',$id)));
+            $profe = User::find(Auth()->user()->id);
+            return view('mis_vistas.moduloProfe', compact('profe'));
         }
     }
 

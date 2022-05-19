@@ -20,11 +20,12 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($moduls as $modul)
+              @foreach($profe->modulUser as $modul)
               <tr class="tabla-fila">
                 <td>{{$modul->nom .'. ' .$modul->descripcio}}</td>
                 <td><a class="btn btn-ins" href="/notesModul/{{$modul->id}}">Veure detalls</a></td>
               </tr>
+              @endforeach
             </tbody>
           </table>
     </x-app-layout>

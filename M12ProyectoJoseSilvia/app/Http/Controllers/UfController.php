@@ -17,6 +17,11 @@ class UfController extends Controller
             return view('mis_vistas.UF',array('arrayUfs'=>Uf::all()));
         }
     }
+    public function showUfProfe($id){
+        if(Auth::user()->role_id == 2){
+            return view('mis_vistas.UF',array('id'=>$id, 'ufs'=>Uf::where('modul_id',$id)));
+        }
+    }
 
     public function editUf($id){
         if(Auth::user()->role_id == 1){
