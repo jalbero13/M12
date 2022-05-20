@@ -31,7 +31,7 @@ class ModulController extends Controller
 
     public function agregarModulo(){
         if (Auth::user()->id == 1){
-            return view('mis_vistas.addModulo');
+            return view('mis_vistas.addModulo',array('arrayCiclos' => Cicle::all()));
         }
     }
 

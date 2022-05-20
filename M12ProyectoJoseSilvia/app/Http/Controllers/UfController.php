@@ -26,7 +26,7 @@ class UfController extends Controller
 
     public function agregarUf(){
         if (Auth::user()->id == 1){
-            return view('mis_vistas.addUF');
+            return view('mis_vistas.addUF',array('arrayModulos' => Modul::all()));
         }
     }
 
