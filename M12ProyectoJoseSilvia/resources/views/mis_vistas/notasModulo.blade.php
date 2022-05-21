@@ -7,7 +7,7 @@
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="/dashboard">Cicles</a></li>
-                  <li class="breadcrumb-item"><a href="/modul">Mòduls</a></li>
+                  <li class="breadcrumb-item"><a href="/modul/{{$modulo->cicle_id}}">Mòduls</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Llistat de qualificacions</li>
                 </ol>
             </nav>
@@ -107,7 +107,7 @@
                 <td style="text-align: center">165</td>
                 <td style="text-align: center">7</td>
               </tr>
-              <tr style="background-color: white">
+              <tr class="tabla-fila">
                 <td style="text-align: center">Fuentes Ibáñez, Rosa María</td>
                 <td style="text-align: center">30</td>
                 <td style="text-align: center">

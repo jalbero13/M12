@@ -19,7 +19,7 @@
                 <a class="nav-link lista-activo active" href="/modul">Mòdul</a>
             </li>
             <li class="nav-item" style="font-size: 1.3rem">
-                <a class="nav-link" href="/UF" >Unitat Formativa</a>
+                <a class="nav-link lista" href="/UF" >Unitat Formativa</a>
             </li>
           </ul>
           <form action="{{route('storeModulo')}}" method="POST">
