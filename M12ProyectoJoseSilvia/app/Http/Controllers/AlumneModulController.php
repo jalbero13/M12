@@ -25,7 +25,7 @@ class AlumneModulController extends Controller
             $modul = Modul::find($modulo->id);
             $user = new UserController;
             $modificat_per = $user->modificado();
-            $modul->alumneModul()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
+            $modul->alumnes()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
         }
         $id = $request->input('idAlumno');
         $idCiclo = $request->input('idCiclo');

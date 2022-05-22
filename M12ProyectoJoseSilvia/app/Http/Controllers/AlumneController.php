@@ -72,6 +72,8 @@ class AlumneController extends Controller
 
     public function eliminarAlumno($id){
         $alumno = Alumne::find($id);
+        $alumno->ufs()->dettach();
+        $alumno->moduls()->dettach();
         $alumno->delete();
         return redirect('/dashboard');
     }

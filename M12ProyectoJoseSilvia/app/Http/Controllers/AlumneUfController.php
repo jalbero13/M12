@@ -30,7 +30,7 @@ class AlumneUfController extends Controller
                 $alumnoUf = Uf::find($uf->id);
                 $user = new UserController;
                 $modificat_per = $user->modificado();
-                $alumnoUf->alumneUf()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
+                $alumnoUf->alumnes()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
             }
         }
         
