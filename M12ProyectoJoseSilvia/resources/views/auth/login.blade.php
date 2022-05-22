@@ -35,12 +35,7 @@
                     <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="current-password" />
                     <x-jet-input-error for="password"></x-jet-input-error>
-                </div>
-
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('No soy un robot') }}" />
-                </div>
-                
+                </div>             
                 <div class="mb-3">
                     <div class="custom-control custom-checkbox">
                         <x-jet-checkbox id="remember_me" name="remember" />
@@ -49,7 +44,10 @@
                         </label>
                     </div>
                 </div>
-
+                <div class="mb3">
+                    {!! NoCaptcha::renderJs() !!}
+                    {!! NoCaptcha::display() !!}
+                </div>
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
                         @if (Route::has('password.request'))

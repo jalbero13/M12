@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '6a230a737d580b5b284345e2c9dbecde8f1676f8',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'anhskohbo/no-captcha' => array(
+            'pretty_version' => '3.4.0',
+            'version' => '3.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../anhskohbo/no-captcha',
+            'aliases' => array(),
+            'reference' => 'e12233006da3063f5cf4ce959cae05a6676faedd',
+            'dev_requirement' => false,
+        ),
         'bacon/bacon-qr-code' => array(
             'pretty_version' => '2.0.7',
             'version' => '2.0.7.0',
@@ -428,12 +437,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '6a230a737d580b5b284345e2c9dbecde8f1676f8',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

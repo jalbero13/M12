@@ -95,4 +95,5 @@ return array(
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'BaconQrCode\\' => array($vendorDir . '/bacon/bacon-qr-code/src'),
     'App\\' => array($baseDir . '/app'),
+    'Anhskohbo\\NoCaptcha\\' => array($vendorDir . '/anhskohbo/no-captcha/src'),
 );

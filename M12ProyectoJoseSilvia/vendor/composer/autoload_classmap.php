@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
+    'Anhskohbo\\NoCaptcha\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptcha.php',
+    'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
     'App\\Actions\\Fortify\\CreateNewUser' => $baseDir . '/app/Actions/Fortify/CreateNewUser.php',
     'App\\Actions\\Fortify\\PasswordValidationRules' => $baseDir . '/app/Actions/Fortify/PasswordValidationRules.php',
     'App\\Actions\\Fortify\\ResetUserPassword' => $baseDir . '/app/Actions/Fortify/ResetUserPassword.php',
@@ -18,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\AlumneModulController' => $baseDir . '/app/Http/Controllers/AlumneModulController.php',
     'App\\Http\\Controllers\\AlumneUfController' => $baseDir . '/app/Http/Controllers/AlumneUfController.php',
     'App\\Http\\Controllers\\CicleController' => $baseDir . '/app/Http/Controllers/CicleController.php',
+    'App\\Http\\Controllers\\CicleUserController' => $baseDir . '/app/Http/Controllers/CicleUserController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ModulController' => $baseDir . '/app/Http/Controllers/ModulController.php',
     'App\\Http\\Controllers\\ModulUserController' => $baseDir . '/app/Http/Controllers/ModulUserController.php',
@@ -38,6 +42,7 @@ return array(
     'App\\Models\\AlumneModul' => $baseDir . '/app/Models/AlumneModul.php',
     'App\\Models\\AlumneUf' => $baseDir . '/app/Models/AlumneUf.php',
     'App\\Models\\Cicle' => $baseDir . '/app/Models/Cicle.php',
+    'App\\Models\\CicleUser' => $baseDir . '/app/Models/CicleUser.php',
     'App\\Models\\Modul' => $baseDir . '/app/Models/Modul.php',
     'App\\Models\\ModulUser' => $baseDir . '/app/Models/ModulUser.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',

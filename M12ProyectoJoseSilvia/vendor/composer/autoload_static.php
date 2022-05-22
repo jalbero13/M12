@@ -18,9 +18,9 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
@@ -181,6 +181,7 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
         'A' => 
         array (
             'App\\' => 4,
+            'Anhskohbo\\NoCaptcha\\' => 20,
         ),
     );
 
@@ -546,6 +547,10 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Anhskohbo\\NoCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anhskohbo/no-captcha/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -566,6 +571,9 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
     );
 
     public static $classMap = array (
+        'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
+        'Anhskohbo\\NoCaptcha\\NoCaptcha' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptcha.php',
+        'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => __DIR__ . '/..' . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
         'App\\Actions\\Fortify\\CreateNewUser' => __DIR__ . '/../..' . '/app/Actions/Fortify/CreateNewUser.php',
         'App\\Actions\\Fortify\\PasswordValidationRules' => __DIR__ . '/../..' . '/app/Actions/Fortify/PasswordValidationRules.php',
         'App\\Actions\\Fortify\\ResetUserPassword' => __DIR__ . '/../..' . '/app/Actions/Fortify/ResetUserPassword.php',
@@ -578,6 +586,7 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
         'App\\Http\\Controllers\\AlumneModulController' => __DIR__ . '/../..' . '/app/Http/Controllers/AlumneModulController.php',
         'App\\Http\\Controllers\\AlumneUfController' => __DIR__ . '/../..' . '/app/Http/Controllers/AlumneUfController.php',
         'App\\Http\\Controllers\\CicleController' => __DIR__ . '/../..' . '/app/Http/Controllers/CicleController.php',
+        'App\\Http\\Controllers\\CicleUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/CicleUserController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ModulController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModulController.php',
         'App\\Http\\Controllers\\ModulUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/ModulUserController.php',
@@ -598,6 +607,7 @@ class ComposerStaticInitfa038b50327732f663d3e55a2c031197
         'App\\Models\\AlumneModul' => __DIR__ . '/../..' . '/app/Models/AlumneModul.php',
         'App\\Models\\AlumneUf' => __DIR__ . '/../..' . '/app/Models/AlumneUf.php',
         'App\\Models\\Cicle' => __DIR__ . '/../..' . '/app/Models/Cicle.php',
+        'App\\Models\\CicleUser' => __DIR__ . '/../..' . '/app/Models/CicleUser.php',
         'App\\Models\\Modul' => __DIR__ . '/../..' . '/app/Models/Modul.php',
         'App\\Models\\ModulUser' => __DIR__ . '/../..' . '/app/Models/ModulUser.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
