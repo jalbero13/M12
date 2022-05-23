@@ -19,7 +19,7 @@ class ModulController extends Controller
     public function showModulProfe($id){
         if(Auth::user()->role_id == 2){
             $profe = User::find(Auth()->user()->id);
-            return view('mis_vistas.moduloProfe', compact('profe'));
+            return view('mis_vistas.moduloProfe', compact('profe','id'));
         }
     }
 

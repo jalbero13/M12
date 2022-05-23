@@ -21,10 +21,12 @@
             </thead>
             <tbody>
               @foreach($profe->modulUser as $modul)
-              <tr class="tabla-fila">
-                <td>{{$modul->nom .'. ' .$modul->descripcio}}</td>
-                <td><a class="btn btn-ins" href="/notesModul/{{$modul->id}}">Veure detalls</a></td>
-              </tr>
+                @if($modul->cicle_id == $id)
+                <tr class="tabla-fila">
+                  <td>{{$modul->nom .'. ' .$modul->descripcio}}</td>
+                  <td><a class="btn btn-ins" href="/notesModul/{{$modul->id}}">Veure detalls</a></td>
+                </tr>
+                @endif
               @endforeach
             </tbody>
           </table>
