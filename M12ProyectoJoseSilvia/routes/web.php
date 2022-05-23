@@ -120,7 +120,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::put('/updateProfe', [UserController::class, 'updateProfe'])->name('updateProfe');
 
 
-    Route::delete('inicio/eliminarAlumno/{id?}',[AlumneController::class, 'eliminarAlumno'])->name('eliminarAlumno');
+    Route::get('inicio/eliminarAlumno/{id?}',[AlumneController::class, 'eliminarAlumno'])->name('eliminarAlumno');
 
     Route::delete('inicio/eliminarProfesor/{id?}',[UserController::class, 'eliminarProfesor'])->name('eliminarProfesor');
 

@@ -32,7 +32,7 @@ class AlumneController extends Controller
 
     public function editAlumne($id){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.editAlumno',array('id' => $id, 'Alumno' => Alumne::find($id)));
+            return view('mis_vistas.editAlumno',array('id' => $id, 'arrayCicles'=>Cicle::all(), 'Alumno' => Alumne::find($id)));
         }
     }
 
@@ -84,8 +84,8 @@ class AlumneController extends Controller
 
     public function eliminarAlumno($id){
         $alumno = Alumne::find($id);
-        $alumno->ufs()->dettach();
-        $alumno->moduls()->dettach();
+        $alumno->ufs()->detach();
+        $alumno->moduls()->detach();
         $alumno->delete();
         return redirect('/dashboard');
     }
