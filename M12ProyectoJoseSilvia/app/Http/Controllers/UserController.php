@@ -63,6 +63,8 @@ class UserController extends Controller
 
     public function eliminarProfesor($id){
         $profesor = User::find($id);
+        $profesor->modulUser()->detach();
+        $profesor->cicles()->detach();
         $profesor->delete();
         return redirect('/profesor');      
     }
