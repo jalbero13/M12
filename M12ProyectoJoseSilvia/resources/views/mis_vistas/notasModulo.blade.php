@@ -40,24 +40,37 @@
                 <td style="text-align: center">Hores</td>
                 <td style="text-align: center">Qualif.</td>
               </tr>
-              @foreach($ufs->alumnes as $alumno )
-              <tr class="tabla-fila">
-                <td style="text-align: center">{{$alumno->nom . ' '. $alumno->cognoms}}</td>
-                @foreach($ufs as $uf)
-                <td style="text-align: center">{{$uf->hores}}30</td>
-                <td style="text-align: center">
-                  <select name="">
-                    @for($i=1;$i<10;$i++)
-                    <option value="{{$i}}">{{$i}}</option>
-                    @endfor
-                  </select>
-                </td>
+              <form action="{{route('')}}" method="POST">
+                @csrf
+                @method('PUT')
+                @foreach($ufs->alumnes as $alumno )
+                @php
+                    $notafinal = 0;
+                @endphp
+                <tr class="tabla-fila">
+                  <td style="text-align: center">{{$alumno->nom . ' '. $alumno->cognoms}}</td>
+                  @foreach($ufs as $uf)
+                  <td style="text-align: center">{{$uf->hores}}</td>
+                  <td style="text-align: center">
+                    <select name="">
+                      @for($i=1;$i<10;$i++)
+                      <option value="{{$i}}">{{$i}}</option>
+                      @endfor
+                    </select>
+                  </td>
+                  @endforeach
+                  @php
+                    $notafinal = $notafinal + ($alumno->notes * $uf->hores);
+                  @endphp
+                </tr>
+                  <td style="text-align: center">{{$modulo->hores}}</td>
+                  <td style="text-align: center">{{$notafinal / $modulo->hores}}</td>
+                </tr>
                 @endforeach
-              </tr>
-              @endforeach
-                <td style="text-align: center">165</td>
-                <td style="text-align: center">7</td>
-              </tr>
+                <tr>
+                  <td><<button type="submit" class="btn btn-ins">Modificar notes</button></td>
+                </tr>
+              </form>
             </tbody>
           </table>
     </x-app-layout>
