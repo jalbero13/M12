@@ -19,15 +19,16 @@ class AlumneModulController extends Controller
         }
     }
 
-    public function storeAlumnoModul(Request $request){
-        $modulos = Modul::where('cicle_id' ,$request->input('idCiclo'))->get();
+    public function storeAlumnoModul($idCiclo, $correoAlumno){
+        $alumno = Alumne::where('mail',$correoAlumno);
+        $modulos = Modul::where('cicle_id' ,$idCiclo)->get();
         foreach($modulos as $modulo){
             $modul = Modul::find($modulo->id);
             $uf = new AlumneUfController;
-            $uf->storeAlumnoUf($modulo, $request->input('idAlumno'));
+            $uf->storeAlumnoUf($modulo, $alumno->id);
             $user = new UserController;
             $modificat_per = $user->modificado();
-            $modul->alumnes()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
+            $modul->alumnes()->attach($alumno->id,['modificat_per'=> $modificat_per]);
         }
         return redirect('dashboard');
         //

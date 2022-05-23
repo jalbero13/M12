@@ -75,11 +75,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     //     return view('mis_vistas.addUF');
     // });
 
-    Route::get('/inscriureAlumne/{id}', [AlumneModulController::class, 'inscribirAlumno'])->name('inscriureAlumne');
-
-    Route::get('/inscriureAlumneUf/{id}/{idCiclo}', [AlumneUfController::class, 'inscribirAlumnoUf'])->name('inscriureAlumneUf');
-    // Route::get('/inscriureAlumneUf/{id}', [AlumneUfController::class, 'inscribirAlumnoUf'])->name('inscriureAlumneUf');
- 
+    
     Route::get('/inscriureProfessor/{id}', [ModulUserController::class, 'inscribirProfesor'])->name('inscriureProfessor'); 
 
     Route::get('/inscriureProfessorCicle/{id}', [CicleUserController::class, 'inscribirProfesorCiclo'])->name('inscriureProfessorCicle');
@@ -98,10 +94,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     
     Route::get('/notes', [AlumneController::class, 'showNotesAlumne'])->name('showAlumnes');
 
-
-    Route::post('/storeAlumnoModul', [AlumneModulController::class, 'storeAlumnoModul'])->name('storeAlumneModul');
-
-    Route::post('/storeAlumnoUf', [AlumneUfController::class, 'storeAlumnoUf'])->name('storeAlumneUf');
 
     Route::post('/storeModulUser', [ModulUserController::class, 'storeModulUser'])->name('storeModulUser');
 

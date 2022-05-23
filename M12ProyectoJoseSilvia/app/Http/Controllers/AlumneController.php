@@ -55,6 +55,8 @@ class AlumneController extends Controller
         $user =  new UserController;
         $alum->modificat_per= $user->modificado();
         $alum->save();
+        $modul = new AlumneModulController;
+        $modul->storeAlumnoModul($request->input('idCiclo'),$request->input('correoAlumno'));
         return redirect('/dashboard');
         //
     }
@@ -73,6 +75,10 @@ class AlumneController extends Controller
         $user = new UserController;
         $alum->modificat_per = $user->modificado();
         $alum->save();
+        $alum->ufs()->detach();
+        $alum->moduls()->detach();
+        $modul = new AlumneModulController;
+        $modul->storeAlumnoModul($request->input('idCiclo'),$request->input('correoAlumno'));
         return redirect('/dashboard');
     }
 
