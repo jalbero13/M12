@@ -19,22 +19,15 @@ class AlumneUfController extends Controller
         }
     }
 
-    public function storeAlumnoUf(Request $request){
-        $modulos = Modul::where('cicle_id' ,$request->input('idCiclo'))->get();
+    public function storeAlumnoUf($modulo, $idAlumno){
+        $ufs = Uf::where('modul_id', $modulo->id)->get();
 
-        
-        foreach($modulos as $modulo){
-            $ufs = Uf::where('modul_id', $modulo->id)->get();
-
-            foreach($ufs as $uf){                
-                $alumnoUf = Uf::find($uf->id);
-                $user = new UserController;
-                $modificat_per = $user->modificado();
-                $alumnoUf->alumnes()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
-            }
+        foreach($ufs as $uf){                
+            $user = new UserController;
+            $modificat_per = $user->modificado();
+            $uf->alumnes()->attach($idAlumno,['modificat_per'=> $modificat_per]);
         }
-        
-        return redirect('/dashboard');
+    
     }
 }
 

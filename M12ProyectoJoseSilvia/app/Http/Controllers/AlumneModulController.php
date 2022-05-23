@@ -23,14 +23,13 @@ class AlumneModulController extends Controller
         $modulos = Modul::where('cicle_id' ,$request->input('idCiclo'))->get();
         foreach($modulos as $modulo){
             $modul = Modul::find($modulo->id);
+            $uf = new AlumneUfController;
+            $uf->storeAlumnoUf($modulo, $request->input('idAlumno'));
             $user = new UserController;
             $modificat_per = $user->modificado();
             $modul->alumnes()->attach($request->input('idAlumno'),['modificat_per'=> $modificat_per]);
         }
-        $id = $request->input('idAlumno');
-        $idCiclo = $request->input('idCiclo');
-        $ruta = "/inscriureAlumneUf/$id/$idCiclo";
-        return redirect($ruta);
+        return redirect('dashboard');
         //
     }
 }
