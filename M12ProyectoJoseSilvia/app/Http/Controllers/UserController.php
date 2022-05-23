@@ -54,7 +54,6 @@ class UserController extends Controller
         $prof->nom = $request->input('nombreProfe');
         $prof->cognoms = $request->input('apellidosProfe');
         $prof->email = $request->input('correoProfe');
-        $user = new UserController;
         $user =  new UserController;
         $prof->modificat_per= $user->modificado();
         $prof->role_id = $request->input('role_id');

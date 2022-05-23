@@ -12,7 +12,9 @@ class NotesmodulController extends Controller
     //
     public function showNotesModul($id){
         if(Auth::user()->role_id == 2){
-            return view('mis_vistas.notasModulo', array('modulo'=>Modul::find($id), 'ufs'=>Uf::where('modul_id',$id)));
+            $modulo=Modul::find($id);
+            $ufs=Uf::where('modul_id',$id);
+            return view('mis_vistas.notasModulo', compact('modulo','ufs'));
         }
     }
 }

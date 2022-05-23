@@ -16,12 +16,12 @@
             <thead class="tabla-amarillo">
               <tr>
                 <th class="tabla-fila"></th>
-                <th scope="col" colspan="8" style="text-align: center">Qualificació de les unitats formatives del mòdul profesional</th>
+                <th scope="col" colspan="{{count($modulo->ufs)*2}}" style="text-align: center">Qualificació de les unitats formatives del mòdul profesional</th>
                 <th scope="col" colspan="4" rowspan="2" style="text-align: center; margin:auto">Qualificació final del mòdul</th>
               </tr>
-              <tr>
-                <td class="tabla-fila"></td>
-                @foreach($ufs as $uf)
+              <tr class="tabla-amarillo">
+                <td ></td>
+                @foreach($modulo->ufs as $uf)
                   <td scope="col" colspan="2" style="text-align: center">{{$uf->nom}}</td>
                 @endforeach
               </tr>
@@ -29,36 +29,29 @@
             <tbody>
               <tr class="tabla-amarillo">
                 <td style="text-align: center">Alumnat</td>
+                @foreach($modulo->ufs as $uf)
                 <td style="text-align: center">Hores</td>
                 <td style="text-align: center">Qualif.</td>
-                <td style="text-align: center">Hores</td>
-                <td style="text-align: center">Qualif.</td>
-                <td style="text-align: center">Hores</td>
-                <td style="text-align: center">Qualif.</td>
-                <td style="text-align: center">Hores</td>
-                <td style="text-align: center">Qualif.</td>
-                <td style="text-align: center">Hores</td>
-                <td style="text-align: center">Qualif.</td>
+                @endforeach
+                <td style="text-align: center">Hores Totals</td>
+                <td style="text-align: center">Qualif. Final</td>
               </tr>
               <form action="{{route('dashboard')}}" method="POST">
                 @csrf
                 @method('PUT')
-                @foreach($ufs->alumnes as $alumno )
+                @foreach($modulo->alumnes as $alumno )
                 @php
                     $notafinal = 0;
                 @endphp
                 <tr class="tabla-fila">
                   <td style="text-align: center">{{$alumno->nom . ' '. $alumno->cognoms}}</td>
-                  @foreach($ufs as $uf)
+                  @foreach($modulo->ufs as $uf)
                   <td style="text-align: center">{{$uf->hores}}</td>
                   <td style="text-align: center">
-                    @php
-                      $identificador = "nota_".$alumno->id . "_" .$uf->id;
-                    @endphp
-                    <select name="{{$identificador}}">
-                      <option value="" @if($uf->notes == "")selected @endif>N.P.</option>
+                    <select name="nota_{{$alumno->id}}_{{$uf->id}}">
+                      <option value="">N.P.</option>
                       @for($i=1;$i<10;$i++)
-                      <option value="{{$i}}"@if($i==$uf->notes) selected @endif>{{$i}}</option>
+                      <option value="{{$i}}" @if($uf->pivot->notes== $id) selected @endif>{{$i}}</option>{{$uf->pivot->notes}}
                       @endfor
                     </select>
                   </td>
@@ -66,8 +59,6 @@
                   $notafinal = $notafinal + ($alumno->notes * $uf->hores);
                   @endphp
                   @endforeach
-                 
-                </tr>
                   <td style="text-align: center">{{$modulo->hores}}</td>
                   <td style="text-align: center">{{$notafinal / $modulo->hores}}</td>
                 </tr>

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->foreignId('uf_id')->constrained()
                         ->cascadeOnUpdate()
                         ->cascadeOnDelete();
-            $table->integer('nota')->nullable();
+            $table->integer('nota')->nullable()
+                                    ->default(0);
             $table->string('modificat_per');
             //$table->string('comentari');
             $table->timestamps();
