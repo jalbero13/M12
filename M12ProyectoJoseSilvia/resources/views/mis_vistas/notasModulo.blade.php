@@ -40,7 +40,7 @@
                 <td style="text-align: center">Hores</td>
                 <td style="text-align: center">Qualif.</td>
               </tr>
-              <form action="{{route('')}}" method="POST">
+              <form action="{{route('dashboard')}}" method="POST">
                 @csrf
                 @method('PUT')
                 @foreach($ufs->alumnes as $alumno )
@@ -52,16 +52,21 @@
                   @foreach($ufs as $uf)
                   <td style="text-align: center">{{$uf->hores}}</td>
                   <td style="text-align: center">
-                    <select name="">
+                    @php
+                      $identificador = "nota_".$alumno->id . "_" .$uf->id;
+                    @endphp
+                    <select name="{{$identificador}}">
+                      <option value="" @if($uf->notes == "")selected @endif>N.P.</option>
                       @for($i=1;$i<10;$i++)
-                      <option value="{{$i}}">{{$i}}</option>
+                      <option value="{{$i}}"@if($i==$uf->notes) selected @endif>{{$i}}</option>
                       @endfor
                     </select>
                   </td>
-                  @endforeach
                   @php
-                    $notafinal = $notafinal + ($alumno->notes * $uf->hores);
+                  $notafinal = $notafinal + ($alumno->notes * $uf->hores);
                   @endphp
+                  @endforeach
+                 
                 </tr>
                   <td style="text-align: center">{{$modulo->hores}}</td>
                   <td style="text-align: center">{{$notafinal / $modulo->hores}}</td>
