@@ -19,6 +19,14 @@ class AlumneModulController extends Controller
         }
     }
 
+    public function storeAlumneModul($id, $correo){
+        $alumnos = Alumne::where('mail', $correo)->get();
+        foreach($alumnos as $alumno){
+            AlumneModulController::storeAlumnoModul($id, $alumno->id);
+        }
+        return redirect('/dashboard');
+    }
+
     public function storeAlumnoModul($idCiclo, $idAlumno){
         $modulos = Modul::where('cicle_id' ,$idCiclo)->get();
         foreach($modulos as $modulo){

@@ -55,10 +55,8 @@ class AlumneController extends Controller
         $user =  new UserController;
         $alum->modificat_per= $user->modificado();
         $alum->save();
-        $alu= Alumne::find($request->input('correoAlumno'));
-        $modul = new AlumneModulController;
-        $modul->storeAlumnoModul($request->input('idCiclo'),$alu->id);
-        return redirect('/dashboard');
+        $ruta = "/inscriureAlumneModul/".$request->input('idCiclo')."/".$request->input('correoAlumno');
+        return redirect($ruta);
         //
     }
     

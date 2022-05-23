@@ -75,7 +75,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     //     return view('mis_vistas.addUF');
     // });
 
-    
+    Route::get('/inscriureAlumneModul/{id}/{correo}', [AlumneModulController::class, 'storeAlumneModul'])->name('inscriureAlumneModul');
+
     Route::get('/inscriureProfessor/{id}', [ModulUserController::class, 'inscribirProfesor'])->name('inscriureProfessor'); 
 
     Route::get('/inscriureProfessorCicle/{id}', [CicleUserController::class, 'inscribirProfesorCiclo'])->name('inscriureProfessorCicle');
