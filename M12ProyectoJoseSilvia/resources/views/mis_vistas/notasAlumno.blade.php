@@ -1,9 +1,10 @@
 <div class="container">
     <x-app-layout>
+        <x-slot name="header">
         <h3>Llistat de qualificacions</h3>
         <h3>Desenvolupament d'aplicacions web II</h3>
         <h3>Francisco Franquiciado Aguilés</h3>
-    </x-app-layout>
+
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/dashboard">Cicles</a></li>
@@ -11,6 +12,7 @@
           <li class="breadcrumb-item active" aria-current="page">Llistat de notes</li>
         </ol>
     </nav>
+        </x-slot>
     <table class="table tabla">
         <thead class="tabla-amarillo">
             <tr>
@@ -48,13 +50,7 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
-                <td>UF5. POO Llibreries de clase fonamentals</td>
-                <td>35</td>
-                <td>6</td>
-                <td></td>
-                <td></td>
-            </tr>
         </thead>
     </table>
+    </x-app-layout>
 </div>

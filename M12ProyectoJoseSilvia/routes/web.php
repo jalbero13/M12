@@ -95,6 +95,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/editProfe/{id}', [UserController::class, 'editProfe'])->name('editProfe');
 
     Route::get('/alumnes', [AlumneController::class, 'showAlumnes'])->name('showAlumnes');
+    
+    Route::get('/notes', [AlumneController::class, 'showNotesAlumne'])->name('showAlumnes');
 
 
     Route::post('/storeAlumnoModul', [AlumneModulController::class, 'storeAlumnoModul'])->name('storeAlumneModul');
@@ -125,6 +127,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::put('/updateProfe', [UserController::class, 'updateProfe'])->name('updateProfe');
 
+
     Route::delete('inicio/eliminarAlumno/{id?}',[AlumneController::class, 'eliminarAlumno'])->name('eliminarAlumno');
 
     Route::delete('inicio/eliminarProfesor/{id?}',[UserController::class, 'eliminarProfesor'])->name('eliminarProfesor');
@@ -134,6 +137,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::delete('inicio/eliminarModulo/{id?}',[ModulController::class, 'eliminarModulo'])->name('eliminarModulo');
 
     Route::delete('inicio/eliminarUf/{id?}',[UfController::class, 'eliminarUf'])->name('eliminarUf');
+
+
 
 
 

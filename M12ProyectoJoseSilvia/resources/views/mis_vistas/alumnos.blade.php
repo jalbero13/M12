@@ -6,7 +6,8 @@
             </h2>
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">Cicles</li>
+                  <li class="breadcrumb-item"><a href="/dashboard">Cicles</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Alumnat</li>
                 </ol>
             </nav>
         </x-slot>
