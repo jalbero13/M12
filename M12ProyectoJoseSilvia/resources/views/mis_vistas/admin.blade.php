@@ -52,7 +52,6 @@
                 @csrf
                     <button type="submit" class="btn btn-dark">Esborrar alumne</button>
               </form> | 
-            <a type="button" class="btn btn-dark" href="/inscriureAlumne/{{$alumno->id}}">Inscriure en el cicle</a>
             </td>
           </tr>
         @endforeach
