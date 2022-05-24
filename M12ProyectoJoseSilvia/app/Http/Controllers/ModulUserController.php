@@ -31,7 +31,7 @@ class ModulUserController extends Controller
             $user = new UserController;
             $modificat_per = $user->modificado();
             $modul->profes()->attach($request->input('idProfe'),['modificat_per'=> $modificat_per, 'nom_modul'=> $modul->descripcio]);    
-            return redirect('/modul');
+            return redirect('/profesor');
         //
     }
 }
