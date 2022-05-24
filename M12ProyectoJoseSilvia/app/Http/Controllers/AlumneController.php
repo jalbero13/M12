@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\Alumne;
 use App\Http\Controllers\Controller;
+use App\Models\AlumneModul;
 use App\Models\Cicle;
 use App\Models\CicleUser;
+use App\Models\Modul;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 class AlumneController extends Controller
@@ -88,4 +91,6 @@ class AlumneController extends Controller
         $alumno->delete();
         return redirect('/dashboard');
     }
+
+   
 }
