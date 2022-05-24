@@ -52,12 +52,12 @@
                     <select name="nota_{{$alumno->id}}_{{$uf->id}}">
                       <option value="0">N.P.</option>
                       @for($i=1;$i<10;$i++)
-                        <option value="{{$i}}" @if($uf->pivot->nota== $id) selected @endif>{{$i}}</option>
+                        <option value="{{$i}}" >{{$i}}</option>
                       @endfor
                     </select>
                   </td>
                   @php
-                  $notafinal = $notafinal + ($uf->pivot->nota * $uf->hores);
+                  $notafinal = $notafinal ;
                   @endphp
                   @endforeach
                   <td style="text-align: center">{{$modulo->hores}}</td>
