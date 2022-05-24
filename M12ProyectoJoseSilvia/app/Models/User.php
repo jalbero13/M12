@@ -66,10 +66,10 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
     public function modulUser(){
-        return $this->belongsToMany(Modul::class, 'modul_user');
+        return $this->belongsToMany(Modul::class, 'modul_user')->withTimestamps();
     }
     public function cicles(){
-        return $this->belongsToMany(Cicle::class,'cicle_user');
+        return $this->belongsToMany(Cicle::class,'cicle_user')->withTimestamps();
     }
 
     public function sendPasswordResetNotification($token)
