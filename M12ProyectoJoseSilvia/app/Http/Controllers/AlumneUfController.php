@@ -29,6 +29,21 @@ class AlumneUfController extends Controller
         }
     
     }
+    public function updateAlumnoUf(Request $request){
+        $id = $request->input('id');
+        $user = new UserController;
+        $modificat_per = $user->modificado();
+        $ufs = Uf::where('modul_id', $id)->get();
+        foreach($ufs as $uf){
+            foreach($uf->alumnes as $alumne){
+                $nota = 'nota_'.$alumne->id.'_'.$uf->id;
+                $uf->alumnes()->updateExistingPivot($alumne->id, ['modificat_per'=>$modificat_per, 'nota'=>$request->input($nota)]);
+            }
+            
+        }
+        $ruta = "/notesModul/$id";
+        return redirect($ruta);
+    }
 }
 
 

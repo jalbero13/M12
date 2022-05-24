@@ -36,13 +36,14 @@
                 <td style="text-align: center">Hores Totals</td>
                 <td style="text-align: center">Qualif. Final</td>
               </tr>
-              <form action="{{route('dashboard')}}" method="POST">
+              <form action="{{route('updateNotesUf')}}" method="POST">
                 @csrf
                 @method('PUT')
                 @foreach($modulo->alumnes as $alumno )
                 @php
                     $notafinal = 0;
                 @endphp
+                <input name="id" value="{{$modulo->id}}" hidden>
                 <tr class="tabla-fila">
                   <td style="text-align: center">{{$alumno->nom . ' '. $alumno->cognoms}}</td>
                   @foreach($modulo->ufs as $uf)
@@ -51,12 +52,12 @@
                     <select name="nota_{{$alumno->id}}_{{$uf->id}}">
                       <option value="0">N.P.</option>
                       @for($i=1;$i<10;$i++)
-                      <option value="{{$i}}" @if($uf->pivot->notes== $id) selected @endif>{{$i}}</option>{{$uf->pivot->notes}}
+                        <option value="{{$i}}" @if($uf->pivot->nota== $id) selected @endif>{{$i}}</option>
                       @endfor
                     </select>
                   </td>
                   @php
-                  $notafinal = $notafinal + ($alumno->notes * $uf->hores);
+                  $notafinal = $notafinal + ($uf->pivot->nota * $uf->hores);
                   @endphp
                   @endforeach
                   <td style="text-align: center">{{$modulo->hores}}</td>
