@@ -63,7 +63,7 @@ class ModulController extends Controller
 
     public function eliminarModulo($id){
         $modulo = Modul::find($id);
-        $modulo->porfes()->detach();
+        $modulo->profes()->detach();
         $modulo->delete();
         return redirect('/modul');      
     }
