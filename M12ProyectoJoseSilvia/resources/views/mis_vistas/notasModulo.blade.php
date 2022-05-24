@@ -12,6 +12,7 @@
                 </ol>
             </nav>
         </x-slot>
+        <h1>{{$modulo->nom.'. '. $modulo->descripcio}}</h1>
         <table class="table tabla">
             <thead class="tabla-amarillo">
               <tr>
@@ -52,8 +53,8 @@
                       <td style="text-align: center">
                         <select name="nota_{{$alumno->id}}_{{$uf->id}}">
                           <option value="0"@if($uf->pivot->nota) selected @endif>N.P.</option>
-                          @for($i=1;$i<10;$i++)
-                            <option value="{{$i}}"@if($uf->pivot->nota) selected @endif>{{$i}}</option>
+                          @for($i=1;$i<=10;$i++)
+                            <option value="{{$i}}"@if($uf->pivot->nota == $i) selected @endif>{{$i}}</option>
                           @endfor
                         </select>
                       </td>
