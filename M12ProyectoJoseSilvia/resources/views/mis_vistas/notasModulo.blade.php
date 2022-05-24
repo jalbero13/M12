@@ -65,7 +65,7 @@
                 </tr>
                 @endforeach
                 <tr>
-                  <td><<button type="submit" class="btn btn-ins">Modificar notes</button></td>
+                  <td><button type="submit" class="btn btn-ins">Modificar notes</button></td>
                 </tr>
               </form>
             </tbody>
