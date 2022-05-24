@@ -17,7 +17,7 @@ class Modul extends Model
     }
     public function alumnes(){
         return $this->belongsToMany(Alumne::class, 'alumne_modul')->withTimestamps()
-                                                                ->withPivot('nota_media','comentari');
+                                                                ->withPivot('nota_media','comentario');
     }
     public function profes(){
         return $this->belongsToMany(User::class, 'modul_user')->withTimestamps();
