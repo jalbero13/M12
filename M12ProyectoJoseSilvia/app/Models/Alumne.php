@@ -9,11 +9,13 @@ class Alumne extends Model
 {
     use HasFactory;
     public function ufs(){
-        return $this->belongsToMany(Uf::class, 'alumne_uf');
+        return $this->belongsToMany(Uf::class, 'alumne_uf')->withTimestamps()
+                                                            ->withPivot('nota');
     }
     
     public function moduls(){
-        return $this->belongsToMany(Modul::class, 'alumne_modul');
+        return $this->belongsToMany(Modul::class, 'alumne_modul')->withTimestamps()
+                                                                ->withPivot('nota_media');
     }
 
     public function cicles(){

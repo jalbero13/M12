@@ -12,6 +12,7 @@ class Uf extends Model
         return $this->belongsTo(Modul::class);
     }
     public function alumnes(){
-        return $this->belongsToMany(Alumne::class,'alumne_uf');
+        return $this->belongsToMany(Alumne::class,'alumne_uf')->withTimestamps()
+                                                            ->withPivot('nota');
     }
 }

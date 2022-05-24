@@ -40,32 +40,34 @@
                 @csrf
                 @method('PUT')
                 @foreach($modulo->alumnes as $alumno )
-                @php
-                    $notafinal = 0;
-                @endphp
-                <input name="id" value="{{$modulo->id}}" hidden>
-                <tr class="tabla-fila">
-                  <td style="text-align: center">{{$alumno->nom . ' '. $alumno->cognoms}}</td>
-                  @foreach($modulo->ufs as $uf)
-                  <td style="text-align: center">{{$uf->hores}}</td>
-                  <td style="text-align: center">
-                    <select name="nota_{{$alumno->id}}_{{$uf->id}}">
-                      <option value="0">N.P.</option>
-                      @for($i=1;$i<10;$i++)
-                        <option value="{{$i}}" >{{$i}}</option>
-                      @endfor
-                    </select>
-                  </td>
                   @php
-                  $notafinal = $notafinal ;
+                      $notafinal = 0;
                   @endphp
-                  @endforeach
-                  <td style="text-align: center">{{$modulo->hores}}</td>
-                  <td style="text-align: center">{{$notafinal / $modulo->hores}}</td>
-                </tr>
+                  <input name="id" value="{{$modulo->id}}" hidden>
+                  <tr class="tabla-fila">
+                    <td style="text-align: center">{{$alumno->nom . ' '. $alumno->cognoms}}</td>
+                    @foreach($alumno->ufs as $uf)
+                      @if($uf->modul_id == $modulo->id)
+                      <td style="text-align: center">{{$uf->hores}}</td>
+                      <td style="text-align: center">
+                        <select name="nota_{{$alumno->id}}_{{$uf->id}}">
+                          <option value="0"@if($uf->pivot->nota) selected @endif>N.P.</option>
+                          @for($i=1;$i<10;$i++)
+                            <option value="{{$i}}"@if($uf->pivot->nota) selected @endif>{{$i}}</option>
+                          @endfor
+                        </select>
+                      </td>
+                      @php
+                        $notafinal = $notafinal + ($uf->pivot->nota * $uf->hores) ;
+                      @endphp
+                      @endif
+                    @endforeach
+                    <td style="text-align: center">{{$modulo->hores}}</td>
+                    <td style="text-align: center">{{$notafinal / $modulo->hores}}</td>
+                  </tr>
                 @endforeach
                 <tr>
-                  <td><<button type="submit" class="btn btn-ins">Modificar notes</button></td>
+                  <td><button type="submit" class="btn btn-ins">Modificar notes</button></td>
                 </tr>
               </form>
             </tbody>

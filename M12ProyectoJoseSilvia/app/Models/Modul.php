@@ -16,9 +16,10 @@ class Modul extends Model
         return $this->hasMany(Uf::class);
     }
     public function alumnes(){
-        return $this->belongsToMany(Alumne::class, 'alumne_modul');
+        return $this->belongsToMany(Alumne::class, 'alumne_modul')->withTimestamps()
+                                                                ->withPivot('nota_media');
     }
     public function profes(){
-        return $this->belongsToMany(User::class, 'modul_user');
+        return $this->belongsToMany(User::class, 'modul_user')->withTimestamps();
     }
 }

@@ -51,6 +51,7 @@ class CicleController extends Controller
 
     public function eliminarCiclo($id){
         $ciclo = Cicle::find($id);
+        $ciclo->usuaris()->detach();
         $ciclo->delete();
         return redirect('/cicle');      
     }
