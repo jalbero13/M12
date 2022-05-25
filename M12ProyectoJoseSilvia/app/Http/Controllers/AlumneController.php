@@ -8,7 +8,6 @@ use App\Models\Cicle;
 use App\Models\CicleUser;
 use App\Models\Modul;
 use App\Models\User;
-use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -32,12 +31,12 @@ class AlumneController extends Controller
     }
 
     public function addAlumne(){
-        return view('mis_vistas.addAlumno', array('arrayCicles'=>Cicle::all()));
+        return view('mis_vistas.addAlumno', array('error'=>'', 'arrayCicles'=>Cicle::all()));
     }
 
     public function editAlumne($id){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.editAlumno',array('id' => $id, 'arrayCicles'=>Cicle::all(), 'Alumno' => Alumne::find($id)));
+            return view('mis_vistas.editAlumno',array('id' => $id, 'error'=>'', 'arrayCicles'=>Cicle::all(), 'Alumno' => Alumne::find($id)));
         }
     }
 
@@ -63,20 +62,18 @@ class AlumneController extends Controller
             $alum->save();
             $ruta = "/inscriureAlumneModul/".$request->input('idCiclo')."/".$request->input('correoAlumno');
             return redirect($ruta);
-        }catch(QueryExecuted $e){
+        }catch(QueryException $e){
             $codigoError = $e->errorInfo[1];
             if($codigoError == 23000){
-                echo "<script>
-                alert('hola');
-                </script>";
+                return view('mis_vistas.addAlumno', array('error'=>'', 'arrayCicles'=>Cicle::all()));
             }
         }
         //
     }
     
     public function updateAlumno(Request $request){
-        
-        $alum = Alumne::find($request->input('idAlumno'));
+        $id = $request->input('idAlumno');
+        $alum = Alumne::find($id);
         $alum->nom = $request->input('nombreAlumno');
         $alum->cognoms = $request->input('apellidosAlumno');
         $alum->direccio = $request->input('direccionAlumno');
@@ -87,12 +84,19 @@ class AlumneController extends Controller
         $alum->cicle_id = $request->input('idCiclo');
         $user = new UserController;
         $alum->modificat_per = $user->modificado();
-        $alum->ufs()->detach();
-        $alum->moduls()->detach();
-        $alum->save();
-        $modul = new AlumneModulController;
-        $modul->storeAlumnoModul($request->input('idCiclo'),$request->input('idAlumno'));
-        return redirect('/dashboard');
+        try{
+            $alum->ufs()->detach();
+            $alum->moduls()->detach();
+            $alum->save();
+            $modul = new AlumneModulController;
+            $modul->storeAlumnoModul($request->input('idCiclo'),$request->input('idAlumno'));
+            return redirect('/dashboard');
+        }catch(QueryException $e){
+            $codigoError = $e->errorInfo[1];
+            if($codigoError == 23000){
+                return view('mis_vistas.editAlumno',array('id' => $id, 'error'=>'Ya hay un alumno con ese dni/correo' , 'arrayCicles'=>Cicle::all(), 'Alumno' => Alumne::find($id)));
+            }
+        }
     }
 
     public function eliminarAlumno($id){

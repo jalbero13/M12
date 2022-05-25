@@ -43,6 +43,7 @@
                 @foreach($modulo->alumnes as $alumno )
                   @php
                       $notafinal = 0;
+                      $nota0;
                   @endphp
                   <input name="id" value="{{$modulo->id}}" hidden>
                   <tr class="tabla-fila">
@@ -59,12 +60,16 @@
                         </select>
                       </td>
                       @php
+                      if($uf->pivot->nota >4){
                         $notafinal = $notafinal + ($uf->pivot->nota * $uf->hores) ;
+                      }else{
+                        $nota0 = 0;
+                      }
                       @endphp
                       @endif
                     @endforeach
                     <td style="text-align: center">{{$modulo->hores}}</td>
-                    <td style="text-align: center"><input class="form-control" name="nota_media" value="{{$notafinal / $modulo->hores}}" disabled></td>
+                    <td style="text-align: center"><input class="form-control" name="nota_media" value="@if($nota0!=0){{$notafinal / $modulo->hores}}@else{{$nota0}}@endif" disabled></td>
                   </tr>
                 @endforeach
                 <tr>
