@@ -39,9 +39,9 @@ class AlumneController extends Controller
         }
     }
 
-    public function showNotesAlumne(){
+    public function showNotesAlumne($id){
         if(Auth::user()->role_id == 2){
-            return view('mis_vistas.notasAlumno');
+            return view('mis_vistas.notasAlumno', array('id' => $id, 'alumno' => Alumne::find($id)));
         }
     }
 

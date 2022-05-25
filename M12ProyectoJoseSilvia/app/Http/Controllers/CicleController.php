@@ -33,7 +33,8 @@ class CicleController extends Controller
     public function storeCiclo(Request $request){
         $ciclo = new Cicle;
         $ciclo->nom = $request->input('nombreCiclo');
-        $ciclo->modificat_per = $request->input('modificado_por');
+        $user = new UserController;
+        $ciclo->modificat_per = $user->modificado();
         $ciclo->save();
         return redirect('/cicle');
         //

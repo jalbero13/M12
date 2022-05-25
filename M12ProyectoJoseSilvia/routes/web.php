@@ -133,6 +133,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('inicio/eliminarUf/{id?}',[UfController::class, 'eliminarUf'])->name('eliminarUf');
 
+    Route::get('notes/{id?}',[AlumneController::class, 'showNotesAlumne'])->name('showNotasAlumno');
 
 
 

@@ -25,7 +25,7 @@
               <tr class="tabla-fila">
                 <td>{{$alumne->nom}}</td>
                 <td>{{$alumne->cognoms}}</td>
-                <td><a class="btn btn-ins" href="/notes">Veure notes</a></td>
+                <td><a class="btn btn-ins" href="/notes/{{$alumne->id}}">Veure notes</a></td>
               </tr>
               @endforeach
             </tbody>
