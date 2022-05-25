@@ -95,8 +95,9 @@ class AlumneController extends Controller
         }catch(QueryException $e){
             $codigoError = $e->errorInfo[1];
             if($codigoError == 1062){
-                return redirect('/dashboard');
+                $error ='Ya hay un alumno con ese dni/correo';
             }
+            return view('mis_vistas.editAlumno', array('error'=>$error, 'arrayCicles'=>Cicle::all()));
         }
     }
 

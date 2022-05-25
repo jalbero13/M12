@@ -24,6 +24,11 @@
           </ul>
           <form action="{{route('storeModulUser')}}" method="POST">
             @csrf
+            @if($error!='')     
+            <div class="alert alert-danger alertdismissible">
+                <h3>{{$error}}</h3>
+            </div>
+            @endif
             <div class="row" style="margin-top: 20px">
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
