@@ -64,9 +64,10 @@ class AlumneController extends Controller
             return redirect($ruta);
         }catch(QueryException $e){
             $codigoError = $e->errorInfo[1];
-            if($codigoError == 23000){
-                return view('mis_vistas.addAlumno', array('error'=>'', 'arrayCicles'=>Cicle::all()));
+            if($codigoError == 1062){
+                $error ='Ya hay un alumno con ese dni/correo';
             }
+            return view('mis_vistas.addAlumno', array('error'=>$error, 'arrayCicles'=>Cicle::all()));
         }
         //
     }
@@ -93,8 +94,8 @@ class AlumneController extends Controller
             return redirect('/dashboard');
         }catch(QueryException $e){
             $codigoError = $e->errorInfo[1];
-            if($codigoError == 23000){
-                return view('mis_vistas.editAlumno',array('id' => $id, 'error'=>'Ya hay un alumno con ese dni/correo' , 'arrayCicles'=>Cicle::all(), 'Alumno' => Alumne::find($id)));
+            if($codigoError == 1062){
+                return redirect('/dashboard');
             }
         }
     }
