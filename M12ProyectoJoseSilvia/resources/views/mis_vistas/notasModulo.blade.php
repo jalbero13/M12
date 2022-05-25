@@ -43,7 +43,7 @@
                 @foreach($modulo->alumnes as $alumno )
                   @php
                       $notafinal = 0;
-                      $nota0;
+                      $nota0=1;
                   @endphp
                   <input name="id" value="{{$modulo->id}}" hidden>
                   <tr class="tabla-fila">
