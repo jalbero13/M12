@@ -8,9 +8,11 @@ use App\Models\Cicle;
 use App\Models\CicleUser;
 use App\Models\Modul;
 use App\Models\User;
+use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\QueryException;
 
 class AlumneController extends Controller
 {
@@ -57,9 +59,18 @@ class AlumneController extends Controller
         $alum->cicle_id = $request->input('idCiclo');
         $user =  new UserController;
         $alum->modificat_per= $user->modificado();
-        $alum->save();
-        $ruta = "/inscriureAlumneModul/".$request->input('idCiclo')."/".$request->input('correoAlumno');
-        return redirect($ruta);
+        try{
+            $alum->save();
+            $ruta = "/inscriureAlumneModul/".$request->input('idCiclo')."/".$request->input('correoAlumno');
+            return redirect($ruta);
+        }catch(QueryExecuted $e){
+            $codigoError = $e->errorInfo[1];
+            if($codigoError == 23000){
+                echo "<script>
+                alert('hola');
+                </script>";
+            }
+        }
         //
     }
     

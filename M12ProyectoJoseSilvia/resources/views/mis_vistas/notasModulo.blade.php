@@ -64,7 +64,7 @@
                       @endif
                     @endforeach
                     <td style="text-align: center">{{$modulo->hores}}</td>
-                    <td style="text-align: center">{{$notafinal / $modulo->hores}}</td>
+                    <td style="text-align: center"><input class="form-control" name="nota_media" value="{{$notafinal / $modulo->hores}}" disabled></td>
                   </tr>
                 @endforeach
                 <tr>
