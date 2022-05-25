@@ -33,7 +33,7 @@
             <tr class="tabla-amarillo2">
                 <td>{{$uf->nom. '. '. $uf->descripcio}}</td>
                 <td>{{$uf->hores}}</td>
-                <td>{{$uf->nota}}</td>
+                <td>{{$uf->pivot->nota}}</td>
                 <td></td>
             </tr>
                 @endif
