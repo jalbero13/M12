@@ -53,7 +53,7 @@
                       <td style="text-align: center">{{$uf->hores}}</td>
                       <td style="text-align: center">
                         <select name="nota_{{$alumno->id}}_{{$uf->id}}">
-                          <option value="0"@if($uf->pivot->nota) selected @endif>N.P.</option>
+                          <option value="0"@if($uf->pivot->nota == 0) selected @endif>N.P.</option>
                           @for($i=1;$i<=10;$i++)
                             <option value="{{$i}}"@if($uf->pivot->nota == $i) selected @endif>{{$i}}</option>
                           @endfor
