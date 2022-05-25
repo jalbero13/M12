@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('cognoms');
             $table->string('direccio');
             $table->date('data_naixement');
-            $table->string('dni', 9);
+            $table->string('dni', 9)->unique();
             $table->string('telefon', 9);
             $table->string('mail')->unique();
             $table->foreignId('cicle_id')->constrained('cicles')
