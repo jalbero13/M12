@@ -19,6 +19,7 @@
                 <th class="tabla-fila"></th>
                 <th scope="col" colspan="{{count($modulo->ufs)*2}}" style="text-align: center">Qualificació de les unitats formatives del mòdul profesional</th>
                 <th scope="col" colspan="4" rowspan="2" style="text-align: center; margin:auto">Qualificació final del mòdul</th>
+                <th scope="col" rowspan="3" style="text-align: center; margin:auto" >Comentari</th>
               </tr>
               <tr class="tabla-amarillo">
                 <td ></td>
@@ -34,8 +35,9 @@
                 <td style="text-align: center">Hores</td>
                 <td style="text-align: center">Qualif.</td>
                 @endforeach
-                <td style="text-align: center">Hores Totals</td>
-                <td style="text-align: center">Qualif. Final</td>
+                <td colspan="2" style="text-align: center">Hores Totals</td>
+                <td colspan="2" style="text-align: center">Qualif. Final</td>
+                <td ></td>
               </tr>
               <form action="{{route('updateNotesUf')}}" method="POST">
                 @csrf
@@ -72,8 +74,9 @@
                     $notafinal = $notafinal / $modulo->hores;
                     $notafinal = round($notafinal, 0);
                     @endphp
-                    <td style="text-align: center">{{$modulo->hores}}</td>
-                    <td style="text-align: center"><input class="form-control"  name="nota_media" value="@if($nota0!=0){{$notafinal}}@else{{$nota0}}@endif" disabled></td>
+                    <td colspan="2" style="text-align: center">{{$modulo->hores}}</td>
+                    <td colspan="2" style="text-align: center"><input class="form-control"  name="nota_media" value="@if($nota0!=0){{$notafinal}}@else{{$nota0}}@endif" disabled></td>
+                    <td>comentario</td>
                   </tr>
                 @endforeach
                 <tr>
