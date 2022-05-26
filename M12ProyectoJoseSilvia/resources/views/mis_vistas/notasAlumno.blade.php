@@ -42,5 +42,6 @@
         </thead>
     </table>
     <a class="btn btn-ins" href="/descarregarButlleti/{{$alumno->id}}">Imprimir butlletí</a>
+    <a class="btn btn-ins" href="/enviarButlleti/{{$alumno->id}}">Enviar butlletí per mail</a>
     </x-app-layout>
 </div>

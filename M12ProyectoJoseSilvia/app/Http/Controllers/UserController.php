@@ -14,7 +14,7 @@ class UserController extends Controller
     //
     public function showProfe(){
         if(Auth::user()->role_id == 1){
-            return view('mis_vistas.profesor',array('error'=>'', 'arrayUsers'=>User::all()));
+            return view('mis_vistas.profesor',array('arrayUsers'=>User::all()));
         }
     }
 
@@ -26,7 +26,7 @@ class UserController extends Controller
 
     public function agregarProfe(){
         if (Auth::user()->id == 1){
-            return view('mis_vistas.addProfe');
+            return view('mis_vistas.addProfe', array('error'=>''));
         }
     }
 
@@ -38,7 +38,6 @@ class UserController extends Controller
         $user =  new UserController;
         $prof->modificat_per= $user->modificado();
         $prof->password = Hash::make($request->input('contra'));
-        return redirect('/profesor');
         try{
             $prof->save();
             return redirect('/profesor');    
