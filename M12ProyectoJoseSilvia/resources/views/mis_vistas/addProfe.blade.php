@@ -45,7 +45,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Rol</label>
-                <select name="idRol">
+                <select class="form-control" name="idRol">
                     <option value="1">Administrador</option>
                     <option value="2">Professor</option>
                 </select>

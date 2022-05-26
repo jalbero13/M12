@@ -52,7 +52,7 @@
             
             <div class="mb-3">
                 <label class="form-label">Rol</label>
-                <select name="idRol">
+                <select class="form-control" name="idRol">
                     <option value="1" @if($Profe->role_id == 1) selected @endif>Administrador</option>
                     <option value="2" @if($Profe->role_id == 2) selected @endif>Professor</option>
                 </select>

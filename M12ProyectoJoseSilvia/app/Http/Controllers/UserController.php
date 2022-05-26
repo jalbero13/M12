@@ -40,16 +40,18 @@ class UserController extends Controller
         $user =  new UserController;
         $prof->modificat_per= $user->modificado();
         $prof->password = Hash::make($request->input('contra'));
-        try{
-            $prof->save();
-            return redirect('/profesor');    
-        }catch(QueryException $e){
-            $codigoError = $e->errorInfo[1];
-            if($codigoError == 1062){
-                $error ='Ya hay un profesor con ese correo';
-            }
-            return view('mis_vistas.addProfe',array('error'=>$error, 'arrayUsers'=>User::all()));
-        }
+        $prof->save();
+        return redirect('/profesor');    
+        // try{
+        //     $prof->save();
+        //     return redirect('/profesor');    
+        // }catch(QueryException $e){
+        //     $codigoError = $e->errorInfo[1];
+        //     if($codigoError == 1062){
+        //         $error ='Ya hay un profesor con ese correo';
+        //     }
+        //     return view('mis_vistas.addProfe',array('error'=>$error, 'arrayUsers'=>User::all()));
+        // }
         //
     }
 
