@@ -48,8 +48,6 @@ class UserController extends Controller
             if($codigoError == 1062){
                 $error ='Ya hay un profesor con ese correo';
             }
-            echo $codigoError;
-            exit;
             return view('mis_vistas.addProfe',array('error'=>$error, 'arrayUsers'=>User::all()));
         }
         //
