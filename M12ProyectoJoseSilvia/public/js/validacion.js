@@ -1,6 +1,6 @@
 let valCorreo = /^\w\@$/;
 
-
+$('#telefonoAlumno').blur(function(){
 function validarTelefono(e){
     let valTelefono = /^\[6-7-8-9]{1}d{8}$/;
     var campo = $('#telefonoAlumno') ;
@@ -11,6 +11,7 @@ function validarTelefono(e){
         e.preventDefault();
     }
 }
+});
 
 
 function validarDni(e){
