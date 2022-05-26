@@ -18,21 +18,20 @@ class CicleUserController extends Controller
         }
     }
 
-    public function storeCicleUser(Request $request){
-        $id =$request->input('idCiclo');
-        $ciclos = Cicle::find($id);    
+    public function storeCicleUser($idciclo, $idprofe){
+        $ciclos = Cicle::find($idciclo);    
         $user = new UserController;
         $modificat_per = $user->modificado();
+        
         try{
-            $ciclos->usuaris()->attach($request->input('idProfe'),['modificat_per' => $modificat_per, 'nom_cicle' =>$ciclos->nom]);
-            return redirect('/profesor');
-            
+            $ciclos->usuaris()->attach($idprofe,['modificat_per' => $modificat_per, 'nom_cicle' =>$idciclo]);
+
         }catch(QueryException $e){
             $codigoError = $e->errorInfo[1];
             if($codigoError == 1062){
-                $error ='Ya esta el profesor en el ciclo';
+                
             }
-            return view('mis_vistas.addCicloUser', array('id'=>$id, 'error'=>$error, 'arrayCicles'=>Cicle::all()));
+            // return view('mis_vistas.addCicloUser', array('id'=>$id, 'error'=>$error, 'profesor'=>User::find($id), 'arrayCicles'=>Cicle::all()));
         }
     //
     }

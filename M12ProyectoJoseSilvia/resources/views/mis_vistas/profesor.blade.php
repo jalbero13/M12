@@ -39,7 +39,6 @@
                 <td>{{$profe->cognoms}}</td>
                 <td>{{$profe->email}}</td>
                 <td> 
-                  <a type="button" class="btn btn-ins" href="/inscriureProfessorCicle/{{$profe->id}}">Inscriure a cicle</a>
                 <div class="btn-group">
                   <a href="/editProfe/{{$profe->id}}" type="button" class="btn btn-outline-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

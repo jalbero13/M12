@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cicle;
 use App\Models\Modul;
 use App\Models\modulCicle;
 use App\Models\ModulUser;
@@ -32,6 +33,8 @@ class ModulUserController extends Controller
             $modul = Modul::find($id);
             $user = new UserController;
             $modificat_per = $user->modificado();
+            $ciclo = new CicleUserController;
+            $ciclo->storeCicleUser($modul->cicle_id, $request->input('idProfe'));
             try{
                 $modul->profes()->attach($request->input('idProfe'),['modificat_per'=> $modificat_per, 'nom_modul'=> $modul->descripcio]);    
                 return redirect('/profesor'); 
