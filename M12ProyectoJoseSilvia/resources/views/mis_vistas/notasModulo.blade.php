@@ -69,10 +69,11 @@
                       @endif
                     @endforeach
                     @php
-                    $notafinal = round($notafinal / $modulo->hores, 0 ,PHP_ROUND_HALF_UP);
+                    $notafinal = $notafinal / $modulo->hores;
+                    $notafinal = round($notafinal, 0);
                     @endphp
                     <td style="text-align: center">{{$modulo->hores}}</td>
-                    <td style="text-align: center"><input class="form-control"  name="nota_media" value="@if($nota0!=0){{$notafinal / $modulo->hores}}@else{{$nota0}}@endif" disabled></td>
+                    <td style="text-align: center"><input class="form-control"  name="nota_media" value="@if($nota0!=0){{$notafinal}}@else{{$nota0}}@endif" disabled></td>
                   </tr>
                 @endforeach
                 <tr>
