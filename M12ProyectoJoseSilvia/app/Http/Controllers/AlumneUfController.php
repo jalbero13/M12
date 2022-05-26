@@ -66,6 +66,7 @@ class AlumneUfController extends Controller
         $ruta = "/notesModul/$id";
         return redirect($ruta);
     }
+    
 }
 
 

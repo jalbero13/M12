@@ -55,25 +55,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('/UF/{id}',[UfController::class, 'showUfProfe'])->name('showUfsProfe');
 
-    // Route::get('/addProfe', function(){
-    //     return view('mis_vistas.addProfe');
-    // });
-
-    // Route::get('/addAlumne', function(){
-    //     return view('mis_vistas.addAlumno');
-    // });
-
-    // Route::get('/addCicle', function(){
-    //     return view('mis_vistas.addCiclo');
-    // });
-
-    // Route::get('/addModul', function(){
-    //     return view('mis_vistas.addModulo');
-    // });  
-
-    // Route::get('/addUF', function(){
-    //     return view('mis_vistas.addUF');
-    // });
+    Route::get('/comentario/{idAlumno}/{idModulo}',[AlumneModulController::class, 'mostrarComentario'])->name('comentario');
 
     Route::get('/inscriureAlumneModul/{id}/{correo}', [AlumneModulController::class, 'storeAlumneModul'])->name('inscriureAlumneModul');
 
@@ -121,6 +103,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::put('/updateProfe', [UserController::class, 'updateProfe'])->name('updateProfe');
 
     Route::put('/updateNotesUf', [AlumneUfController::class, 'updateAlumnoUf'])->name('updateNotesUf');
+
+    Route::put('/editComentari',[AlumneModulController::class, 'updateComentario'])->name('editComentari');
+
 
 
     Route::get('inicio/eliminarAlumno/{id?}',[AlumneController::class, 'eliminarAlumno'])->name('eliminarAlumno');

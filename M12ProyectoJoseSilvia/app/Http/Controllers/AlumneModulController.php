@@ -46,4 +46,21 @@ class AlumneModulController extends Controller
         $modificat_per = $user->modificado();
         $modulo->alumnes()->updateExistingPivot($idalumno,['modificat_per'=>$modificat_per, 'nota_media'=>$nota]);
     }
+    public function mostrarComentario($idAlumno, $idModulo){
+        $alumno = Alumne::find($idAlumno);
+        $modulo = Modul::find($idModulo);
+        return view('mis_vistas.comentario', compact('alumno', 'modulo'));
+    }
+    public function updateComentario(Request $request){
+        $idalumno = $request->input('idAlumno');
+        $comentario = $request->input('comentario');
+        $idmodulo = $request->input('idModulo');
+        $modulo = Modul::find($request->input('idModulo'));
+        $user = new UserController;
+        $modificat_per = $user->modificado();
+        $modulo->alumnes()->updateExistingPivot($idalumno,['modificat_per'=>$modificat_per, 'comentario'=>$comentario]);
+        $ruta = "/notesModul/$idmodulo";
+
+        return redirect($ruta);
+    }
 }

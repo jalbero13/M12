@@ -76,7 +76,7 @@
                     @endphp
                     <td colspan="2" style="text-align: center">{{$modulo->hores}}</td>
                     <td colspan="2" style="text-align: center"><input class="form-control"  name="nota_media" value="@if($nota0!=0){{$notafinal}}@else{{$nota0}}@endif" disabled></td>
-                    <td>comentario</td>
+                    <td><a href="/comentario/{{$alumno->id}}/{{$modulo->id}}">comentario</a></td>
                   </tr>
                 @endforeach
                 <tr>
