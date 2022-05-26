@@ -44,6 +44,13 @@
                 </div>
             </div>
             <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <select name="idRol">
+                    <option value="1">Administrador</option>
+                    <option value="2">Professor</option>
+                </select>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Correu professor</label>
                 <input id="correoProfe" type="email" class="form-control" name="correoProfe" required>
             </div>
@@ -51,7 +58,6 @@
               <label class="form-label">Contrasenya</label>
               <input type="password" class="form-control" name="contra" required>
             </div>
-            <input type="hidden" name="role_id" value="2">
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-ins" >Afegir professor</button>
             </div>

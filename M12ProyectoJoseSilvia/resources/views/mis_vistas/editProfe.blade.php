@@ -49,6 +49,14 @@
                 <label class="form-label">Correu professor</label>
                 <input id="correoProfe" type="email" class="form-control" name="correoProfe" value="{{$Profe->email}}" required>
             </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <select name="idRol">
+                    <option value="1" @if($Profe->role_id == 1) selected @endif>Administrador</option>
+                    <option value="2" @if($Profe->role_id == 2) selected @endif>Professor</option>
+                </select>
+            </div>
             <div class="mb-3">
               <label class="form-label">Contrasenya</label>
               <input type="password" class="form-control" name="contra" value="{{$Profe->password}}" disabled>

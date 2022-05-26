@@ -26,11 +26,8 @@ class UserController extends Controller
 
     public function agregarProfe(){
         if (Auth::user()->id == 1){
-<<<<<<< HEAD
             return view('mis_vistas.addProfe',array('error'=>''));
-=======
-            return view('mis_vistas.addProfe', array('error'=>''));
->>>>>>> 847df278f3c472e19676f41630dd4e2043d6420e
+
         }
     }
 
@@ -50,6 +47,8 @@ class UserController extends Controller
             if($codigoError == 1062){
                 $error ='Ya hay un profesor con ese correo';
             }
+            echo $codigoError;
+            exit;
             return view('mis_vistas.addProfe',array('error'=>$error, 'arrayUsers'=>User::all()));
         }
         //
