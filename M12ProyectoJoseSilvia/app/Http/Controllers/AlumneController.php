@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Mail;
 
 class AlumneController extends Controller
 {
@@ -113,8 +114,32 @@ class AlumneController extends Controller
     public function descargarPDF($id){
         $pdf = PDF::loadView('mis_vistas.butlleti', array('alumno'=>Alumne::find($id)));
         return $pdf->download('butlleti.pdf');
-  
-      }
+        
+    }
+
+    public function enviarPDF($id){
+        $datos["mail"] = Auth::user()->email;
+        $datos["nombre"] = Auth::user()->nom;
+        $datos["asunto"] = "Butlletí de notes";
+
+        $pdf = PDF::loadView('mis_vistas.butlleti', array('alumno'=>Alumne::find($id)));
+
+        try{
+            Mail::send('mis_vistas.mailBoletin', $datos, function($message)use($datos,$pdf){
+                $message->to($datos["mail"], $datos["nombre"])
+                ->subject($datos["asunto"])
+                ->attachData($pdf->output(), 'butlleti.pdf');
+            });
+
+        }catch(JWTException $excepcion){
+            $this->serverstatuscode = "0";
+            $this->serverstatusdes = $excepcion->getMessage();
+        }
+
+        return redirect()->back();
+    }
+
+
 
    
 }

@@ -1,32 +1,27 @@
-<div class="container">
-    <x-app-layout>
-        <x-slot name="header">
-            <h3>Llistat de qualificacions</h3>
-            <h3>Desenvolupament d'aplicacions web II</h3>
-            <h3>{{$alumno->nom.' '.$alumno->cognoms}}</h3>
-    
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/dashboard">Cicles</a></li>
-              <li class="breadcrumb-item"><a href="/alumnes">Alumnes</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Llistat de notes</li>
-            </ol>
-        </nav>
-            </x-slot>
-    <table class="table tabla">
-        <thead >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{$alumno->nom.' '.$alumno->cognoms}}</h1>
+    <table>
+        <thead>
             <tr>
-                <th scope="col"><b>Mòdul</b></th>
-                <th scope="col"><b>Hores</b></th>
-                <th scope="col"><b>Qualificació</b></th>
-                <th scope="col"><b>%Aprovat per UF</b></th>
+                <th scope="col">Mòdul</th>
+                <th scope="col">Hores</th>
+                <th scope="col">Qualificació</th>
+                <th scope="col">%Aprovat per UF</th>
             </tr>
             @foreach($alumno->moduls as $modulo)
-            <tr class="tabla-amarillo">      
+            <tr>      
                 <td><b>{{$modulo->nom. '. '. $modulo->descripcio }}</b></td>
                 <td><b>{{$modulo->hores}}</b></td>
                 <td><b>{{$modulo->pivot->nota_media}}</b></td>
-                <td><b>100%</b></td> 
+                <td>100%</td> 
             </tr>
                 @foreach($alumno->ufs as $uf)
                 @if($uf->modul_id == $modulo->id)
@@ -41,5 +36,5 @@
             @endforeach
         </thead>
     </table>
-    </x-app-layout>
-</div>
+</body>
+</html>
