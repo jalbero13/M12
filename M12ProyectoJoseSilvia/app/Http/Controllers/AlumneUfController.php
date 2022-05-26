@@ -33,13 +33,35 @@ class AlumneUfController extends Controller
         $id = $request->input('id');
         $user = new UserController;
         $modificat_per = $user->modificado();
-        $ufs = Uf::where('modul_id', $id)->get();
-        foreach($ufs as $uf){
-            foreach($uf->alumnes as $alumne){
-                $nota = 'nota_'.$alumne->id.'_'.$uf->id;
-                $uf->alumnes()->updateExistingPivot($alumne->id, ['modificat_per'=>$modificat_per, 'nota'=>$request->input($nota)]);
+        $modul = Modul::find($id);
+        $aluMod = new AlumneModulController;
+
+        foreach($modul->alumnes as $alumne){
+            $nota0 = 1;
+            $notafinal = 0;
+            foreach($alumne->ufs as $uf){
+                if($uf->modul_id==$id){
+                    $nota = 'nota_'.$alumne->id.'_'.$uf->id;
+                    $uf->alumnes()->updateExistingPivot($alumne->id, ['modificat_per'=>$modificat_per, 'nota'=>$request->input($nota)]);
+                    if($request->input($nota) >4){
+                        $notafinal = $notafinal + ($request->input($nota)* $uf->hores);
+                    }else{
+                        $nota0 = 0;
+                    }
+                    echo "$nota0 en el bucle de uf $notafinal "; 
+                }
             }
-            
+            echo "$nota0 fuera del bucle $notafinal ";
+            if($nota0!=0){
+                $notafinal = $notafinal / $modul->hores;
+                $notafinal = round($notafinal, 0, PHP_ROUND_HALF_UP);  
+                $aluMod->updateNota($alumne->id, $id, $notafinal);
+                echo $notafinal;
+            }else{
+                $aluMod->updateNota($alumne->id, $id, $nota0);
+                echo $nota0;
+            }
+
         }
         $ruta = "/notesModul/$id";
         return redirect($ruta);

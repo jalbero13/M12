@@ -40,4 +40,10 @@ class AlumneModulController extends Controller
         return redirect('dashboard');
         //
     }
+    public function updateNota($idalumno, $idmodul, $nota){
+        $modulo = Modul::find($idmodul);
+        $user = new UserController;
+        $modificat_per = $user->modificado();
+        $modulo->alumnes()->updateExistingPivot($idalumno,['modificat_per'=>$modificat_per, 'nota_media'=>$nota]);
+    }
 }
