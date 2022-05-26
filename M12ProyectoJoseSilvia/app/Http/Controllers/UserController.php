@@ -36,6 +36,7 @@ class UserController extends Controller
         $prof->nom = $request->input('nombreProfe');
         $prof->cognoms = $request->input('apellidosProfe');
         $prof->email = $request->input('correoProfe');
+        $prof->role_id = $request->input('idRol');
         $user =  new UserController;
         $prof->modificat_per= $user->modificado();
         $prof->password = Hash::make($request->input('contra'));
@@ -66,6 +67,7 @@ class UserController extends Controller
         $prof->cognoms = $request->input('apellidosProfe');
         $prof->email = $request->input('correoProfe');
         $user =  new UserController;
+        $prof->role_id = $request->input('idRol');
         $prof->modificat_per= $user->modificado();
         $prof->role_id = $request->input('role_id');
         try{
