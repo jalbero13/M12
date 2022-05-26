@@ -135,7 +135,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
     Route::get('notes/{id?}',[AlumneController::class, 'showNotesAlumne'])->name('showNotasAlumno');
 
-
+    Route::get('descarregarButlleti/{id?}',[AlumneController::class, 'descargarPDF'])->name('descargarPDF');
 
 
 });

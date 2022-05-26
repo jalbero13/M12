@@ -8,6 +8,7 @@ use App\Models\Cicle;
 use App\Models\CicleUser;
 use App\Models\Modul;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -108,6 +109,12 @@ class AlumneController extends Controller
         $alumno->delete();
         return redirect('/dashboard');
     }
+
+    public function descargarPDF($id){
+        $pdf = PDF::loadView('mis_vistas.butlleti', array('alumno'=>Alumne::find($id)));
+        return $pdf->download('butlleti.pdf');
+  
+      }
 
    
 }
