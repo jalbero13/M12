@@ -17,7 +17,7 @@
             </li>
             <li class="nav-item" style="font-size: 1.2rem">
                 <a class="nav-link lista" href="/modul">Mòdul</a>
-            </li>s
+            </li>
             <li class="nav-item" style="font-size: 1.3rem">
                 <a class="nav-link lista-activo active" href="/UF">Unitat Formativa</a>
             </li>
@@ -60,6 +60,7 @@
                                 <option value="{{$modulo->id}}">{{$modulo->nom . " " . $modulo->descripcio}}</option>
                             @endif
                             @endforeach
+                        </select>
                     </div>
                 </div>
             </div>
