@@ -33,13 +33,13 @@
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Nom professor</label>
-                        <input type="text" class="form-control" name="nombreProfe">
+                        <input type="text" class="form-control" name="nombreProfe" required>
                       </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Cognoms professor</label>
-                        <input type="text" class="form-control" name="apellidosProfe">
+                        <input type="text" class="form-control" name="apellidosProfe" required>
                     </div>
                 </div>
             </div>

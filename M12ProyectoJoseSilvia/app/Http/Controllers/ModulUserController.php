@@ -21,12 +21,7 @@ class ModulUserController extends Controller
         }
     }
 
-    /*public function showModulo(){
-        if(Auth::user()->role_id == 2){
-            $modulUser = ModulUser::where('user_id',Auth::user()->id);
-            //return view('mis_vistas.addModuloUser',array('id'=>$id, 'profesor'=>User::find($id), 'arrayModuls'=>Modul::all()));
-        }
-    }*/
+
 
     public function storeModulUser(Request $request){
             $id = $request->input('idModulo');
