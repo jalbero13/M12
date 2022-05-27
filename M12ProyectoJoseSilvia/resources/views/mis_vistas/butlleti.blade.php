@@ -7,43 +7,30 @@
     <title>Notes</title>
 </head>
 <body>
-    <h1>{{$alumno->nom.' '.$alumno->cognoms}}</h1>
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Mòdul</th>
-                <th scope="col">Hores</th>
-                <th></th>
-                <th scope="col">Qualificació</th>
-                <th></th>
-                <th scope="col">%Aprovat per UF</th>
-                <th>Comentari</th>
-            </tr>
-            @php $texto = ''; @endphp 
-            @foreach($alumno->moduls as $modulo)
-            <tr>      
-                <td><b>{{$modulo->nom. '. '. $modulo->descripcio }}</b></td>
-                <td><b>{{$modulo->hores}}</b></td>
-                <td></td>
-                <td><b>{{$modulo->pivot->nota_media}}</b></td>
-                <td></td>
-                <td>100%</td>
-            </tr>
-            
-                @foreach($alumno->ufs as $uf)
-                @if($uf->modul_id == $modulo->id)
-            <tr>
-                <td>{{$uf->nom. '. '. $uf->descripcio}}</td>
-                <td>{{$uf->hores}}</td>
-                <td></td>
-                <td>{{$uf->pivot->nota}}</td>
-                <td></td>
-            </tr>
-                @endif
-                @endforeach
-            @endforeach
-        </thead>
-    </table>
+    <p><b>Informe de qualificacions del curs escolar 2021 - 2022</b></p>
+    <hr width="550">
+    <p><b>Dades del centre</b></p>
+    <hr width="550">
+    <p>Nom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Codi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Municipi</p>
+    <p>Institut camí de mar &nbsp; 43007257 &nbsp; Calafell</p>
+    <p><b>Dades de l'alumne</b></p>
+    <hr width="550">
+    <p>Alumne &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DNI</p>
+    <p>{{$alumno->nom.' '.$alumno->cognoms}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$alumno->dni}}</p>
+    <p><b>Qualificacions</b></p>
+    <hr width="550">
+    <p>Mòdul &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hores &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Qualificació &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %Aprovat per UF</p>
+    @php $texto = ''; @endphp 
+    @foreach($alumno->moduls as $modulo)       
+        <p><b>{{$modulo->nom. '. '. $modulo->descripcio }} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$modulo->hores}} &nbsp; &nbsp; &nbsp; &nbsp; {{$modulo->pivot->nota_media}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;100%</b></p>           
+        @foreach($alumno->ufs as $uf)
+        @if($uf->modul_id == $modulo->id)
+        <p>{{$uf->nom. '. '. $uf->descripcio}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$uf->hores}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$uf->pivot->nota}}</p>
+        @endif
+        @endforeach
+    @endforeach
+    <p><b>Comentaris</b></p>
+    <hr width="550">
     @foreach($alumno->moduls as $modulo)
     <p>{{$modulo->nom}}  {{$modulo->pivot->comentario}} <br></p>
     @endforeach
