@@ -28,12 +28,16 @@ class AlumneController extends Controller
     }
 
     public function showAlumnes(){
-        $alumnos = Alumne::all();
-        return view('mis_vistas.alumnos', compact('alumnos'));
+        if(Auth()->user()->role_id ==2){
+            $alumnos = Alumne::all();
+            return view('mis_vistas.alumnos', compact('alumnos'));
+        }
     }
 
     public function addAlumne(){
-        return view('mis_vistas.addAlumno', array('error'=>'', 'arrayCicles'=>Cicle::all()));
+        if(Auth()->user()->role_id ==1){
+            return view('mis_vistas.addAlumno', array('error'=>'', 'arrayCicles'=>Cicle::all()));
+        }
     }
 
     public function editAlumne($id){

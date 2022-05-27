@@ -41,15 +41,19 @@ class AlumneModulController extends Controller
         //
     }
     public function updateNota($idalumno, $idmodul, $nota){
-        $modulo = Modul::find($idmodul);
-        $user = new UserController;
-        $modificat_per = $user->modificado();
-        $modulo->alumnes()->updateExistingPivot($idalumno,['modificat_per'=>$modificat_per, 'nota_media'=>$nota]);
+        if(Auth()->user()->role_id ==2){
+            $modulo = Modul::find($idmodul);
+            $user = new UserController;
+            $modificat_per = $user->modificado();
+            $modulo->alumnes()->updateExistingPivot($idalumno,['modificat_per'=>$modificat_per, 'nota_media'=>$nota]);
+        }
     }
     public function mostrarComentario($idAlumno, $idModulo){
-        $alumno = Alumne::find($idAlumno);
-        $modulo = Modul::find($idModulo);
-        return view('mis_vistas.comentario', compact('alumno', 'modulo'));
+        if(Auth()->user()->role_id ==2){
+            $alumno = Alumne::find($idAlumno);
+            $modulo = Modul::find($idModulo);
+            return view('mis_vistas.comentario', compact('alumno', 'modulo'));
+        }
     }
     public function updateComentario(Request $request){
         $idalumno = $request->input('idAlumno');
